@@ -3,20 +3,12 @@
   شجره‌نامه قباکلکی
   people.js
 ========================================================
-
-  نکته مهم:
-  - هر فرد یک ID یکتا دارد.
-  - spouse و children فقط با ID نوشته شده‌اند.
-  - family.html از همین اطلاعات برای ساخت نمودار استفاده می‌کند.
-  - person.html از همین اطلاعات برای ساخت صفحه شخص استفاده می‌کند.
-========================================================
 */
-
 
 const people = {
 
   /* =====================================================
-     نسل مشترک خاندان احمد و خاندان علی
+     نسل مشترک غلامحسین
   ===================================================== */
 
   "gholamhossein": {
@@ -51,9 +43,7 @@ const people = {
     father: "gholamhossein",
     mother: "",
 
-    spouse: [
-      "shirin"
-    ],
+    spouse: ["shirin"],
 
     children: [
       "farideh",
@@ -77,9 +67,7 @@ const people = {
     father: "",
     mother: "",
 
-    spouse: [
-      "ahmad"
-    ],
+    spouse: ["ahmad"],
 
     children: [
       "farideh",
@@ -96,7 +84,7 @@ const people = {
   },
 
 
-  /* ---------- فریده و صادق ---------- */
+  /* فریده و صادق */
 
   "farideh": {
     name: "فریده",
@@ -105,9 +93,7 @@ const people = {
     father: "ahmad",
     mother: "shirin",
 
-    spouse: [
-      "sadegh"
-    ],
+    spouse: ["sadegh"],
 
     children: [
       "kamelya"
@@ -127,9 +113,7 @@ const people = {
     father: "ali",
     mother: "mahin",
 
-    spouse: [
-      "farideh"
-    ],
+    spouse: ["farideh"],
 
     children: [
       "kamelya"
@@ -160,7 +144,7 @@ const people = {
   },
 
 
-  /* ---------- فجر و فاطمه ---------- */
+  /* فجر و فاطمه */
 
   "fajr": {
     name: "فجر",
@@ -169,9 +153,7 @@ const people = {
     father: "ahmad",
     mother: "shirin",
 
-    spouse: [
-      "fatemeh-fajr"
-    ],
+    spouse: ["fatemeh-fajr"],
 
     children: [
       "baran"
@@ -191,9 +173,7 @@ const people = {
     father: "",
     mother: "",
 
-    spouse: [
-      "fajr"
-    ],
+    spouse: ["fajr"],
 
     children: [
       "baran"
@@ -224,7 +204,7 @@ const people = {
   },
 
 
-  /* ---------- غلامحسین و سمیه عبدالکریم ---------- */
+  /* غلامحسین و سمیه عبدالکریم */
 
   "gholamhossein-ahmad": {
     name: "غلامحسین",
@@ -233,9 +213,7 @@ const people = {
     father: "ahmad",
     mother: "shirin",
 
-    spouse: [
-      "somayeh-abdolkarim"
-    ],
+    spouse: ["somayeh-abdolkarim"],
 
     children: [
       "liana"
@@ -255,9 +233,7 @@ const people = {
     father: "",
     mother: "",
 
-    spouse: [
-      "gholamhossein-ahmad"
-    ],
+    spouse: ["gholamhossein-ahmad"],
 
     children: [
       "liana"
@@ -288,7 +264,7 @@ const people = {
   },
 
 
-  /* ---------- فیض و سمیه اسپرغم ---------- */
+  /* فیض و سمیه اسپرغم */
 
   "feiz": {
     name: "فیض",
@@ -297,9 +273,7 @@ const people = {
     father: "ahmad",
     mother: "shirin",
 
-    spouse: [
-      "somayeh-espargham"
-    ],
+    spouse: ["somayeh-espargham"],
 
     children: [],
 
@@ -317,9 +291,7 @@ const people = {
     father: "",
     mother: "",
 
-    spouse: [
-      "feiz"
-    ],
+    spouse: ["feiz"],
 
     children: [],
 
@@ -330,7 +302,7 @@ const people = {
   },
 
 
-  /* ---------- پدرام ---------- */
+  /* پدرام */
 
   "pedram": {
     name: "پدرام",
@@ -361,9 +333,7 @@ const people = {
     father: "gholamhossein",
     mother: "",
 
-    spouse: [
-      "mahin"
-    ],
+    spouse: ["mahin"],
 
     children: [
       "sadegh",
@@ -388,9 +358,7 @@ const people = {
     father: "",
     mother: "",
 
-    spouse: [
-      "ali"
-    ],
+    spouse: ["ali"],
 
     children: [
       "sadegh",
@@ -408,7 +376,7 @@ const people = {
   },
 
 
-  /* ---------- صدیقه و منصور ---------- */
+  /* صدیقه و منصور */
 
   "sedigheh": {
     name: "صدیقه",
@@ -417,13 +385,11 @@ const people = {
     father: "ali",
     mother: "mahin",
 
-    spouse: [
-      "mansour"
-    ],
+    spouse: ["mansour"],
 
     children: [
       "mohammad-ali",
-      "zhalه",
+      "zhaleh",
       "yekta"
     ],
 
@@ -441,9 +407,7 @@ const people = {
     father: "",
     mother: "",
 
-    spouse: [
-      "sedigheh"
-    ],
+    spouse: ["sedigheh"],
 
     children: [
       "mohammad-ali",
@@ -466,7 +430,6 @@ const people = {
     mother: "sedigheh",
 
     spouse: [],
-
     children: [],
 
     job: "",
@@ -484,7 +447,6 @@ const people = {
     mother: "sedigheh",
 
     spouse: [],
-
     children: [],
 
     job: "",
@@ -502,7 +464,6 @@ const people = {
     mother: "sedigheh",
 
     spouse: [],
-
     children: [],
 
     job: "",
@@ -512,7 +473,7 @@ const people = {
   },
 
 
-  /* ---------- صمد و زهرا ---------- */
+  /* صمد و زهرا */
 
   "samad": {
     name: "صمد",
@@ -521,9 +482,7 @@ const people = {
     father: "ali",
     mother: "mahin",
 
-    spouse: [
-      "zahra-samad"
-    ],
+    spouse: ["zahra-samad"],
 
     children: [
       "niloufar",
@@ -544,9 +503,7 @@ const people = {
     father: "",
     mother: "",
 
-    spouse: [
-      "samad"
-    ],
+    spouse: ["samad"],
 
     children: [
       "niloufar",
@@ -568,7 +525,6 @@ const people = {
     mother: "zahra-samad",
 
     spouse: [],
-
     children: [],
 
     job: "",
@@ -586,7 +542,6 @@ const people = {
     mother: "zahra-samad",
 
     spouse: [],
-
     children: [],
 
     job: "",
@@ -596,7 +551,7 @@ const people = {
   },
 
 
-  /* ---------- خیری و وحید ---------- */
+  /* خیری و وحید */
 
   "kheyri": {
     name: "خیری",
@@ -605,9 +560,7 @@ const people = {
     father: "ali",
     mother: "mahin",
 
-    spouse: [
-      "vahid"
-    ],
+    spouse: ["vahid"],
 
     children: [
       "armina"
@@ -627,9 +580,7 @@ const people = {
     father: "",
     mother: "",
 
-    spouse: [
-      "kheyri"
-    ],
+    spouse: ["kheyri"],
 
     children: [
       "armina"
@@ -650,7 +601,6 @@ const people = {
     mother: "kheyri",
 
     spouse: [],
-
     children: [],
 
     job: "",
@@ -660,7 +610,7 @@ const people = {
   },
 
 
-  /* ---------- فاطمه ---------- */
+  /* فاطمه */
 
   "fatemeh-ali": {
     name: "فاطمه",
@@ -670,7 +620,6 @@ const people = {
     mother: "mahin",
 
     spouse: [],
-
     children: [],
 
     job: "",
@@ -680,7 +629,7 @@ const people = {
   },
 
 
-  /* ---------- مریم ---------- */
+  /* مریم */
 
   "maryam-ali": {
     name: "مریم",
@@ -690,7 +639,6 @@ const people = {
     mother: "mahin",
 
     spouse: [],
-
     children: [],
 
     job: "",
@@ -711,9 +659,7 @@ const people = {
     father: "",
     mother: "",
 
-    spouse: [
-      "esmat"
-    ],
+    spouse: ["esmat"],
 
     children: [
       "ebrahim",
@@ -735,9 +681,7 @@ const people = {
     father: "",
     mother: "",
 
-    spouse: [
-      "mohammad-abdolrashid"
-    ],
+    spouse: ["mohammad-abdolrashid"],
 
     children: [
       "ebrahim",
@@ -752,7 +696,7 @@ const people = {
   },
 
 
-  /* ---------- ابراهیم و سارا ---------- */
+  /* ابراهیم و سارا */
 
   "ebrahim": {
     name: "ابراهیم",
@@ -761,9 +705,7 @@ const people = {
     father: "mohammad-abdolrashid",
     mother: "esmat",
 
-    spouse: [
-      "sara"
-    ],
+    spouse: ["sara"],
 
     children: [],
 
@@ -781,9 +723,7 @@ const people = {
     father: "",
     mother: "",
 
-    spouse: [
-      "ebrahim"
-    ],
+    spouse: ["ebrahim"],
 
     children: [],
 
@@ -794,7 +734,7 @@ const people = {
   },
 
 
-  /* ---------- رشید و زهرا ---------- */
+  /* رشید و زهرا */
 
   "rashid": {
     name: "رشید",
@@ -803,9 +743,7 @@ const people = {
     father: "mohammad-abdolrashid",
     mother: "esmat",
 
-    spouse: [
-      "zahra-rashid"
-    ],
+    spouse: ["zahra-rashid"],
 
     children: [
       "helena"
@@ -825,9 +763,7 @@ const people = {
     father: "",
     mother: "",
 
-    spouse: [
-      "rashid"
-    ],
+    spouse: ["rashid"],
 
     children: [
       "helena"
@@ -848,7 +784,6 @@ const people = {
     mother: "zahra-rashid",
 
     spouse: [],
-
     children: [],
 
     job: "",
@@ -858,7 +793,7 @@ const people = {
   },
 
 
-  /* ---------- الهام ---------- */
+  /* الهام */
 
   "elham": {
     name: "الهام",
@@ -868,7 +803,6 @@ const people = {
     mother: "esmat",
 
     spouse: [],
-
     children: [],
 
     job: "",
@@ -882,7 +816,7 @@ const people = {
 
 /*
 ========================================================
-  اطلاعات خاندان‌ها
+  اطلاعات سه خاندان
 ========================================================
 */
 
@@ -918,24 +852,11 @@ const families = {
 ========================================================
 */
 
-
-/*
-  گرفتن یک شخص با ID
-*/
 function getPerson(id) {
-
-  if (!id) {
-    return null;
-  }
-
   return people[id] || null;
-
 }
 
 
-/*
-  گرفتن نام شخص
-*/
 function getPersonName(id) {
 
   const person = getPerson(id);
@@ -947,9 +868,6 @@ function getPersonName(id) {
 }
 
 
-/*
-  گرفتن همسر اول
-*/
 function getSpouse(id) {
 
   const person = getPerson(id);
@@ -965,23 +883,9 @@ function getSpouse(id) {
   }
 
   return person.spouse;
-
 }
 
 
-/*
-  بررسی وجود شخص
-*/
-function personExists(id) {
-
-  return !!people[id];
-
-}
-
-
-/*
-  گرفتن فرزندان
-*/
 function getChildren(id) {
 
   const person = getPerson(id);
@@ -991,21 +895,9 @@ function getChildren(id) {
   }
 
   return person.children;
-
 }
 
 
-/*
-  گرفتن عنوان خانواده
-*/
-function getFamilyName(id) {
-
-  const person = getPerson(id);
-
-  if (!person) {
-    return "";
-  }
-
-  return person.family || "";
-
+function personExists(id) {
+  return !!people[id];
       }
