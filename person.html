@@ -3,195 +3,328 @@
 
 <head>
 
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-    <title>مشخصات فرد</title>
+  <title>اطلاعات فرد</title>
 
-    <style>
 
-        * {
-            box-sizing: border-box;
-        }
+  <style>
 
-        body {
-            margin: 0;
-            font-family: Tahoma, Arial, sans-serif;
-            background: #f4f7f4;
-            color: #333;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        header {
-            background: #245c3a;
-            color: white;
-            text-align: center;
-            padding: 30px 15px;
-        }
 
-        header h1 {
-            margin: 0 0 10px;
-            font-size: 28px;
-        }
+    body {
 
-        header p {
-            margin: 0;
-            font-size: 15px;
-        }
+      margin: 0;
 
-        .container {
-            max-width: 750px;
-            margin: 35px auto;
-            padding: 0 15px;
-        }
+      font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
 
-        .profile-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
+      background: #f4f7f5;
 
-        .profile-header {
-            text-align: center;
-            padding-bottom: 25px;
-            border-bottom: 2px solid #e5eee7;
-        }
+      color: #26352b;
 
-        .avatar {
-            width: 90px;
-            height: 90px;
-            margin: auto;
-            border-radius: 50%;
-            background: #e7f2ea;
+    }
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
 
-            font-size: 42px;
-        }
+    header {
 
-        .profile-header h1 {
-            color: #245c3a;
-            margin: 15px 0 5px;
-        }
+      background:
+        linear-gradient(
+          135deg,
+          #285943,
+          #4d8063
+        );
 
-        .gender {
-            color: #777;
-            font-size: 14px;
-        }
+      color: white;
 
-        .section {
-            margin-top: 25px;
-        }
+      text-align: center;
 
-        .section h2 {
-            color: #245c3a;
-            font-size: 19px;
+      padding: 30px 15px;
 
-            border-bottom: 1px solid #e1e1e1;
-            padding-bottom: 10px;
-        }
+    }
 
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
 
-            padding: 14px 5px;
+    header h1 {
 
-            border-bottom: 1px solid #eee;
-        }
+      margin: 0 0 12px;
 
-        .label {
-            font-weight: bold;
-            color: #555;
-        }
+      font-size: 28px;
 
-        .value {
-            color: #245c3a;
-            text-align: left;
-        }
+    }
 
-        .family-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
 
-        .family-person {
-            display: inline-block;
-            padding: 9px 14px;
+    .back {
 
-            background: #e7f2ea;
-            color: #245c3a;
+      display: inline-block;
 
-            border-radius: 10px;
+      color: white;
 
-            text-decoration: none;
-        }
+      text-decoration: none;
 
-        .family-person:hover {
-            background: #d4e8da;
-        }
+      background:
+        rgba(255,255,255,.16);
 
-        .empty {
-            color: #999;
-        }
+      padding: 9px 18px;
 
-        .bio {
-            line-height: 2;
-            color: #555;
-        }
+      border-radius: 9px;
 
-        .back-button {
-            display: block;
-            text-align: center;
+    }
 
-            margin-top: 30px;
-            padding: 14px;
 
-            background: #245c3a;
-            color: white;
+    .container {
 
-            border-radius: 12px;
+      max-width: 900px;
 
-            text-decoration: none;
-        }
+      margin: 35px auto;
 
-        .back-button:hover {
-            background: #17452b;
-        }
+      padding: 0 18px;
 
-        .error {
-            text-align: center;
-            color: #a33;
-            padding: 40px;
-        }
+    }
 
-        @media (max-width: 600px) {
 
-            .profile-card {
-                padding: 20px;
-            }
+    .profile {
 
-            .info-row {
-                flex-direction: column;
-                gap: 5px;
-            }
+      background: white;
 
-            .value {
-                text-align: right;
-            }
+      border-radius: 18px;
 
-            header h1 {
-                font-size: 23px;
-            }
-        }
+      padding: 30px;
 
-    </style>
+      box-shadow:
+        0 5px 20px rgba(0,0,0,.08);
+
+      border: 1px solid #dfe7e2;
+
+    }
+
+
+    .profile-header {
+
+      text-align: center;
+
+      padding-bottom: 25px;
+
+      border-bottom: 1px solid #e4ebe6;
+
+    }
+
+
+    .avatar {
+
+      width: 85px;
+
+      height: 85px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      margin: 0 auto 15px;
+
+      border-radius: 50%;
+
+      background: #eaf2ed;
+
+      font-size: 42px;
+
+    }
+
+
+    .profile-header h1 {
+
+      color: #285943;
+
+      margin: 8px 0;
+
+      font-size: 27px;
+
+    }
+
+
+    .family-name {
+
+      color: #78847d;
+
+      font-size: 14px;
+
+    }
+
+
+    .details {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(220px, 1fr)
+        );
+
+      gap: 15px;
+
+      margin-top: 25px;
+
+    }
+
+
+    .detail {
+
+      background: #f7faf8;
+
+      border: 1px solid #e2e9e4;
+
+      border-radius: 12px;
+
+      padding: 16px;
+
+    }
+
+
+    .label {
+
+      display: block;
+
+      color: #78847d;
+
+      font-size: 12px;
+
+      margin-bottom: 7px;
+
+    }
+
+
+    .value {
+
+      color: #285943;
+
+      font-weight: bold;
+
+    }
+
+
+    .section {
+
+      margin-top: 28px;
+
+    }
+
+
+    .section h2 {
+
+      color: #285943;
+
+      font-size: 19px;
+
+      border-right: 4px solid #357454;
+
+      padding-right: 10px;
+
+    }
+
+
+    .links {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+    }
+
+
+    .person-link {
+
+      display: inline-block;
+
+      background: #eaf2ed;
+
+      color: #285943;
+
+      text-decoration: none;
+
+      padding: 10px 15px;
+
+      border-radius: 9px;
+
+      transition: .2s;
+
+    }
+
+
+    .person-link:hover {
+
+      background: #dcebe1;
+
+    }
+
+
+    .empty {
+
+      color: #78847d;
+
+      background: #f7faf8;
+
+      padding: 14px;
+
+      border-radius: 10px;
+
+    }
+
+
+    .error {
+
+      text-align: center;
+
+      background: white;
+
+      border-radius: 15px;
+
+      padding: 30px;
+
+      color: #a33;
+
+    }
+
+
+    footer {
+
+      text-align: center;
+
+      padding: 30px 15px;
+
+      color: #78847d;
+
+      font-size: 13px;
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .profile {
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 23px;
+      }
+
+    }
+
+  </style>
 
 </head>
 
@@ -201,293 +334,409 @@
 
 <header>
 
-    <h1>🌳 شجره‌نامه قباکلکی</h1>
+  <h1>
+    👤 اطلاعات فرد
+  </h1>
 
-    <p>
-        اطلاعات و تاریخچه افراد خانواده
-    </p>
+
+  <a
+    href="./index.html"
+    class="back"
+  >
+    ← صفحه اصلی
+  </a>
 
 </header>
 
 
-<div class="container">
+<main class="container">
 
-    <div id="profile"></div>
+  <div id="content"></div>
 
-</div>
+</main>
 
 
-<script src="people.js"></script>
+<footer>
+  شجره‌نامه قباکلکی © ۱۴۰۵
+</footer>
+
+
+<!-- اطلاعات افراد -->
+<script src="./people.js"></script>
 
 
 <script>
 
-    // دریافت شناسه فرد از آدرس صفحه
-    const params = new URLSearchParams(window.location.search);
-
-    const id = params.get("id");
-
-    const person = people[id];
-
-    const profile = document.getElementById("profile");
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
 
 
-    // اگر فرد پیدا نشد
-    if (!person) {
+  const personId =
+    params.get("id");
 
-        profile.innerHTML = `
-            <div class="profile-card error">
 
-                <h2>فرد مورد نظر پیدا نشد</h2>
+  const person =
+    people[personId];
 
-                <p>
-                    ممکن است لینک اشتباه باشد.
-                </p>
 
-                <a class="back-button"
-                   href="index.html">
-                    ← بازگشت به شجره‌نامه
-                </a>
+  const content =
+    document.getElementById(
+      "content"
+    );
 
-            </div>
-        `;
+
+  /*
+  اگر فرد پیدا نشد
+  */
+
+  if (!person) {
+
+    content.innerHTML = `
+
+      <div class="error">
+
+        <h2>
+          فرد موردنظر پیدا نشد
+        </h2>
+
+        <p>
+          ممکن است لینک اشتباه باشد.
+        </p>
+
+        <a href="./index.html">
+          بازگشت به صفحه اصلی
+        </a>
+
+      </div>
+
+    `;
+
+  } else {
+
+    renderPerson();
+
+  }
+
+
+  /*
+  تبدیل ID به لینک
+  */
+
+  function personLink(id) {
+
+    if (!id || !people[id]) {
+      return "";
+    }
+
+
+    return `
+
+      <a
+        class="person-link"
+        href="./person.html?id=${encodeURIComponent(id)}"
+      >
+        ${people[id].name}
+      </a>
+
+    `;
+
+  }
+
+
+  /*
+  نمایش یک مقدار
+  */
+
+  function showValue(
+    value,
+    emptyText = "ثبت نشده"
+  ) {
+
+    if (
+      value &&
+      value.trim &&
+      value.trim() !== ""
+    ) {
+
+      return value;
 
     }
 
-    else {
+    return emptyText;
 
-        document.title =
-            "مشخصات " + person.name;
+  }
 
 
-        // پیدا کردن شناسه افراد بر اساس نام
-        function findPersonId(name) {
+  /*
+  ساخت صفحه شخص
+  */
 
-            for (const key in people) {
+  function renderPerson() {
 
-                if (people[key].name === name) {
-                    return key;
-                }
+    document.title =
+      person.name +
+      " | شجره‌نامه قباکلکی";
 
-            }
 
-            return null;
-        }
+    let spouseLinks = "";
 
+    if (
+      Array.isArray(person.spouse) &&
+      person.spouse.length > 0
+    ) {
 
-        // ساخت لینک برای اعضای خانواده
-        function familyLinks(names) {
-
-            if (!names || names.length === 0) {
-
-                return '<span class="empty">ثبت نشده</span>';
-
-            }
-
-
-            return names.map(function(name) {
-
-                const personId = findPersonId(name);
-
-                if (personId) {
-
-                    return `
-                        <a class="family-person"
-                           href="person.html?id=${personId}">
-                            ${name}
-                        </a>
-                    `;
-
-                }
-
-                return `
-                    <span class="family-person">
-                        ${name}
-                    </span>
-                `;
-
-            }).join("");
-
-        }
-
-
-        // آیکون بر اساس جنسیت
-        let avatar = "👤";
-
-        if (person.gender === "مرد") {
-            avatar = "👨";
-        }
-
-        if (person.gender === "زن") {
-            avatar = "👩";
-        }
-
-        if (person.gender === "دختر") {
-            avatar = "👧";
-        }
-
-
-        profile.innerHTML = `
-
-            <div class="profile-card">
-
-
-                <!-- نام فرد -->
-
-                <div class="profile-header">
-
-                    <div class="avatar">
-                        ${avatar}
-                    </div>
-
-                    <h1>
-                        ${person.name}
-                    </h1>
-
-                    <div class="gender">
-                        ${person.gender || ""}
-                    </div>
-
-                </div>
-
-
-                <!-- اطلاعات شخصی -->
-
-                <div class="section">
-
-                    <h2>👤 اطلاعات فرد</h2>
-
-
-                    <div class="info-row">
-
-                        <span class="label">
-                            شغل
-                        </span>
-
-                        <span class="value">
-                            ${person.job || "ثبت نشده"}
-                        </span>
-
-                    </div>
-
-
-                    <div class="info-row">
-
-                        <span class="label">
-                            تحصیلات
-                        </span>
-
-                        <span class="value">
-                            ${person.education || "ثبت نشده"}
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- والدین -->
-
-                <div class="section">
-
-                    <h2>👨‍👩‍👧 والدین</h2>
-
-                    <div class="family-list">
-
-                        ${
-                            person.father
-                            ? `<span class="family-person">
-                                👨 ${person.father}
-                               </span>`
-                            : ""
-                        }
-
-                        ${
-                            person.mother
-                            ? `<span class="family-person">
-                                👩 ${person.mother}
-                               </span>`
-                            : ""
-                        }
-
-                        ${
-                            !person.father && !person.mother
-                            ? '<span class="empty">اطلاعات ثبت نشده</span>'
-                            : ""
-                        }
-
-                    </div>
-
-                </div>
-
-
-                <!-- همسر -->
-
-                <div class="section">
-
-                    <h2>💍 همسر</h2>
-
-                    <div class="family-list">
-
-                        ${familyLinks(person.spouse)}
-
-                    </div>
-
-                </div>
-
-
-                <!-- فرزندان -->
-
-                <div class="section">
-
-                    <h2>👶 فرزندان</h2>
-
-                    <div class="family-list">
-
-                        ${familyLinks(person.children)}
-
-                    </div>
-
-                </div>
-
-
-                <!-- زندگی نامه -->
-
-                <div class="section">
-
-                    <h2>📖 درباره این فرد</h2>
-
-                    <p class="bio">
-
-                        ${
-                            person.bio ||
-                            "هنوز اطلاعاتی درباره زندگی و سوابق این فرد ثبت نشده است."
-                        }
-
-                    </p>
-
-                </div>
-
-
-                <!-- بازگشت -->
-
-                <a class="back-button"
-                   href="index.html">
-
-                    ← بازگشت به شجره‌نامه
-
-                </a>
-
-
-            </div>
-
-        `;
+      spouseLinks =
+        person.spouse
+          .map(personLink)
+          .join("");
 
     }
+
+
+    let childrenLinks = "";
+
+    if (
+      Array.isArray(person.children) &&
+      person.children.length > 0
+    ) {
+
+      childrenLinks =
+        person.children
+          .map(personLink)
+          .join("");
+
+    }
+
+
+    let fatherLink = "";
+
+    if (
+      person.father &&
+      people[person.father]
+    ) {
+
+      fatherLink =
+        personLink(
+          person.father
+        );
+
+    }
+
+
+    let motherLink = "";
+
+    if (
+      person.mother &&
+      people[person.mother]
+    ) {
+
+      motherLink =
+        personLink(
+          person.mother
+        );
+
+    }
+
+
+    content.innerHTML = `
+
+      <div class="profile">
+
+
+        <!-- مشخصات اصلی -->
+
+        <div class="profile-header">
+
+          <div class="avatar">
+
+            ${
+              person.gender === "زن"
+                ? "👩"
+                : "👨"
+            }
+
+          </div>
+
+
+          <h1>
+            ${person.name}
+          </h1>
+
+
+          <div class="family-name">
+
+            ${showValue(
+              person.family,
+              "خاندان ثبت نشده"
+            )}
+
+          </div>
+
+        </div>
+
+
+        <!-- اطلاعات شغلی و تحصیلی -->
+
+        <div class="details">
+
+
+          <div class="detail">
+
+            <span class="label">
+              جنسیت
+            </span>
+
+            <span class="value">
+              ${showValue(
+                person.gender
+              )}
+            </span>
+
+          </div>
+
+
+          <div class="detail">
+
+            <span class="label">
+              شغل
+            </span>
+
+            <span class="value">
+              ${showValue(
+                person.job
+              )}
+            </span>
+
+          </div>
+
+
+          <div class="detail">
+
+            <span class="label">
+              تحصیلات
+            </span>
+
+            <span class="value">
+              ${showValue(
+                person.education
+              )}
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+        <!-- پدر و مادر -->
+
+        <div class="section">
+
+          <h2>
+            👨‍👩‍👧 والدین
+          </h2>
+
+
+          <div class="links">
+
+            ${
+              fatherLink ||
+              motherLink
+
+              ?
+
+              `
+                ${fatherLink}
+                ${motherLink}
+              `
+
+              :
+
+              `
+                <div class="empty">
+                  اطلاعات والدین ثبت نشده است.
+                </div>
+              `
+            }
+
+          </div>
+
+        </div>
+
+
+        <!-- همسر -->
+
+        <div class="section">
+
+          <h2>
+            ❤️ همسر
+          </h2>
+
+
+          <div class="links">
+
+            ${
+              spouseLinks
+
+              ?
+
+              spouseLinks
+
+              :
+
+              `
+                <div class="empty">
+                  همسر ثبت نشده است.
+                </div>
+              `
+            }
+
+          </div>
+
+        </div>
+
+
+        <!-- فرزندان -->
+
+        <div class="section">
+
+          <h2>
+            👶 فرزندان
+          </h2>
+
+
+          <div class="links">
+
+            ${
+              childrenLinks
+
+              ?
+
+              childrenLinks
+
+              :
+
+              `
+                <div class="empty">
+                  فرزندی ثبت نشده است.
+                </div>
+              `
+            }
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    `;
+
+  }
 
 </script>
 
-
 </body>
-
 </html>
