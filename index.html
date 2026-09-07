@@ -1,485 +1,232 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>شجره‌نامه قباکلکی</title>
+  <title>شجره‌نامه قباکلکی</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            font-family: Tahoma, Arial, sans-serif;
-            background: #f4f7f4;
-            color: #333;
-        }
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f4f7f5;
+      color: #26352b;
+    }
 
-        header {
-            background: #245c3a;
-            color: white;
-            text-align: center;
-            padding: 30px 15px;
-        }
+    header {
+      background: linear-gradient(135deg, #285943, #4d8063);
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.15);
+    }
 
-        header h1 {
-            margin: 0 0 10px;
-            font-size: 30px;
-        }
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 30px;
+    }
 
-        header p {
-            margin: 0;
-            font-size: 16px;
-        }
+    header p {
+      margin: 0;
+      opacity: .9;
+      font-size: 15px;
+    }
 
-        .search-box {
-            max-width: 500px;
-            margin: 25px auto;
-            padding: 0 15px;
-        }
+    .container {
+      max-width: 1100px;
+      margin: 35px auto;
+      padding: 0 18px;
+    }
 
-        #search {
-            width: 100%;
-            padding: 14px 18px;
-            border: 1px solid #ccc;
-            border-radius: 12px;
-            font-size: 16px;
-            font-family: inherit;
-        }
+    .intro {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-        .tree {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 20px;
-        }
+    .intro h2 {
+      margin-bottom: 10px;
+      color: #285943;
+    }
 
-        .person-box {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-width: 150px;
-            padding: 15px 20px;
-            margin: 8px;
-            background: white;
-            border: 2px solid #8ab89a;
-            border-radius: 14px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-        }
+    .intro p {
+      color: #66736b;
+      line-height: 1.9;
+    }
 
-        .person-name {
-            color: #245c3a;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 17px;
-        }
+    .families {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
 
-        .person-name:hover {
-            color: #c27b00;
-            text-decoration: underline;
-        }
+    .family-card {
+      background: white;
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 5px 18px rgba(0,0,0,.08);
+      border: 1px solid #e1e8e3;
+      transition: .25s;
+      text-align: center;
+    }
 
-        .root {
-            text-align: center;
-            margin-bottom: 35px;
-        }
+    .family-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.12);
+    }
 
-        .root .person-box {
-            background: #e7f2ea;
-            border-color: #245c3a;
-        }
+    .family-icon {
+      font-size: 45px;
+      margin-bottom: 12px;
+    }
 
-        .family {
-            text-align: center;
-            margin: 25px 0;
-        }
+    .family-card h3 {
+      color: #285943;
+      margin: 8px 0 12px;
+      font-size: 22px;
+    }
 
-        .couple {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
+    .family-card p {
+      color: #68756d;
+      line-height: 1.8;
+      min-height: 55px;
+    }
 
-        .heart {
-            font-size: 20px;
-        }
+    .family-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 11px 22px;
+      border-radius: 10px;
+      background: #357454;
+      color: white;
+      text-decoration: none;
+      transition: .2s;
+    }
 
-        .children {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px dashed #b8cdbd;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+    .family-button:hover {
+      background: #234c38;
+    }
 
-        .single {
-            text-align: center;
-            margin: 25px 0;
-        }
+    .info-box {
+      margin-top: 35px;
+      background: #eaf2ed;
+      border-right: 5px solid #357454;
+      padding: 20px;
+      border-radius: 12px;
+      line-height: 2;
+      color: #425149;
+    }
 
-        .section {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 25px;
-            background: white;
-            border-radius: 18px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-        }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 25px;
+      color: #78847d;
+      font-size: 13px;
+    }
 
-        .section h2 {
-            color: #245c3a;
-            margin-top: 0;
-        }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 24px;
+      }
 
-        footer {
-            margin-top: 50px;
-            padding: 25px;
-            background: #245c3a;
-            color: white;
-            text-align: center;
-        }
+      .container {
+        margin-top: 25px;
+      }
 
-        @media (max-width: 600px) {
-
-            header h1 {
-                font-size: 24px;
-            }
-
-            .tree {
-                padding: 10px;
-            }
-
-            .person-box {
-                min-width: 130px;
-                padding: 12px 15px;
-            }
-
-            .person-name {
-                font-size: 15px;
-            }
-
-            .couple {
-                gap: 5px;
-            }
-        }
-    </style>
+      .family-card {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-    <h1>🌳 شجره‌نامه قباکلکی</h1>
-    <p>ثبت و نگهداری تاریخچه خانواده‌های قباکلکی</p>
+  <h1>🌳 شجره‌نامه قباکلکی</h1>
+  <p>سامانه خانوادگی و شجره‌نامه اهالی روستای قباکلکی</p>
 </header>
 
+<main class="container">
 
-<div class="search-box">
-    <input
-        type="text"
-        id="search"
-        placeholder="🔍 جستجوی نام..."
-    >
-</div>
+  <section class="intro">
+    <h2>خاندان‌ها</h2>
+    <p>
+      یکی از خاندان‌ها را انتخاب کنید تا نمودار کامل خانواده،
+      همسران، فرزندان و ارتباطات خانوادگی را مشاهده کنید.
+    </p>
+  </section>
 
+  <section class="families">
 
-<main class="tree" id="familyTree">
+    <!-- خاندان احمد -->
+    <div class="family-card">
+      <div class="family-icon">🌳</div>
 
-    <!-- نسل اول -->
+      <h3>خاندان احمد</h3>
 
-    <div class="root">
+      <p>
+        احمد فرزند غلامحسین و خانواده او،
+        شامل همسر، فرزندان و نوه‌ها
+      </p>
 
-        <div class="person-box">
-            <a class="person-name"
-               href="person.html?id=gholamhossein-older">
-                غلامحسین
-            </a>
-        </div>
-
+      <a class="family-button" href="family.html?family=ahmad">
+        مشاهده شجره‌نامه
+      </a>
     </div>
 
-
-    <!-- احمد و شیرین -->
-
-    <div class="family">
-
-        <div class="couple">
-
-            <div class="person-box">
-                <a class="person-name"
-                   href="person.html?id=ahmad">
-                    احمد
-                </a>
-            </div>
-
-            <span class="heart">❤️</span>
-
-            <div class="person-box">
-                <a class="person-name"
-                   href="person.html?id=shirin">
-                    شیرین
-                </a>
-            </div>
-
-        </div>
-
-
-        <!-- فرزندان احمد و شیرین -->
-
-        <div class="children">
-
-
-            <!-- فریده و صادق -->
-
-            <div class="family">
-
-                <div class="couple">
-
-                    <div class="person-box">
-                        <a class="person-name"
-                           href="person.html?id=farideh">
-                            فریده
-                        </a>
-                    </div>
-
-                    <span class="heart">❤️</span>
-
-                    <div class="person-box">
-                        <a class="person-name"
-                           href="person.html?id=sadegh">
-                            صادق
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="children">
-
-                    <div class="person-box">
-                        <a class="person-name"
-                           href="person.html?id=kamelya">
-                            کاملیا
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- فجر و فاطمه -->
-
-            <div class="family">
-
-                <div class="couple">
-
-                    <div class="person-box">
-                        <a class="person-name"
-                           href="person.html?id=fajr">
-                            فجر
-                        </a>
-                    </div>
-
-                    <span class="heart">❤️</span>
-
-                    <div class="person-box">
-                        <a class="person-name"
-                           href="person.html?id=fatemeh">
-                            فاطمه
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="children">
-
-                    <div class="person-box">
-                        <a class="person-name"
-                           href="person.html?id=baran">
-                            باران
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- غلامحسین و سمیه -->
-
-            <div class="family">
-
-                <div class="couple">
-
-                    <div class="person-box">
-                        <a class="person-name"
-                           href="person.html?id=gholamhossein-ahmad">
-                            غلامحسین
-                        </a>
-                    </div>
-
-                    <span class="heart">❤️</span>
-
-                    <div class="person-box">
-                        <a class="person-name"
-                           href="person.html?id=somayeh-gholamhossein">
-                            سمیه
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="children">
-
-                    <div class="person-box">
-                        <a class="person-name"
-                           href="person.html?id=liyana">
-                            لیانا
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- فیض و سمیه -->
-
-            <div class="family">
-
-                <div class="couple">
-
-                    <div class="person-box">
-                        <a class="person-name"
-                           href="person.html?id=faiz">
-                            فیض
-                        </a>
-                    </div>
-
-                    <span class="heart">❤️</span>
-
-                    <div class="person-box">
-                        <a class="person-name"
-                           href="person.html?id=somayeh-faiz">
-                            سمیه
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- پدرام -->
-
-            <div class="single">
-
-                <div class="person-box">
-
-                    <a class="person-name"
-                       href="person.html?id=pedram">
-                        پدرام
-                    </a>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
+    <!-- خاندان علی -->
+    <div class="family-card">
+      <div class="family-icon">🌿</div>
+
+      <h3>خاندان علی</h3>
+
+      <p>
+        علی فرزند غلامحسین و خانواده او،
+        شامل همسر، فرزندان و نسل بعد
+      </p>
+
+      <a class="family-button" href="family.html?family=ali">
+        مشاهده شجره‌نامه
+      </a>
     </div>
+
+    <!-- خاندان محمد عبدالرشید -->
+    <div class="family-card">
+      <div class="family-icon">🌲</div>
+
+      <h3>خاندان محمد عبدالرشید</h3>
+
+      <p>
+        محمد عبدالرشید و خانواده او،
+        شامل همسر، فرزندان و نوه‌ها
+      </p>
+
+      <a class="family-button" href="family.html?family=mohammad-abdolrashid">
+        مشاهده شجره‌نامه
+      </a>
+    </div>
+
+  </section>
+
+  <div class="info-box">
+    💡 <strong>راهنما:</strong>
+    برای مشاهده اطلاعات هر فرد، روی نام او در نمودار کلیک کنید.
+    در صفحه شخصی، اطلاعاتی مانند شغل، تحصیلات،
+    همسر و فرزندان نمایش داده می‌شود.
+  </div>
 
 </main>
 
-
-<!-- درباره شجره نامه -->
-
-<section class="section">
-
-    <h2>📖 درباره شجره‌نامه</h2>
-
-    <p>
-        این شجره‌نامه برای ثبت و نگهداری اطلاعات
-        خانواده‌های روستای قباکلکی ایجاد شده است.
-    </p>
-
-    <p>
-        با انتخاب نام هر فرد می‌توانید اطلاعات بیشتر
-        مانند تحصیلات، شغل، سوابق زندگی و سایر اطلاعات
-        مربوط به او را مشاهده کنید.
-    </p>
-
-</section>
-
-
-<!-- اسناد -->
-
-<section class="section">
-
-    <h2>📚 اسناد و مدارک</h2>
-
-    <p>
-        در این بخش می‌توان در آینده تصاویر قدیمی،
-        اسناد خانوادگی، مدارک، عکس‌ها و خاطرات
-        مربوط به افراد خانواده را قرار داد.
-    </p>
-
-</section>
-
-
 <footer>
-
-    <p>
-        🌳 شجره‌نامه قباکلکی
-    </p>
-
+  شجره‌نامه قباکلکی © ۱۴۰۵
 </footer>
-
-
-<script>
-
-    const searchInput = document.getElementById("search");
-
-    const peopleBoxes = document.querySelectorAll(".person-box");
-
-
-    searchInput.addEventListener("input", function () {
-
-        const text = this.value.trim();
-
-        peopleBoxes.forEach(function (box) {
-
-            const nameElement =
-                box.querySelector(".person-name");
-
-            if (!nameElement) return;
-
-            const name =
-                nameElement.textContent.trim();
-
-            if (text === "" || name.includes(text)) {
-
-                box.style.display = "inline-flex";
-
-            } else {
-
-                box.style.display = "none";
-
-            }
-
-        });
-
-    });
-
-</script>
 
 </body>
 </html>
