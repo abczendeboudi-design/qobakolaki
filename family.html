@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>شجره‌نامه خانواده</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f5f8f6;
+      color: #26352b;
+    }
+
+    header {
+      background: linear-gradient(135deg, #285943, #4d8063);
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: 28px;
+    }
+
+    .back-button {
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.35);
+      padding: 8px 17px;
+      border-radius: 9px;
+      transition: .2s;
+    }
+
+    .back-button:hover {
+      background: rgba(255,255,255,.25);
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 30px auto;
+      padding: 0 15px;
+      overflow-x: auto;
+    }
+
+    .tree-wrapper {
+      min-width: 850px;
+      padding: 20px;
+    }
+
+    .generation {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 25px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .generation-title {
+      text-align: center;
+      color: #65736b;
+      font-size: 14px;
+      margin: 25px 0 12px;
+    }
+
+    .person-card {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 170px;
+      background: white;
+      border: 1px solid #dce5df;
+      border-radius: 14px;
+      padding: 15px 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.07);
+      transition: .2s;
+    }
+
+    .person-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(0,0,0,.11);
+    }
+
+    .person-name {
+      display: block;
+      color: #24583f;
+      font-weight: bold;
+      font-size: 17px;
+      text-decoration: none;
+      margin-bottom: 6px;
+    }
+
+    .person-name:hover {
+      color: #173c2a;
+      text-decoration: underline;
+    }
+
+    .person-job {
+      font-size: 12px;
+      color: #758078;
+    }
+
+    .couple {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 8px;
+    }
+
+    .heart {
+      color: #b45b65;
+      font-size: 20px;
+    }
+
+    .parent-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .parent-line {
+      width: 2px;
+      height: 30px;
+      background: #aebdb3;
+      margin: 5px auto;
+    }
+
+    .children-area {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      position: relative;
+      padding-top: 10px;
+    }
+
+    .children-area::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: #aebdb3;
+    }
+
+    .child-branch {
+      position: relative;
+      padding-top: 22px;
+    }
+
+    .child-branch::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 50%;
+      width: 2px;
+      height: 22px;
+      background: #aebdb3;
+      transform: translateX(50%);
+    }
+
+    .branch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 190px;
+    }
+
+    .branch-children {
+      margin-top: 15px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .empty-message {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      color: #68756d;
+      margin-top: 30px;
+    }
+
+    .legend {
+      margin-top: 35px;
+      background: white;
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.06);
+      text-align: center;
+      color: #68756d;
+      line-height: 2;
+    }
+
+    footer {
+      text-align: center;
+      color: #7a857f;
+      padding: 25px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      .tree-wrapper {
+        min-width: 700px;
+      }
+
+      header h1 {
+        font-size: 23px;
+      }
+
+      .person-card {
+        min-width: 145px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1 id="familyTitle">🌳 شجره‌نامه</h1>
+
+  <a href="index.html" class="back-button">
+    ← بازگشت به خاندان‌ها
+  </a>
+</header>
+
+<main class="container">
+
+  <div id="tree" class="tree-wrapper"></div>
+
+  <div class="legend">
+    👤 برای مشاهده اطلاعات هر فرد، روی نام او کلیک کنید.
+    <br>
+    اطلاعات شغل و تحصیلات هر شخص در صفحه اختصاصی او نمایش داده می‌شود.
+  </div>
+
+</main>
+
+<footer>
+  شجره‌نامه قباکلکی © ۱۴۰۵
+</footer>
+
+<script src="people.js"></script>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const familyId = params.get("family");
+
+  /*
+   * ساختار مخصوص نمایش هر خاندان
+   *
+   * احمد و علی هر دو فرزند غلامحسین هستند،
+   * اما در دو صفحه جداگانه نمایش داده می‌شوند.
+   */
+  const familyDefinitions = {
+
+    ahmad: {
+      title: "خاندان احمد",
+      parent: "gholamhossein",
+      main: "ahmad"
+    },
+
+    ali: {
+      title: "خاندان علی",
+      parent: "gholamhossein",
+      main: "ali"
+    },
+
+    "mohammad-abdolrashid": {
+      title: "خاندان محمد عبدالرشید",
+      parent: null,
+      main: "mohammad-abdolrashid"
+    }
+
+  };
+
+
+  const family = familyDefinitions[familyId];
+
+
+  if (!family) {
+
+    document.getElementById("familyTitle").textContent =
+      "خاندان پیدا نشد";
+
+    document.getElementById("tree").innerHTML = `
+      <div class="empty-message">
+        خاندان موردنظر پیدا نشد.
+        <br><br>
+        <a href="index.html">بازگشت به صفحه اصلی</a>
+      </div>
+    `;
+
+  } else {
+
+    document.title = family.title + " | شجره‌نامه قباکلکی";
+
+    document.getElementById("familyTitle").textContent =
+      "🌳 " + family.title;
+
+    renderFamily();
+
+  }
+
+
+  /*
+   * گرفتن اطلاعات فرد
+   */
+  function getPerson(id) {
+
+    if (!id || !people[id]) {
+      return null;
+    }
+
+    return people[id];
+
+  }
+
+
+  /*
+   * لینک صفحه شخص
+   */
+  function personLink(id) {
+
+    const person = getPerson(id);
+
+    if (!person) {
+      return "";
+    }
+
+    const job =
+      person.job && person.job.trim()
+        ? person.job
+        : "";
+
+    return `
+      <div class="person-card">
+
+        <a
+          class="person-name"
+          href="person.html?id=${encodeURIComponent(id)}"
+        >
+          ${person.name}
+        </a>
+
+        ${
+          job
+            ? `<div class="person-job">${job}</div>`
+            : `<div class="person-job">اطلاعات بیشتر</div>`
+        }
+
+      </div>
+    `;
+
+  }
+
+
+  /*
+   * نمایش یک زوج
+   */
+  function renderCouple(personId, spouseId) {
+
+    const person = getPerson(personId);
+    const spouse = getPerson(spouseId);
+
+    if (!person) {
+      return "";
+    }
+
+    let html = `
+      <div class="couple">
+        ${personLink(personId)}
+    `;
+
+    if (spouse) {
+
+      html += `
+        <span class="heart">♥</span>
+        ${personLink(spouseId)}
+      `;
+
+    }
+
+    html += `
+      </div>
+    `;
+
+    return html;
+
+  }
+
+
+  /*
+   * پیدا کردن همسر اصلی یک فرد
+   */
+  function getSpouseId(person) {
+
+    if (!person || !person.spouse) {
+      return null;
+    }
+
+    if (Array.isArray(person.spouse)) {
+      return person.spouse[0] || null;
+    }
+
+    return person.spouse;
+
+  }
+
+
+  /*
+   * نمایش فرزندان یک زوج
+   */
+  function renderChildren(parentId) {
+
+    const parent = getPerson(parentId);
+
+    if (!parent || !parent.children || parent.children.length === 0) {
+      return "";
+    }
+
+    const children = parent.children;
+
+    let html = `
+      <div class="children-area">
+    `;
+
+    children.forEach(childId => {
+
+      const child = getPerson(childId);
+
+      if (!child) {
+        return;
+      }
+
+      const spouseId = getSpouseId(child);
+
+      html += `
+        <div class="child-branch">
+
+          <div class="branch">
+
+            ${renderCouple(childId, spouseId)}
+
+      `;
+
+      /*
+       * اگر فرزند خودش فرزند داشته باشد،
+       * نسل بعد نیز نمایش داده می‌شود.
+       */
+      if (child.children && child.children.length > 0) {
+
+        html += `
+          <div class="branch-children">
+        `;
+
+        child.children.forEach(grandChildId => {
+
+          const grandChild = getPerson(grandChildId);
+
+          if (!grandChild) {
+            return;
+          }
+
+          const grandSpouseId = getSpouseId(grandChild);
+
+          html += `
+            <div>
+              ${renderCouple(grandChildId, grandSpouseId)}
+            </div>
+          `;
+
+        });
+
+        html += `
+          </div>
+        `;
+
+      }
+
+      html += `
+          </div>
+        </div>
+      `;
+
+    });
+
+    html += `
+      </div>
+    `;
+
+    return html;
+
+  }
+
+
+  /*
+   * ساخت کل خاندان
+   */
+  function renderFamily() {
+
+    const mainPerson = getPerson(family.main);
+
+    if (!mainPerson) {
+
+      document.getElementById("tree").innerHTML = `
+        <div class="empty-message">
+          اطلاعات این خاندان هنوز ثبت نشده است.
+        </div>
+      `;
+
+      return;
+
+    }
+
+
+    let html = "";
+
+
+    /*
+     * اگر پدر نسل بالاتر وجود داشته باشد
+     */
+    if (family.parent) {
+
+      const parent = getPerson(family.parent);
+
+      if (parent) {
+
+        html += `
+          <div class="generation-title">
+            نسل بالاتر
+          </div>
+
+          <div class="generation">
+            ${personLink(family.parent)}
+          </div>
+
+          <div class="parent-line"></div>
+        `;
+
+      }
+
+    }
+
+
+    /*
+     * شخص اصلی + همسر
+     */
+    const mainSpouseId = getSpouseId(mainPerson);
+
+    html += `
+      <div class="generation-title">
+        نسل اصلی
+      </div>
+
+      <div class="generation">
+
+        <div class="parent-block">
+
+          ${renderCouple(family.main, mainSpouseId)}
+
+          <div class="parent-line"></div>
+
+          ${renderChildren(family.main)}
+
+        </div>
+
+      </div>
+    `;
+
+
+    document.getElementById("tree").innerHTML = html;
+
+  }
+
+</script>
+
+</body>
+</html>
