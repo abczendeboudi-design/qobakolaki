@@ -2,708 +2,236 @@
 <html lang="fa" dir="rtl">
 
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>شجره‌نامه قباکلکی</title>
-
-
-<style>
-
-/* =========================
-   تنظیمات عمومی
-========================= */
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-
-    margin: 0;
-
-    font-family:
-        Tahoma,
-        Arial,
-        sans-serif;
-
-    background: #f5f1e8;
-
-    color: #29251f;
-
-}
-
-
-/* =========================
-   سربرگ
-========================= */
-
-header {
-
-    background:
-        linear-gradient(
-            135deg,
-            #315c45,
-            #173b2b
-        );
-
-    color: white;
-
-    text-align: center;
-
-    padding: 35px 15px;
-
-}
-
-header h1 {
-
-    margin: 0 0 10px;
-
-    font-size: 30px;
-
-}
-
-header p {
-
-    margin: 0;
-
-    opacity: .9;
-
-    font-size: 15px;
-
-}
-
-
-/* =========================
-   محتوای اصلی
-========================= */
-
-.container {
-
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding: 20px;
-
-}
-
-
-/* =========================
-   جستجو
-========================= */
-
-.search {
-
-    background: white;
-
-    padding: 18px;
-
-    border-radius: 15px;
-
-    box-shadow:
-        0 3px 15px
-        rgba(0,0,0,.08);
-
-    margin-bottom: 30px;
-
-}
-
-.search input {
-
-    width: 100%;
-
-    padding: 14px;
-
-    border:
-        1px solid #ddd;
-
-    border-radius: 10px;
-
-    font-size: 16px;
-
-    outline: none;
-
-}
-
-.search input:focus {
-
-    border-color: #315c45;
-
-}
-
-
-/* =========================
-   عنوان
-========================= */
-
-.tree-title {
-
-    text-align: center;
-
-    color: #315c45;
-
-    margin:
-        25px 0
-        35px;
-
-}
-
-
-/* =========================
-   درخت
-========================= */
-
-.tree {
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    width: 100%;
-
-}
-
-
-/* =========================
-   نسل
-========================= */
-
-.generation {
-
-    width: 100%;
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 25px;
-
-    flex-wrap: wrap;
-
-    margin-bottom: 25px;
-
-}
-
-
-/* =========================
-   خانواده
-========================= */
-
-.family {
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    min-width: 260px;
-
-}
-
-
-/* =========================
-   زوج
-========================= */
-
-.couple {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 8px;
-
-}
-
-
-/* =========================
-   علامت ازدواج
-========================= */
-
-.marriage {
-
-    font-size: 20px;
-
-    color: #9a8060;
-
-}
-
-
-/* =========================
-   کارت شخص
-========================= */
-
-.person {
-
-    background: white;
-
-    border-radius: 15px;
-
-    padding:
-        16px
-        18px;
-
-    width: 190px;
-
-    min-height: 115px;
-
-    text-align: center;
-
-    box-shadow:
-        0 4px 15px
-        rgba(0,0,0,.09);
-
-    border-top:
-        5px solid #315c45;
-
-    transition:
-        transform .2s,
-        box-shadow .2s;
-
-}
-
-.person:hover {
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 7px 20px
-        rgba(0,0,0,.14);
-
-}
-
-
-/* =========================
-   نام
-========================= */
-
-.person .name {
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    color: #244936;
-
-}
-
-
-/* =========================
-   توضیح
-========================= */
-
-.person .info {
-
-    margin-top: 8px;
-
-    color: #777;
-
-    font-size: 12px;
-
-    line-height: 1.8;
-
-}
-
-
-/* =========================
-   همسر
-========================= */
-
-.spouse-label {
-
-    margin-top: 5px;
-
-    color: #8c795d;
-
-    font-size: 11px;
-
-}
-
-
-/* =========================
-   وضعیت اطلاعات
-========================= */
-
-.status {
-
-    display:
-        inline-block;
-
-    margin-top: 8px;
-
-    padding:
-        4px 8px;
-
-    border-radius:
-        20px;
-
-    font-size:
-        10px;
-
-}
-
-.pending {
-
-    background:
-        #f5ead3;
-
-    color:
-        #80652d;
-
-}
-
-
-/* =========================
-   فلش نسل
-========================= */
-
-.generation-arrow {
-
-    font-size: 28px;
-
-    color: #8c795d;
-
-    margin:
-        5px 0
-        15px;
-
-}
-
-
-/* =========================
-   فرزندان
-========================= */
-
-.children {
-
-    margin-top: 18px;
-
-    padding-top: 18px;
-
-    border-top:
-        2px solid #b7a98f;
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 12px;
-
-    flex-wrap: wrap;
-
-}
-
-
-/* =========================
-   بخش توضیحات
-========================= */
-
-.section {
-
-    background: white;
-
-    padding: 22px;
-
-    border-radius: 15px;
-
-    margin-top: 35px;
-
-    box-shadow:
-        0 3px 15px
-        rgba(0,0,0,.07);
-
-}
-
-.section h2 {
-
-    color: #315c45;
-
-    margin-top: 0;
-
-}
-
-.section p {
-
-    line-height: 2;
-
-}
-
-
-/* =========================
-   نتیجه جستجو
-========================= */
-
-.no-result {
-
-    display: none;
-
-    text-align: center;
-
-    background: white;
-
-    padding: 25px;
-
-    border-radius: 15px;
-
-    color: #777;
-
-}
-
-
-/* =========================
-   مخفی
-========================= */
-
-.hidden {
-
-    display: none !important;
-
-}
-
-
-/* =========================
-   پایین صفحه
-========================= */
-
-footer {
-
-    text-align: center;
-
-    background: #173b2b;
-
-    color: white;
-
-    padding: 25px;
-
-    margin-top: 40px;
-
-    font-size: 13px;
-
-}
-
-
-/* =========================
-   موبایل
-========================= */
-
-@media (max-width: 700px) {
-
-    header h1 {
-
-        font-size: 24px;
-
-    }
-
-    .generation {
-
-        flex-direction: column;
-
-        align-items: center;
-
-    }
-
-    .family {
-
-        width: 100%;
-
-    }
-
-    .couple {
-
-        flex-wrap: wrap;
-
-    }
-
-    .person {
-
-        width: 150px;
-
-    }
-
-    .children {
-
-        border-top: none;
-
-    }
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>شجره‌نامه قباکلکی</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Tahoma, Arial, sans-serif;
+            background: #f4f7f4;
+            color: #333;
+        }
+
+        header {
+            background: #245c3a;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 30px;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 25px auto;
+            padding: 0 15px;
+        }
+
+        #search {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        .tree {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .person-box {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 150px;
+            padding: 15px 20px;
+            margin: 8px;
+            background: white;
+            border: 2px solid #8ab89a;
+            border-radius: 14px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+        }
+
+        .person-name {
+            color: #245c3a;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .person-name:hover {
+            color: #c27b00;
+            text-decoration: underline;
+        }
+
+        .root {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .root .person-box {
+            background: #e7f2ea;
+            border-color: #245c3a;
+        }
+
+        .family {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .couple {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .heart {
+            font-size: 20px;
+        }
+
+        .children {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px dashed #b8cdbd;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .single {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .section {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .section h2 {
+            color: #245c3a;
+            margin-top: 0;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 25px;
+            background: #245c3a;
+            color: white;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            .tree {
+                padding: 10px;
+            }
+
+            .person-box {
+                min-width: 130px;
+                padding: 12px 15px;
+            }
+
+            .person-name {
+                font-size: 15px;
+            }
+
+            .couple {
+                gap: 5px;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
-
-<!-- ==================================
-     سربرگ
-================================== -->
-
 <header>
-
-    <h1>
-        🌳 شجره‌نامه قباکلکی
-    </h1>
-
-    <p>
-        ثبت و نگهداری تاریخ، خاندان‌ها و نسل‌های قباکلکی
-    </p>
-
+    <h1>🌳 شجره‌نامه قباکلکی</h1>
+    <p>ثبت و نگهداری تاریخچه خانواده‌های قباکلکی</p>
 </header>
 
 
-
-<div class="container">
-
-
-<!-- ==================================
-     جستجو
-================================== -->
-
-<div class="search">
-
+<div class="search-box">
     <input
         type="text"
         id="search"
-        placeholder="🔎 جست‌وجوی نام افراد..."
+        placeholder="🔍 جستجوی نام..."
     >
-
 </div>
 
 
+<main class="tree" id="familyTree">
 
-<!-- ==================================
-     عنوان شجره‌نامه
-================================== -->
+    <!-- نسل اول -->
 
-<h2 class="tree-title">
+    <div class="root">
 
-    شجره‌نامه خانوادگی
-
-</h2>
-
-
-
-<!-- ==================================
-     درخت اصلی
-================================== -->
-
-<div id="tree"
-     class="tree">
-
-
-
-<!-- ==================================
-     نسل اول
-================================== -->
-
-<div class="generation">
-
-
-    <div class="family">
-
-
-        <div class="person person-card"
-             data-name="غلامحسین">
-
-            <div class="name">
+        <div class="person-box">
+            <a class="person-name"
+               href="person.html?id=gholamhossein-older">
                 غلامحسین
-            </div>
-
-            <div class="info">
-                نسل پایه
-            </div>
-
-            <div class="status pending">
-                ⚠ نیازمند بررسی
-            </div>
-
+            </a>
         </div>
-
 
     </div>
 
-</div>
 
-
-
-<div class="generation-arrow">
-    ↓
-</div>
-
-
-
-<!-- ==================================
-     نسل دوم
-================================== -->
-
-<div class="generation">
-
+    <!-- احمد و شیرین -->
 
     <div class="family">
 
-
-        <!-- احمد و شیرین -->
-
         <div class="couple">
 
-
-            <div class="person person-card"
-                 data-name="احمد">
-
-                <div class="name">
+            <div class="person-box">
+                <a class="person-name"
+                   href="person.html?id=ahmad">
                     احمد
-                </div>
-
-                <div class="info">
-                    فرزند غلامحسین
-                </div>
-
-                <div class="spouse-label">
-                    همسر: شیرین
-                </div>
-
-                <div class="status pending">
-                    ⚠ نیازمند بررسی
-                </div>
-
+                </a>
             </div>
 
+            <span class="heart">❤️</span>
 
-            <div class="marriage">
-                ❤️
-            </div>
-
-
-            <div class="person person-card"
-                 data-name="شیرین">
-
-                <div class="name">
+            <div class="person-box">
+                <a class="person-name"
+                   href="person.html?id=shirin">
                     شیرین
-                </div>
-
-                <div class="info">
-                    همسر احمد
-                </div>
-
+                </a>
             </div>
-
 
         </div>
 
 
-        <!-- فرزندان احمد -->
+        <!-- فرزندان احمد و شیرین -->
 
         <div class="children">
 
@@ -714,69 +242,36 @@ footer {
 
                 <div class="couple">
 
-
-                    <div class="person person-card"
-                         data-name="فریده">
-
-                        <div class="name">
+                    <div class="person-box">
+                        <a class="person-name"
+                           href="person.html?id=farideh">
                             فریده
-                        </div>
-
-                        <div class="info">
-                            فرزند احمد و شیرین
-                        </div>
-
-                        <div class="spouse-label">
-                            همسر: صادق
-                        </div>
-
+                        </a>
                     </div>
 
+                    <span class="heart">❤️</span>
 
-                    <div class="marriage">
-                        ❤️
-                    </div>
-
-
-                    <div class="person person-card"
-                         data-name="صادق">
-
-                        <div class="name">
+                    <div class="person-box">
+                        <a class="person-name"
+                           href="person.html?id=sadegh">
                             صادق
-                        </div>
-
-                        <div class="info">
-                            همسر فریده
-                        </div>
-
+                        </a>
                     </div>
-
 
                 </div>
-
-
-                <!-- کاملیا -->
 
                 <div class="children">
 
-                    <div class="person person-card"
-                         data-name="کاملیا">
-
-                        <div class="name">
+                    <div class="person-box">
+                        <a class="person-name"
+                           href="person.html?id=kamelya">
                             کاملیا
-                        </div>
-
-                        <div class="info">
-                            فرزند فریده و صادق
-                        </div>
-
+                        </a>
                     </div>
 
                 </div>
 
-
             </div>
-
 
 
             <!-- فجر و فاطمه -->
@@ -785,69 +280,36 @@ footer {
 
                 <div class="couple">
 
-
-                    <div class="person person-card"
-                         data-name="فجر">
-
-                        <div class="name">
+                    <div class="person-box">
+                        <a class="person-name"
+                           href="person.html?id=fajr">
                             فجر
-                        </div>
-
-                        <div class="info">
-                            فرزند احمد و شیرین
-                        </div>
-
-                        <div class="spouse-label">
-                            همسر: فاطمه
-                        </div>
-
+                        </a>
                     </div>
 
+                    <span class="heart">❤️</span>
 
-                    <div class="marriage">
-                        ❤️
-                    </div>
-
-
-                    <div class="person person-card"
-                         data-name="فاطمه">
-
-                        <div class="name">
+                    <div class="person-box">
+                        <a class="person-name"
+                           href="person.html?id=fatemeh">
                             فاطمه
-                        </div>
-
-                        <div class="info">
-                            همسر فجر
-                        </div>
-
+                        </a>
                     </div>
-
 
                 </div>
-
-
-                <!-- باران -->
 
                 <div class="children">
 
-                    <div class="person person-card"
-                         data-name="باران">
-
-                        <div class="name">
+                    <div class="person-box">
+                        <a class="person-name"
+                           href="person.html?id=baran">
                             باران
-                        </div>
-
-                        <div class="info">
-                            فرزند فجر و فاطمه
-                        </div>
-
+                        </a>
                     </div>
 
                 </div>
 
-
             </div>
-
 
 
             <!-- غلامحسین و سمیه -->
@@ -856,69 +318,36 @@ footer {
 
                 <div class="couple">
 
-
-                    <div class="person person-card"
-                         data-name="غلامحسین فرزند احمد">
-
-                        <div class="name">
+                    <div class="person-box">
+                        <a class="person-name"
+                           href="person.html?id=gholamhossein-ahmad">
                             غلامحسین
-                        </div>
-
-                        <div class="info">
-                            فرزند احمد و شیرین
-                        </div>
-
-                        <div class="spouse-label">
-                            همسر: سمیه
-                        </div>
-
+                        </a>
                     </div>
 
+                    <span class="heart">❤️</span>
 
-                    <div class="marriage">
-                        ❤️
-                    </div>
-
-
-                    <div class="person person-card"
-                         data-name="سمیه همسر غلامحسین">
-
-                        <div class="name">
+                    <div class="person-box">
+                        <a class="person-name"
+                           href="person.html?id=somayeh-gholamhossein">
                             سمیه
-                        </div>
-
-                        <div class="info">
-                            همسر غلامحسین
-                        </div>
-
+                        </a>
                     </div>
-
 
                 </div>
-
-
-                <!-- لیانا -->
 
                 <div class="children">
 
-                    <div class="person person-card"
-                         data-name="لیانا">
-
-                        <div class="name">
+                    <div class="person-box">
+                        <a class="person-name"
+                           href="person.html?id=liyana">
                             لیانا
-                        </div>
-
-                        <div class="info">
-                            فرزند غلامحسین و سمیه
-                        </div>
-
+                        </a>
                     </div>
 
                 </div>
 
-
             </div>
-
 
 
             <!-- فیض و سمیه -->
@@ -927,64 +356,37 @@ footer {
 
                 <div class="couple">
 
-
-                    <div class="person person-card"
-                         data-name="فیض">
-
-                        <div class="name">
+                    <div class="person-box">
+                        <a class="person-name"
+                           href="person.html?id=faiz">
                             فیض
-                        </div>
-
-                        <div class="info">
-                            فرزند احمد و شیرین
-                        </div>
-
-                        <div class="spouse-label">
-                            همسر: سمیه
-                        </div>
-
+                        </a>
                     </div>
 
+                    <span class="heart">❤️</span>
 
-                    <div class="marriage">
-                        ❤️
-                    </div>
-
-
-                    <div class="person person-card"
-                         data-name="سمیه همسر فیض">
-
-                        <div class="name">
+                    <div class="person-box">
+                        <a class="person-name"
+                           href="person.html?id=somayeh-faiz">
                             سمیه
-                        </div>
-
-                        <div class="info">
-                            همسر فیض
-                        </div>
-
+                        </a>
                     </div>
-
 
                 </div>
 
             </div>
 
 
-
             <!-- پدرام -->
 
-            <div class="family">
+            <div class="single">
 
-                <div class="person person-card"
-                     data-name="پدرام">
+                <div class="person-box">
 
-                    <div class="name">
+                    <a class="person-name"
+                       href="person.html?id=pedram">
                         پدرام
-                    </div>
-
-                    <div class="info">
-                        فرزند احمد و شیرین
-                    </div>
+                    </a>
 
                 </div>
 
@@ -993,168 +395,91 @@ footer {
 
         </div>
 
-
     </div>
 
-</div>
+</main>
 
 
+<!-- درباره شجره نامه -->
 
-<!-- ==================================
-     نتیجه جستجو
-================================== -->
+<section class="section">
 
-<div id="noResult"
-     class="no-result">
-
-    فردی با این نام پیدا نشد.
-
-</div>
-
-
-
-<!-- ==================================
-     درباره شجره‌نامه
-================================== -->
-
-<div class="section">
-
-    <h2>
-        📜 درباره شجره‌نامه
-    </h2>
+    <h2>📖 درباره شجره‌نامه</h2>
 
     <p>
-        این وب‌سایت با هدف ثبت و نگهداری
-        اطلاعات تاریخی و خانوادگی مردم
-        قباکلکی ایجاد شده است.
+        این شجره‌نامه برای ثبت و نگهداری اطلاعات
+        خانواده‌های روستای قباکلکی ایجاد شده است.
     </p>
 
     <p>
-        اطلاعات شجره‌نامه باید بر اساس
-        اسناد، مدارک و گفته‌های معتبر
-        خانوادگی بررسی و تأیید شوند.
+        با انتخاب نام هر فرد می‌توانید اطلاعات بیشتر
+        مانند تحصیلات، شغل، سوابق زندگی و سایر اطلاعات
+        مربوط به او را مشاهده کنید.
     </p>
 
-</div>
+</section>
 
 
+<!-- اسناد -->
 
-<!-- ==================================
-     تصاویر و اسناد
-================================== -->
+<section class="section">
 
-<div class="section">
-
-    <h2>
-        📷 تصاویر و اسناد
-    </h2>
+    <h2>📚 اسناد و مدارک</h2>
 
     <p>
-        در این بخش می‌توان تصاویر قدیمی،
-        اسناد، سنگ‌نوشته‌ها، کتاب‌ها و
-        مدارک مربوط به خاندان‌های قباکلکی
-        را قرار داد.
+        در این بخش می‌توان در آینده تصاویر قدیمی،
+        اسناد خانوادگی، مدارک، عکس‌ها و خاطرات
+        مربوط به افراد خانواده را قرار داد.
     </p>
 
-</div>
+</section>
 
-
-</div>
-
-
-
-<!-- ==================================
-     Footer
-================================== -->
 
 <footer>
 
-    © شجره‌نامه قباکلکی
+    <p>
+        🌳 شجره‌نامه قباکلکی
+    </p>
 
 </footer>
 
 
-
-<!-- ==================================
-     JavaScript
-================================== -->
-
 <script>
 
-const searchInput =
-    document.getElementById("search");
+    const searchInput = document.getElementById("search");
 
-const noResult =
-    document.getElementById("noResult");
-
-const people =
-    document.querySelectorAll(".person-card");
+    const peopleBoxes = document.querySelectorAll(".person-box");
 
 
-searchInput.addEventListener(
-    "input",
-    function() {
+    searchInput.addEventListener("input", function () {
 
-        const text =
-            searchInput.value
-            .trim()
-            .toLowerCase();
+        const text = this.value.trim();
 
+        peopleBoxes.forEach(function (box) {
 
-        let found = false;
+            const nameElement =
+                box.querySelector(".person-name");
 
+            if (!nameElement) return;
 
-        people.forEach(
-            function(person) {
+            const name =
+                nameElement.textContent.trim();
 
-                const name =
-                    person
-                    .getAttribute("data-name")
-                    .toLowerCase();
+            if (text === "" || name.includes(text)) {
 
+                box.style.display = "inline-flex";
 
-                if (
-                    text === "" ||
-                    name.includes(text)
-                ) {
+            } else {
 
-                    person.classList
-                          .remove("hidden");
-
-                    found = true;
-
-                } else {
-
-                    person.classList
-                          .add("hidden");
-
-                }
+                box.style.display = "none";
 
             }
-        );
 
+        });
 
-        if (
-            text !== "" &&
-            !found
-        ) {
-
-            noResult.style.display =
-                "block";
-
-        } else {
-
-            noResult.style.display =
-                "none";
-
-        }
-
-    }
-);
+    });
 
 </script>
 
-
 </body>
-
 </html>
