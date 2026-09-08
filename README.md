@@ -1,1 +1,0 @@
-# qobakolaki
