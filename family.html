@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>شجره‌نامه قباکلکی</title>
 
-    <script src="./people.js"></script>
-
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -20,22 +20,26 @@
             color: #26352f;
         }
 
-        /* هدر */
+        /* =========================
+           هدر با عکس قباکلکی
+        ========================= */
+
         header {
             background:
                 linear-gradient(
                     rgba(0, 85, 45, 0.70),
                     rgba(0, 65, 35, 0.78)
                 ),
-                url("./qabaklaki.jpg");
+                url("./IMG-20260828-WA0000.jpg");
 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
 
             color: white;
-            min-height: 230px;
-            padding: 55px 20px;
+
+            min-height: 250px;
+            padding: 60px 20px;
 
             display: flex;
             flex-direction: column;
@@ -47,253 +51,301 @@
 
         header h1 {
             margin: 0;
-            font-size: 36px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+
+            font-size: 38px;
+            line-height: 1.6;
+
+            text-shadow:
+                0 2px 5px rgba(0, 0, 0, 0.35);
         }
 
         header p {
-            margin: 15px 0 0;
+            margin: 10px 0 0;
+
             font-size: 19px;
+
+            text-shadow:
+                0 1px 4px rgba(0, 0, 0, 0.35);
         }
 
-        /* منو */
+        /* =========================
+           منو
+        ========================= */
+
         nav {
             background: #00633d;
+
             display: flex;
             justify-content: center;
-            gap: 10px;
+            align-items: center;
+
+            gap: 5px;
+
             padding: 0 10px;
         }
 
         nav a {
             color: white;
+
             text-decoration: none;
-            padding: 16px 25px;
+
+            padding: 16px 28px;
+
             font-size: 16px;
             font-weight: bold;
+
             border-bottom: 4px solid transparent;
+
+            transition: 0.2s;
         }
 
         nav a:hover,
         nav a.active {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
+
             border-bottom-color: #b7f0d5;
         }
 
-        /* محتوای اصلی */
+        /* =========================
+           محتوای اصلی
+        ========================= */
+
         main {
-            max-width: 1000px;
+            max-width: 1050px;
+
             margin: 0 auto;
-            padding: 45px 20px 60px;
+
+            padding: 50px 20px 70px;
         }
 
         .page-title {
             text-align: center;
-            margin-bottom: 40px;
+
+            margin-bottom: 45px;
         }
 
         .page-title h2 {
             color: #075b3b;
+
             font-size: 34px;
+
             margin: 0 0 12px;
         }
 
         .page-title p {
             color: #52635c;
+
             font-size: 18px;
+
             margin: 0;
         }
 
-        /* کارت خانواده */
+        /* =========================
+           کارت خاندان‌ها
+        ========================= */
+
+        .families {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
         .family-card {
             background: white;
+
             border: 1px solid #d7e8df;
-            border-radius: 12px;
+
+            border-radius: 15px;
+
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 80, 50, 0.07);
+
+            box-shadow:
+                0 5px 18px
+                rgba(0, 80, 50, 0.08);
+
+            transition:
+                transform 0.2s,
+                box-shadow 0.2s;
         }
 
-        .family-header {
-            background: linear-gradient(
-                90deg,
-                #e2f2eb,
-                #f0f8f4
-            );
+        .family-card:hover {
+            transform: translateY(-5px);
 
-            padding: 17px 20px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 15px;
+            box-shadow:
+                0 10px 25px
+                rgba(0, 80, 50, 0.14);
         }
 
-        .family-name {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        /* بالای کارت */
 
-            color: #075b3b;
-            font-size: 24px;
-            font-weight: bold;
+        .family-card-header {
+            background:
+                linear-gradient(
+                    135deg,
+                    #dff1e9,
+                    #eff8f4
+                );
+
+            padding: 25px 20px;
+
+            text-align: center;
+
+            border-bottom:
+                1px solid #d7e8df;
         }
 
-        .person-icon {
-            width: 38px;
-            height: 38px;
+        .family-icon {
+            width: 65px;
+            height: 65px;
+
+            margin: 0 auto 12px;
 
             border-radius: 50%;
+
             background: #08734a;
+
             color: white;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            font-size: 20px;
+            font-size: 31px;
         }
 
-        .father-label {
-            color: #344941;
+        .family-card-header h3 {
+            margin: 0;
+
+            color: #075b3b;
+
+            font-size: 24px;
+        }
+
+        /* بدنه کارت */
+
+        .family-card-body {
+            padding: 25px 22px;
+
+            text-align: center;
+        }
+
+        .family-description {
+            color: #5a6963;
+
+            font-size: 15px;
+
+            line-height: 2;
+
+            min-height: 60px;
+
+            margin: 0 0 20px;
+        }
+
+        /* دکمه */
+
+        .family-button {
+            display: block;
+
+            width: 100%;
+
+            padding: 12px 18px;
+
+            border:
+                1.5px solid #08734a;
+
+            border-radius: 9px;
+
+            background: white;
+
+            color: #075b3b;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
             font-size: 16px;
-            font-weight: bold;
+
+            transition: 0.2s;
         }
 
-        .family-body {
-            padding: 25px;
+        .family-button:hover {
+            background: #08734a;
+
+            color: white;
         }
 
-        .info-row {
-            margin-bottom: 18px;
-            font-size: 17px;
-        }
+        /* =========================
+           توضیحات
+        ========================= */
 
-        .info-title {
-            font-weight: bold;
-            color: #344941;
-            margin-left: 8px;
-        }
+        .notice {
+            margin-top: 45px;
 
-        /* لینک افراد */
-        .person-link {
-            color: #0874d1;
-            text-decoration: none;
-            font-weight: bold;
-        }
+            padding: 22px;
 
-        .person-link:hover {
-            text-decoration: underline;
-        }
+            background: #edf7f2;
 
-        .children-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px 22px;
-            margin-top: 12px;
-        }
+            border:
+                1px solid #d3e8de;
 
-        .children-list a {
-            color: #0874d1;
-            text-decoration: none;
-            font-weight: bold;
-        }
+            border-radius: 12px;
 
-        .children-list a:hover {
-            text-decoration: underline;
-        }
-
-        .child-item:not(:last-child)::after {
-            content: "|";
-            color: #a8b5af;
-            margin-right: 20px;
-        }
-
-        /* دکمه جزئیات */
-        .details-button {
-            display: inline-block;
-            margin-top: 10px;
-
-            padding: 9px 18px;
-
-            border: 1.5px solid #08734a;
-            border-radius: 9px;
-
-            color: #075b3b;
-            background: white;
-
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .details-button:hover {
-            background: #e9f7f0;
-        }
-
-        /* خط چین بین خانواده ها */
-        .family-divider {
-            border: none;
-            border-top: 2px dashed #a9c5b8;
-            margin: 25px -5px;
-        }
-
-        /* وقتی اطلاعاتی وجود ندارد */
-        .empty {
-            color: #777;
-            font-weight: normal;
-        }
-
-        /* پیام خطا */
-        .error-box {
-            background: #fff1f1;
-            color: #a32121;
-            border: 1px solid #e4b5b5;
-            padding: 20px;
-            border-radius: 10px;
             text-align: center;
-            font-size: 17px;
+
+            color: #40564c;
+
+            line-height: 2;
         }
 
-        /* بازگشت */
-        .back-area {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .back-button {
-            display: inline-block;
-            border: 1.5px solid #08734a;
+        .notice strong {
             color: #075b3b;
-            background: white;
-            text-decoration: none;
-            padding: 12px 22px;
-            border-radius: 9px;
-            font-weight: bold;
         }
 
-        .back-button:hover {
-            background: #e9f7f0;
-        }
+        /* =========================
+           فوتر
+        ========================= */
 
-        /* فوتر */
         footer {
             background: #075b3b;
+
             color: white;
+
             text-align: center;
-            padding: 20px;
+
+            padding: 22px;
+
             font-size: 14px;
         }
 
-        /* موبایل */
-        @media (max-width: 700px) {
+        /* =========================
+           موبایل
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .families {
+                grid-template-columns: 1fr;
+            }
+
+            .family-card {
+                max-width: 600px;
+
+                width: 100%;
+
+                margin: 0 auto;
+            }
 
             header {
-                min-height: 190px;
-                padding: 40px 15px;
+                min-height: 210px;
+
+                padding: 45px 15px;
             }
 
             header h1 {
-                font-size: 28px;
+                font-size: 30px;
             }
 
             header p {
@@ -306,422 +358,268 @@
 
             nav a {
                 padding: 13px 15px;
+
                 font-size: 14px;
             }
 
             main {
-                padding: 30px 12px 45px;
+                padding: 35px 15px 55px;
             }
 
             .page-title h2 {
-                font-size: 28px;
+                font-size: 29px;
             }
 
             .page-title p {
                 font-size: 15px;
             }
+        }
 
-            .family-header {
-                align-items: flex-start;
-                flex-direction: column;
+        @media (max-width: 420px) {
+
+            header h1 {
+                font-size: 26px;
             }
 
-            .family-name {
-                font-size: 21px;
+            header p {
+                font-size: 14px;
             }
 
-            .family-body {
-                padding: 20px 16px;
+            nav a {
+                padding: 11px 10px;
+
+                font-size: 13px;
             }
 
-            .children-list {
-                display: block;
-            }
-
-            .child-item {
-                display: inline-block;
-                margin-bottom: 8px;
+            .family-card-header h3 {
+                font-size: 22px;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
-<header>
-    <h1>🌳 شجره‌نامه قباکلکی</h1>
-    <p>درخت خانوادگی مردم قباکلکی</p>
-</header>
 
-<nav>
-    <a href="./index.html">🏠 صفحه اصلی</a>
-    <a href="./index.html">👨‍👩‍👧 خاندان‌ها</a>
-    <a href="./person.html">👤 افراد</a>
-</nav>
+    <!-- هدر -->
 
-<main>
+    <header>
 
-    <div class="page-title">
-        <h2 id="familyTitle">خاندان</h2>
-        <p id="familyDescription">اعضای خاندان و خانواده‌های وابسته به آن</p>
-    </div>
+        <h1>
+            🌳 شجره‌نامه قباکلکی
+        </h1>
 
-    <div id="familyContainer"></div>
+        <p>
+            درخت خانوادگی مردم قباکلکی
+        </p>
 
-    <div class="back-area">
-        <a class="back-button" href="./index.html">
-            ← بازگشت به صفحه خاندان‌ها
+    </header>
+
+
+    <!-- منو -->
+
+    <nav>
+
+        <a
+            href="./index.html"
+            class="active"
+        >
+            🏠 صفحه اصلی
         </a>
-    </div>
 
-</main>
+        <a href="#families">
+            👨‍👩‍👧 خاندان‌ها
+        </a>
 
-<footer>
-    شجره‌نامه قباکلکی © ۱۴۰۵
-</footer>
+        <a href="./person.html">
+            👤 افراد
+        </a>
 
-
-<script>
-
-    /*
-     * گرفتن شناسه خاندان از آدرس
-     *
-     * مثال:
-     * family.html?family=ahmad
-     * family.html?family=ali
-     * family.html?family=mohammad-abdolrashid
-     */
-
-    const params = new URLSearchParams(window.location.search);
-    const familyId = params.get("family");
+    </nav>
 
 
-    /*
-     * تعریف خاندان‌ها
-     */
+    <!-- محتوای اصلی -->
 
-    const familyDefinitions = {
+    <main>
 
-        ahmad: {
-            title: "خاندان احمد",
-            description: "اعضای خاندان احمد و خانواده‌های وابسته به آن",
-            main: "ahmad"
-        },
+        <div class="page-title">
 
-        ali: {
-            title: "خاندان علی",
-            description: "اعضای خاندان علی و خانواده‌های وابسته به آن",
-            main: "ali"
-        },
+            <h2>
+                خاندان‌های قباکلکی
+            </h2>
 
-        "mohammad-abdolrashid": {
-            title: "خاندان محمد عبدالرشید",
-            description: "اعضای خاندان محمد عبدالرشید و خانواده‌های وابسته به آن",
-            main: "mohammad-abdolrashid"
-        }
+            <p>
+                برای مشاهده شجره هر خاندان،
+                روی کارت مورد نظر کلیک کنید.
+            </p>
 
-    };
+        </div>
 
 
-    /*
-     * توابع کمکی
-     */
+        <!-- کارت خاندان‌ها -->
 
-    function getPerson(id) {
-        if (!id || !people) return null;
-        return people[id] || null;
-    }
+        <div
+            class="families"
+            id="families"
+        >
 
 
-    function getName(id) {
-        const person = getPerson(id);
+            <!-- خاندان احمد -->
 
-        if (!person) {
-            return "نام ثبت نشده";
-        }
+            <div class="family-card">
 
-        return person.name || "نام ثبت نشده";
-    }
+                <div class="family-card-header">
 
-
-    function createPersonLink(id) {
-
-        const person = getPerson(id);
-
-        if (!person) {
-            return `<span class="empty">ثبت نشده</span>`;
-        }
-
-        return `
-            <a
-                class="person-link"
-                href="./person.html?id=${encodeURIComponent(id)}"
-            >
-                ${person.name}
-            </a>
-        `;
-    }
-
-
-    function getSpouseId(person) {
-
-        if (!person || !person.spouse) {
-            return null;
-        }
-
-        if (Array.isArray(person.spouse)) {
-            return person.spouse[0] || null;
-        }
-
-        return person.spouse;
-    }
-
-
-    function getChildrenIds(person) {
-
-        if (!person || !person.children) {
-            return [];
-        }
-
-        if (Array.isArray(person.children)) {
-            return person.children;
-        }
-
-        return [];
-    }
-
-
-    /*
-     * ساخت کارت یک خانواده
-     */
-
-    function createFamilyCard(personId) {
-
-        const person = getPerson(personId);
-
-        if (!person) {
-            return "";
-        }
-
-        const spouseId = getSpouseId(person);
-        const childrenIds = getChildrenIds(person);
-
-        let childrenHTML = "";
-
-        if (childrenIds.length > 0) {
-
-            childrenHTML = childrenIds
-                .filter(id => getPerson(id))
-                .map(id => `
-                    <span class="child-item">
-                        ${createPersonLink(id)}
-                    </span>
-                `)
-                .join("");
-
-        } else {
-
-            childrenHTML = `
-                <span class="empty">
-                    فرزندی ثبت نشده است
-                </span>
-            `;
-        }
-
-
-        return `
-            <section class="family-card">
-
-                <div class="family-header">
-
-                    <div class="family-name">
-                        <span class="person-icon">
-                            ${person.gender === "female" ? "👩" : "👨"}
-                        </span>
-
-                        ${createPersonLink(personId)}
+                    <div class="family-icon">
+                        👨‍👩‍👧‍👦
                     </div>
 
-                    <div class="father-label">
-                        پدر خانواده:
-                        ${createPersonLink(personId)}
-                    </div>
+                    <h3>
+                        خاندان احمد
+                    </h3>
 
                 </div>
 
+                <div class="family-card-body">
 
-                <div class="family-body">
+                    <p class="family-description">
 
-                    <div class="info-row">
+                        مشاهده اعضای خاندان احمد،
+                        همسران، فرزندان و نسل‌های بعدی.
 
-                        <span class="info-title">
-                            همسر:
-                        </span>
-
-                        ${
-                            spouseId
-                            ? createPersonLink(spouseId)
-                            : `<span class="empty">همسر ثبت نشده است</span>`
-                        }
-
-                    </div>
-
-
-                    <div class="info-row">
-
-                        <span class="info-title">
-                            👨‍👩‍👧‍👦 فرزندان:
-                        </span>
-
-                        <div class="children-list">
-                            ${childrenHTML}
-                        </div>
-
-                    </div>
-
+                    </p>
 
                     <a
-                        class="details-button"
-                        href="./person.html?id=${encodeURIComponent(personId)}"
+                        class="family-button"
+                        href="./family.html?family=ahmad"
                     >
-                        ← مشاهده جزئیات
+
+                        🌳 مشاهده شجره خاندان احمد
+
                     </a>
 
                 </div>
 
-            </section>
-        `;
-    }
+            </div>
 
 
-    /*
-     * ساخت لیست خانواده‌ها
-     */
+            <!-- خاندان علی -->
 
-    function renderFamily() {
+            <div class="family-card">
 
-        const container = document.getElementById("familyContainer");
+                <div class="family-card-header">
 
-        const definition = familyDefinitions[familyId];
+                    <div class="family-icon">
+                        👨‍👩‍👧‍👦
+                    </div>
 
+                    <h3>
+                        خاندان علی
+                    </h3>
 
-        /*
-         * اگر خاندان پیدا نشد
-         */
-
-        if (!definition) {
-
-            document.getElementById("familyTitle").textContent =
-                "خاندان پیدا نشد";
-
-            document.getElementById("familyDescription").textContent =
-                "لطفاً از صفحه اصلی یکی از خاندان‌ها را انتخاب کنید.";
-
-            container.innerHTML = `
-                <div class="error-box">
-                    اطلاعات این خاندان پیدا نشد.
-                    <br><br>
-                    لطفاً به صفحه اصلی برگردید و دوباره انتخاب کنید.
                 </div>
-            `;
 
-            return;
-        }
+                <div class="family-card-body">
 
+                    <p class="family-description">
 
-        /*
-         * تغییر عنوان صفحه
-         */
+                        مشاهده اعضای خاندان علی،
+                        همسران، فرزندان و نسل‌های بعدی.
 
-        document.getElementById("familyTitle").textContent =
-            definition.title;
+                    </p>
 
-        document.getElementById("familyDescription").textContent =
-            definition.description;
+                    <a
+                        class="family-button"
+                        href="./family.html?family=ali"
+                    >
 
+                        🌳 مشاهده شجره خاندان علی
 
-        /*
-         * پیدا کردن فرد اصلی خاندان
-         */
+                    </a>
 
-        const mainPerson = getPerson(definition.main);
-
-        if (!mainPerson) {
-
-            container.innerHTML = `
-                <div class="error-box">
-                    اطلاعات خاندان در people.js پیدا نشد.
-                    <br><br>
-                    شناسه مورد نظر:
-                    ${definition.main}
                 </div>
-            `;
 
-            return;
-        }
+            </div>
 
 
-        /*
-         * خانواده اصلی
-         */
+            <!-- خاندان محمد عبدالرشید -->
 
-        let familyMembers = [definition.main];
+            <div class="family-card">
 
-        /*
-         * فرزندان خانواده اصلی را به عنوان
-         * خانواده‌های بعدی نمایش می‌دهیم.
-         */
+                <div class="family-card-header">
 
-        const children = getChildrenIds(mainPerson);
+                    <div class="family-icon">
+                        👨‍👩‍👧‍👦
+                    </div>
 
-        children.forEach(childId => {
+                    <h3>
+                        خاندان محمد عبدالرشید
+                    </h3>
 
-            if (
-                getPerson(childId) &&
-                !familyMembers.includes(childId)
-            ) {
-                familyMembers.push(childId);
-            }
+                </div>
 
-        });
+                <div class="family-card-body">
 
+                    <p class="family-description">
 
-        /*
-         * ساخت HTML
-         */
+                        مشاهده اعضای خاندان محمد عبدالرشید،
+                        همسران، فرزندان و نسل‌های بعدی.
 
-        let html = "";
+                    </p>
 
-        familyMembers.forEach((personId, index) => {
+                    <a
+                        class="family-button"
+                        href="./family.html?family=mohammad-abdolrashid"
+                    >
 
-            html += createFamilyCard(personId);
+                        🌳 مشاهده شجره خاندان محمد عبدالرشید
 
-            /*
-             * خط چین بین خانواده‌ها
-             */
+                    </a>
 
-            if (index < familyMembers.length - 1) {
+                </div>
 
-                html += `
-                    <hr class="family-divider">
-                `;
-
-            }
-
-        });
+            </div>
 
 
-        container.innerHTML = html;
-    }
+        </div>
 
 
-    /*
-     * اجرای صفحه
-     */
+        <!-- توضیحات -->
 
-    renderFamily();
+        <div class="notice">
 
-</script>
+            <strong>
+                🌿 درباره شجره‌نامه
+            </strong>
+
+            <br>
+
+            با انتخاب هر خاندان می‌توانید
+            اعضای خانواده، همسران، فرزندان
+            و نسل‌های بعدی را مشاهده کنید.
+
+            <br>
+
+            با کلیک روی نام هر فرد نیز
+            اطلاعات بیشتر او نمایش داده می‌شود.
+
+        </div>
+
+
+    </main>
+
+
+    <!-- فوتر -->
+
+    <footer>
+
+        شجره‌نامه قباکلکی © ۱۴۰۵
+
+    </footer>
+
 
 </body>
+
 </html>
