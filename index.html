@@ -1,253 +1,625 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>شجره‌نامه قباکلکی</title>
+    <title>شجره‌نامه قباکلکی</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+    <style>
 
-    body {
-      margin: 0;
-      font-family: Tahoma, Arial, sans-serif;
-      background: #f4f7f5;
-      color: #26352b;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    header {
-      background: linear-gradient(135deg, #285943, #4d8063);
-      color: white;
-      text-align: center;
-      padding: 38px 20px;
-      box-shadow: 0 3px 12px rgba(0,0,0,.15);
-    }
+        body {
+            margin: 0;
+            font-family: Tahoma, Arial, sans-serif;
+            background: #f7faf8;
+            color: #26352f;
+        }
 
-    header h1 {
-      margin: 0 0 12px;
-      font-size: 30px;
-    }
+        /* =========================
+           هدر با عکس قباکلکی
+        ========================= */
 
-    header p {
-      margin: 0;
-      font-size: 15px;
-      opacity: .92;
-    }
+        header {
+            background:
+                linear-gradient(
+                    rgba(0, 85, 45, 0.70),
+                    rgba(0, 65, 35, 0.78)
+                ),
+                url("./IMG-20260828-WA0000.jpg");
 
-    .container {
-      max-width: 1100px;
-      margin: 35px auto;
-      padding: 0 18px;
-    }
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
 
-    .intro {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+            color: white;
 
-    .intro h2 {
-      color: #285943;
-      margin-bottom: 10px;
-    }
+            min-height: 250px;
+            padding: 60px 20px;
 
-    .intro p {
-      color: #69756e;
-      line-height: 2;
-    }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
-    .families {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
+            text-align: center;
+        }
 
-    .family-card {
-      background: white;
-      border-radius: 18px;
-      padding: 28px 22px;
-      text-align: center;
-      border: 1px solid #dfe7e2;
-      box-shadow: 0 5px 18px rgba(0,0,0,.08);
-      transition: .25s;
-    }
+        header h1 {
+            margin: 0;
 
-    .family-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,.13);
-    }
+            font-size: 38px;
+            line-height: 1.6;
 
-    .family-icon {
-      font-size: 46px;
-      margin-bottom: 12px;
-    }
+            text-shadow:
+                0 2px 5px rgba(0, 0, 0, 0.35);
+        }
 
-    .family-card h3 {
-      color: #285943;
-      font-size: 22px;
-      margin: 8px 0 12px;
-    }
+        header p {
+            margin: 10px 0 0;
 
-    .family-card p {
-      color: #68756d;
-      line-height: 1.9;
-      min-height: 58px;
-    }
+            font-size: 19px;
 
-    .family-button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 11px 23px;
-      border-radius: 10px;
-      background: #357454;
-      color: white;
-      text-decoration: none;
-      transition: .2s;
-    }
+            text-shadow:
+                0 1px 4px rgba(0, 0, 0, 0.35);
+        }
 
-    .family-button:hover {
-      background: #234c38;
-    }
+        /* =========================
+           منو
+        ========================= */
 
-    .info-box {
-      margin-top: 35px;
-      background: #eaf2ed;
-      border-right: 5px solid #357454;
-      padding: 20px;
-      border-radius: 12px;
-      line-height: 2;
-      color: #425149;
-    }
+        nav {
+            background: #00633d;
 
-    footer {
-      text-align: center;
-      padding: 30px 15px;
-      color: #78847d;
-      font-size: 13px;
-    }
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 24px;
-      }
+            gap: 5px;
 
-      .container {
-        margin-top: 25px;
-      }
-    }
-  </style>
+            padding: 0 10px;
+        }
+
+        nav a {
+            color: white;
+
+            text-decoration: none;
+
+            padding: 16px 28px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            border-bottom: 4px solid transparent;
+
+            transition: 0.2s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: rgba(255, 255, 255, 0.08);
+
+            border-bottom-color: #b7f0d5;
+        }
+
+        /* =========================
+           محتوای اصلی
+        ========================= */
+
+        main {
+            max-width: 1050px;
+
+            margin: 0 auto;
+
+            padding: 50px 20px 70px;
+        }
+
+        .page-title {
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+        .page-title h2 {
+            color: #075b3b;
+
+            font-size: 34px;
+
+            margin: 0 0 12px;
+        }
+
+        .page-title p {
+            color: #52635c;
+
+            font-size: 18px;
+
+            margin: 0;
+        }
+
+        /* =========================
+           کارت خاندان‌ها
+        ========================= */
+
+        .families {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .family-card {
+            background: white;
+
+            border: 1px solid #d7e8df;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 5px 18px
+                rgba(0, 80, 50, 0.08);
+
+            transition:
+                transform 0.2s,
+                box-shadow 0.2s;
+        }
+
+        .family-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(0, 80, 50, 0.14);
+        }
+
+        /* بالای کارت */
+
+        .family-card-header {
+            background:
+                linear-gradient(
+                    135deg,
+                    #dff1e9,
+                    #eff8f4
+                );
+
+            padding: 25px 20px;
+
+            text-align: center;
+
+            border-bottom:
+                1px solid #d7e8df;
+        }
+
+        .family-icon {
+            width: 65px;
+            height: 65px;
+
+            margin: 0 auto 12px;
+
+            border-radius: 50%;
+
+            background: #08734a;
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 31px;
+        }
+
+        .family-card-header h3 {
+            margin: 0;
+
+            color: #075b3b;
+
+            font-size: 24px;
+        }
+
+        /* بدنه کارت */
+
+        .family-card-body {
+            padding: 25px 22px;
+
+            text-align: center;
+        }
+
+        .family-description {
+            color: #5a6963;
+
+            font-size: 15px;
+
+            line-height: 2;
+
+            min-height: 60px;
+
+            margin: 0 0 20px;
+        }
+
+        /* دکمه */
+
+        .family-button {
+            display: block;
+
+            width: 100%;
+
+            padding: 12px 18px;
+
+            border:
+                1.5px solid #08734a;
+
+            border-radius: 9px;
+
+            background: white;
+
+            color: #075b3b;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            font-size: 16px;
+
+            transition: 0.2s;
+        }
+
+        .family-button:hover {
+            background: #08734a;
+
+            color: white;
+        }
+
+        /* =========================
+           توضیحات
+        ========================= */
+
+        .notice {
+            margin-top: 45px;
+
+            padding: 22px;
+
+            background: #edf7f2;
+
+            border:
+                1px solid #d3e8de;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            color: #40564c;
+
+            line-height: 2;
+        }
+
+        .notice strong {
+            color: #075b3b;
+        }
+
+        /* =========================
+           فوتر
+        ========================= */
+
+        footer {
+            background: #075b3b;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 22px;
+
+            font-size: 14px;
+        }
+
+        /* =========================
+           موبایل
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .families {
+                grid-template-columns: 1fr;
+            }
+
+            .family-card {
+                max-width: 600px;
+
+                width: 100%;
+
+                margin: 0 auto;
+            }
+
+            header {
+                min-height: 210px;
+
+                padding: 45px 15px;
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                padding: 13px 15px;
+
+                font-size: 14px;
+            }
+
+            main {
+                padding: 35px 15px 55px;
+            }
+
+            .page-title h2 {
+                font-size: 29px;
+            }
+
+            .page-title p {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 420px) {
+
+            header h1 {
+                font-size: 26px;
+            }
+
+            header p {
+                font-size: 14px;
+            }
+
+            nav a {
+                padding: 11px 10px;
+
+                font-size: 13px;
+            }
+
+            .family-card-header h3 {
+                font-size: 22px;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-<header>
-  <h1>🌳 شجره‌نامه قباکلکی</h1>
-  <p>سامانه خانوادگی و شجره‌نامه اهالی روستای قباکلکی</p>
-</header>
 
-<main class="container">
+    <!-- هدر -->
 
-  <section class="intro">
-    <h2>خاندان‌ها</h2>
+    <header>
 
-    <p>
-      یکی از خاندان‌ها را انتخاب کنید تا شجره‌نامه،
-      همسران، فرزندان و نسل‌های بعدی را مشاهده کنید.
-    </p>
-  </section>
+        <h1>
+            🌳 شجره‌نامه قباکلکی
+        </h1>
 
+        <p>
+            درخت خانوادگی مردم قباکلکی
+        </p>
 
-  <section class="families">
-
-    <!-- خاندان احمد -->
-    <div class="family-card">
-
-      <div class="family-icon">🌳</div>
-
-      <h3>خاندان احمد</h3>
-
-      <p>
-        احمد فرزند غلامحسین و خانواده او،
-        شامل همسر، فرزندان و نوه‌ها.
-      </p>
-
-      <a
-        class="family-button"
-        href="./family.html?family=ahmad"
-      >
-        مشاهده شجره‌نامه
-      </a>
-
-    </div>
+    </header>
 
 
-    <!-- خاندان علی -->
-    <div class="family-card">
+    <!-- منو -->
 
-      <div class="family-icon">🌿</div>
+    <nav>
 
-      <h3>خاندان علی</h3>
+        <a
+            href="./index.html"
+            class="active"
+        >
+            🏠 صفحه اصلی
+        </a>
 
-      <p>
-        علی فرزند غلامحسین و خانواده او،
-        شامل همسر، فرزندان و نسل بعد.
-      </p>
+        <a href="#families">
+            👨‍👩‍👧 خاندان‌ها
+        </a>
 
-      <a
-        class="family-button"
-        href="./family.html?family=ali"
-      >
-        مشاهده شجره‌نامه
-      </a>
+        <a href="./person.html">
+            👤 افراد
+        </a>
 
-    </div>
-
-
-    <!-- خاندان محمد عبدالرشید -->
-    <div class="family-card">
-
-      <div class="family-icon">🌲</div>
-
-      <h3>خاندان محمد عبدالرشید</h3>
-
-      <p>
-        محمد عبدالرشید و خانواده او،
-        شامل همسر، فرزندان و نوه‌ها.
-      </p>
-
-      <a
-        class="family-button"
-        href="./family.html?family=mohammad-abdolrashid"
-      >
-        مشاهده شجره‌نامه
-      </a>
-
-    </div>
-
-  </section>
+    </nav>
 
 
-  <div class="info-box">
+    <!-- محتوای اصلی -->
 
-    💡 <strong>راهنما:</strong>
+    <main>
 
-    برای مشاهده اطلاعات هر فرد، روی نام او کلیک کنید.
+        <div class="page-title">
 
-    <br>
+            <h2>
+                خاندان‌های قباکلکی
+            </h2>
 
-    در صفحه شخصی، شغل، تحصیلات، همسر،
-    پدر، مادر و فرزندان نمایش داده می‌شود.
+            <p>
+                برای مشاهده شجره هر خاندان،
+                روی کارت مورد نظر کلیک کنید.
+            </p>
 
-  </div>
-
-</main>
+        </div>
 
 
-<footer>
-  شجره‌نامه قباکلکی © ۱۴۰۵
-</footer>
+        <!-- کارت خاندان‌ها -->
+
+        <div
+            class="families"
+            id="families"
+        >
+
+
+            <!-- خاندان احمد -->
+
+            <div class="family-card">
+
+                <div class="family-card-header">
+
+                    <div class="family-icon">
+                        👨‍👩‍👧‍👦
+                    </div>
+
+                    <h3>
+                        خاندان احمد
+                    </h3>
+
+                </div>
+
+                <div class="family-card-body">
+
+                    <p class="family-description">
+
+                        مشاهده اعضای خاندان احمد،
+                        همسران، فرزندان و نسل‌های بعدی.
+
+                    </p>
+
+                    <a
+                        class="family-button"
+                        href="./family.html?family=ahmad"
+                    >
+
+                        🌳 مشاهده شجره خاندان احمد
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- خاندان علی -->
+
+            <div class="family-card">
+
+                <div class="family-card-header">
+
+                    <div class="family-icon">
+                        👨‍👩‍👧‍👦
+                    </div>
+
+                    <h3>
+                        خاندان علی
+                    </h3>
+
+                </div>
+
+                <div class="family-card-body">
+
+                    <p class="family-description">
+
+                        مشاهده اعضای خاندان علی،
+                        همسران، فرزندان و نسل‌های بعدی.
+
+                    </p>
+
+                    <a
+                        class="family-button"
+                        href="./family.html?family=ali"
+                    >
+
+                        🌳 مشاهده شجره خاندان علی
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- خاندان محمد عبدالرشید -->
+
+            <div class="family-card">
+
+                <div class="family-card-header">
+
+                    <div class="family-icon">
+                        👨‍👩‍👧‍👦
+                    </div>
+
+                    <h3>
+                        خاندان محمد عبدالرشید
+                    </h3>
+
+                </div>
+
+                <div class="family-card-body">
+
+                    <p class="family-description">
+
+                        مشاهده اعضای خاندان محمد عبدالرشید،
+                        همسران، فرزندان و نسل‌های بعدی.
+
+                    </p>
+
+                    <a
+                        class="family-button"
+                        href="./family.html?family=mohammad-abdolrashid"
+                    >
+
+                        🌳 مشاهده شجره خاندان محمد عبدالرشید
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- توضیحات -->
+
+        <div class="notice">
+
+            <strong>
+                🌿 درباره شجره‌نامه
+            </strong>
+
+            <br>
+
+            با انتخاب هر خاندان می‌توانید
+            اعضای خانواده، همسران، فرزندان
+            و نسل‌های بعدی را مشاهده کنید.
+
+            <br>
+
+            با کلیک روی نام هر فرد نیز
+            اطلاعات بیشتر او نمایش داده می‌شود.
+
+        </div>
+
+
+    </main>
+
+
+    <!-- فوتر -->
+
+    <footer>
+
+        شجره‌نامه قباکلکی © ۱۴۰۵
+
+    </footer>
+
 
 </body>
+
 </html>
