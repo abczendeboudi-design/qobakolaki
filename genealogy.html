@@ -4,2855 +4,1797 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>شجره‌نامه خاندان غلامحسین قاسم زائر غلامحسین</title>
+<title>شجره‌نامه قباکلکی</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html,body{
+    margin:0;
+    padding:0;
+    font-family:Tahoma,Arial,sans-serif;
+    background:#f4f8f5;
+    color:#26352b;
 }
 
-body {
-    margin: 0;
-    font-family: Tahoma, Arial, sans-serif;
-    background: #f4f8f5;
-    color: #183c2a;
+body{
+    overflow-x:hidden;
 }
 
-/* ================= HEADER ================= */
-
-header {
-    background:
-        linear-gradient(
-            rgba(0, 75, 40, 0.80),
-            rgba(0, 55, 30, 0.88)
-        ),
-        url("./IMG-20260828-WA0000.jpg");
-
-    background-size: cover;
-    background-position: center;
-
-    min-height: 250px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-    color: white;
-
-    padding: 30px 15px;
+/* Header */
+.header{
+    background:linear-gradient(135deg,#176b3a,#2d8a55);
+    color:white;
+    padding:18px 15px;
+    text-align:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.15);
 }
 
-header h1 {
-    margin: 0 0 12px;
-    font-size: 32px;
+.header h1{
+    margin:0 0 8px;
+    font-size:27px;
 }
 
-header p {
-    margin: 0;
-    font-size: 17px;
+.header p{
+    margin:0;
+    font-size:13px;
+    opacity:.9;
 }
 
-/* ================= CONTROLS ================= */
-
-.controls {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-
-    background: rgba(255,255,255,0.96);
-    backdrop-filter: blur(10px);
-
-    padding: 15px;
-
-    border-bottom: 1px solid #dce9e0;
-
-    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+/* Toolbar */
+.toolbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:white;
+    padding:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.12);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:7px;
+    flex-wrap:wrap;
 }
 
-.controls-inner {
-    width: min(1200px, 95%);
-    margin: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 10px;
-
-    flex-wrap: wrap;
+.toolbar button{
+    border:1px solid #cbded1;
+    background:#f7faf8;
+    color:#176b3a;
+    border-radius:8px;
+    padding:8px 13px;
+    cursor:pointer;
+    font-family:inherit;
+    font-weight:bold;
 }
 
-.search-box {
-    min-width: 260px;
-    flex: 1;
-    max-width: 420px;
-
-    border: 1px solid #cbded1;
-    border-radius: 12px;
-
-    padding: 12px 15px;
-
-    font-family: inherit;
-    font-size: 14px;
-
-    outline: none;
-
-    background: white;
+.toolbar button:hover{
+    background:#e5f2e9;
 }
 
-.search-box:focus {
-    border-color: #177245;
-    box-shadow: 0 0 0 3px rgba(23,114,69,0.10);
+.search{
+    width:220px;
+    border:1px solid #cbded1;
+    border-radius:8px;
+    padding:9px 12px;
+    font-family:inherit;
+    outline:none;
 }
 
-.control-btn {
-    border: none;
-
-    padding: 11px 17px;
-
-    border-radius: 11px;
-
-    background: #12613b;
-    color: white;
-
-    font-family: inherit;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.2s;
+.search:focus{
+    border-color:#2d8a55;
 }
 
-.control-btn:hover {
-    background: #0c482c;
-    transform: translateY(-1px);
+/* Tree area */
+.tree-wrapper{
+    width:100%;
+    overflow:auto;
+    padding:35px 25px 80px;
 }
 
-.control-btn.secondary {
-    background: #e5efe8;
-    color: #174d31;
+.tree{
+    min-width:max-content;
+    transform-origin:top center;
+    transition:transform .25s ease;
+    text-align:center;
 }
 
-.control-btn.secondary:hover {
-    background: #d5e6db;
+/* Root */
+.root{
+    display:inline-block;
+    margin-bottom:20px;
 }
 
-/* ================= MAIN ================= */
-
-.container {
-    width: min(1400px, 96%);
-    margin: 35px auto 70px;
+.root-card{
+    background:linear-gradient(135deg,#145f35,#23804c);
+    color:white;
+    border-radius:15px;
+    padding:14px 24px;
+    min-width:230px;
+    box-shadow:0 5px 15px rgba(0,0,0,.18);
+    font-size:17px;
+    font-weight:bold;
 }
 
-.title {
-    text-align: center;
-    margin-bottom: 25px;
+/* Families */
+.family-list{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:22px;
+    position:relative;
 }
 
-.title h2 {
-    margin: 0 0 10px;
-    color: #12613b;
-    font-size: 28px;
+.family{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
-.title p {
-    color: #65776c;
-    margin: 0;
+/* connector from parent to family */
+.family-list > .family::before{
+    content:"";
+    position:absolute;
+    top:-20px;
+    left:50%;
+    width:2px;
+    height:20px;
+    background:#8eaa98;
 }
 
-/* ================= LEGEND ================= */
-
-.legend {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-
-    flex-wrap: wrap;
-
-    margin: 20px auto 30px;
+/* spouse */
+.spouse{
+    display:inline-block;
+    background:#fff5dc;
+    color:#765b18;
+    border:1px solid #e8ce88;
+    border-radius:20px;
+    padding:5px 10px;
+    font-size:11px;
+    margin-bottom:8px;
+    white-space:nowrap;
 }
 
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-
-    color: #5e7065;
-    font-size: 13px;
+/* Person node */
+.person-box{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    background:white;
+    border:2px solid #b8d4c1;
+    border-radius:12px;
+    min-width:125px;
+    max-width:180px;
+    padding:8px 11px;
+    box-shadow:0 2px 8px rgba(0,0,0,.09);
+    position:relative;
+    z-index:2;
+    cursor:pointer;
+    transition:.2s;
 }
 
-.legend-box {
-    width: 18px;
-    height: 18px;
-    border-radius: 5px;
+.person-box:hover{
+    transform:translateY(-2px);
+    box-shadow:0 5px 14px rgba(0,0,0,.15);
+    border-color:#459466;
 }
 
-.legend-person {
-    background: #ffffff;
-    border: 2px solid #177245;
+.person-name{
+    font-weight:bold;
+    font-size:13px;
+    line-height:1.7;
 }
 
-.legend-spouse {
-    background: #fff7df;
-    border: 2px solid #c89c36;
+.gender{
+    font-size:9px;
+    color:#7d8d83;
+    margin-top:2px;
 }
 
-.legend-root {
-    background: #177245;
+.has-children .person-box::after{
+    content:"⌄";
+    font-size:13px;
+    color:#2d8a55;
+    margin-top:1px;
 }
 
-/* ================= TREE ================= */
-
-.tree-wrapper {
-    background: white;
-
-    border-radius: 24px;
-
-    padding: 40px;
-
-    box-shadow: 0 8px 35px rgba(0,0,0,0.07);
-
-    border: 1px solid #dce9e0;
-
-    overflow-x: auto;
-    overflow-y: hidden;
+.collapsed .person-box::after{
+    content:"‹";
+    transform:rotate(-90deg);
 }
 
-.tree {
-    min-width: 1150px;
-
-    display: flex;
-    justify-content: center;
-
-    direction: rtl;
-
-    padding: 20px 20px 50px;
+/* Children */
+.children{
+    margin-top:22px;
+    position:relative;
 }
 
-/* ================= TREE NODES ================= */
-
-.tree ul {
-    padding-top: 25px;
-
-    position: relative;
-
-    display: flex;
-    justify-content: center;
-
-    margin: 0;
-    padding-right: 0;
-    padding-left: 0;
+.children.hidden{
+    display:none;
 }
 
-.tree li {
-    list-style: none;
-
-    position: relative;
-
-    text-align: center;
-
-    padding: 25px 12px 0;
+.children > .family-list{
+    padding-top:0;
 }
 
-/* horizontal connector */
-
-.tree li::before,
-.tree li::after {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    width: 50%;
-    height: 25px;
-
-    border-top: 2px solid #b7cfc0;
+/* vertical line from parent to children */
+.children::before{
+    content:"";
+    position:absolute;
+    top:-22px;
+    left:50%;
+    width:2px;
+    height:22px;
+    background:#8eaa98;
 }
 
-.tree li::before {
-    left: 0;
+/* Horizontal connector */
+.children > .family-list::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:5%;
+    right:5%;
+    height:2px;
+    background:#8eaa98;
 }
 
-.tree li::after {
-    right: 0;
-    border-right: 2px solid #b7cfc0;
+/* Child family connector */
+.children > .family-list > .family::before{
+    top:0;
+    height:20px;
 }
 
-/* remove connectors for single child */
-
-.tree li:only-child::before,
-.tree li:only-child::after {
-    display: none;
+/* Deep levels */
+.children .person-box{
+    min-width:110px;
+    max-width:155px;
+    padding:7px 9px;
 }
 
-.tree li:only-child {
-    padding-top: 0;
+.children .person-name{
+    font-size:12px;
 }
 
-/* first child */
-
-.tree li:first-child::before {
-    border: none;
+/* Multiple generations */
+.children .children{
+    margin-top:18px;
 }
 
-/* last child */
-
-.tree li:last-child::after {
-    border: none;
+.children .children::before{
+    top:-18px;
+    height:18px;
 }
 
-/* vertical connection */
-
-.tree ul::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    right: 50%;
-
-    width: 2px;
-    height: 25px;
-
-    background: #b7cfc0;
+.children .children > .family-list::before{
+    top:0;
 }
 
-/* ================= PERSON CARD ================= */
-
-.person {
-    position: relative;
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 7px;
-
-    min-width: 145px;
-
-    max-width: 230px;
-
-    min-height: 58px;
-
-    padding: 12px 15px;
-
-    background: #ffffff;
-
-    border: 2px solid #177245;
-
-    border-radius: 15px;
-
-    color: #174d31;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    box-shadow: 0 4px 13px rgba(0,0,0,0.06);
-
-    transition:
-        transform 0.2s,
-        box-shadow 0.2s,
-        background 0.2s;
-
-    user-select: none;
+/* Search highlight */
+.highlight{
+    animation:highlight 1.5s ease;
+    border-color:#e39b19 !important;
+    box-shadow:0 0 0 4px rgba(227,155,25,.25) !important;
 }
 
-.person:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 8px 20px rgba(23,114,69,0.16);
-
-    background: #f5fbf7;
+@keyframes highlight{
+    0%{transform:scale(1.08)}
+    100%{transform:scale(1)}
 }
 
-.person.root {
-    background: #177245;
-    color: white;
-
-    border-color: #0e5934;
-
-    font-size: 18px;
-
-    padding: 17px 25px;
-
-    min-width: 250px;
+/* Legend */
+.legend{
+    text-align:center;
+    padding:15px;
+    color:#66756b;
+    font-size:12px;
 }
 
-.person.childless {
-    cursor: default;
+.legend span{
+    display:inline-block;
+    margin:4px 8px;
 }
 
-.person.childless:hover {
-    transform: none;
-}
+/* Mobile */
+@media(max-width:700px){
 
-.toggle {
-    width: 24px;
-    height: 24px;
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    border-radius: 50%;
-
-    background: #e5f1e9;
-
-    color: #12613b;
-
-    font-size: 14px;
-
-    font-weight: bold;
-}
-
-/* ================= SPOUSE ================= */
-
-.spouse {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin: 8px 3px 0;
-
-    padding: 7px 12px;
-
-    border-radius: 10px;
-
-    background: #fff8e6;
-
-    border: 1px solid #d8b866;
-
-    color: #765b1c;
-
-    font-size: 12px;
-
-    font-weight: normal;
-
-    position: relative;
-}
-
-.spouse::before {
-    content: "♥";
-
-    margin-left: 5px;
-
-    color: #bd8e21;
-
-    font-size: 11px;
-}
-
-/* ================= FAMILY BLOCK ================= */
-
-.family {
-    display: inline-flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    vertical-align: top;
-}
-
-/* ================= COLLAPSED ================= */
-
-.tree li.collapsed > ul {
-    display: none;
-}
-
-.tree li.collapsed > .person .toggle {
-    background: #12613b;
-    color: white;
-}
-
-.tree li.collapsed > .person .toggle::before {
-    content: "+";
-}
-
-.tree li:not(.collapsed) > .person .toggle::before {
-    content: "−";
-}
-
-/* ================= SEARCH ================= */
-
-.search-match {
-    animation: highlight 1.2s ease;
-}
-
-@keyframes highlight {
-    0% {
-        box-shadow: 0 0 0 7px rgba(230,178,45,0.5);
+    .header h1{
+        font-size:21px;
     }
 
-    100% {
-        box-shadow: 0 0 0 0 rgba(230,178,45,0);
-    }
-}
-
-.hidden-search {
-    display: none !important;
-}
-
-/* ================= BACK BUTTON ================= */
-
-.back-area {
-    text-align: center;
-
-    margin-top: 30px;
-}
-
-.back-link {
-    display: inline-block;
-
-    padding: 12px 22px;
-
-    background: #e5efe8;
-
-    color: #174d31;
-
-    text-decoration: none;
-
-    border-radius: 12px;
-
-    font-weight: bold;
-
-    transition: 0.2s;
-}
-
-.back-link:hover {
-    background: #d5e6db;
-}
-
-/* ================= FOOTER ================= */
-
-footer {
-    padding: 25px;
-
-    text-align: center;
-
-    background: #103d28;
-
-    color: white;
-
-    font-size: 14px;
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 700px) {
-
-    header {
-        min-height: 220px;
+    .header p{
+        font-size:11px;
     }
 
-    header h1 {
-        font-size: 24px;
+    .toolbar{
+        justify-content:flex-start;
+        overflow-x:auto;
+        flex-wrap:nowrap;
     }
 
-    header p {
-        font-size: 14px;
+    .search{
+        width:170px;
+        flex-shrink:0;
     }
 
-    .controls-inner {
-        flex-direction: column;
+    .tree-wrapper{
+        padding:25px 15px 60px;
     }
 
-    .search-box {
-        width: 100%;
-        max-width: none;
+    .family-list{
+        gap:10px;
     }
 
-    .control-btn {
-        width: 100%;
+    .root-card{
+        font-size:14px;
+        min-width:190px;
     }
 
-    .tree-wrapper {
-        padding: 15px;
-        border-radius: 17px;
+    .person-box{
+        min-width:105px;
+        max-width:140px;
+        padding:6px 8px;
     }
 
-    .tree {
-        min-width: 900px;
+    .person-name{
+        font-size:11px;
     }
 
-    .title h2 {
-        font-size: 23px;
-    }
-}
-
-/* ================= PRINT ================= */
-
-@media print {
-
-    .controls,
-    .back-area {
-        display: none;
-    }
-
-    header {
-        min-height: 120px;
-        background: #177245 !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-
-    .tree-wrapper {
-        box-shadow: none;
-        border: none;
-    }
-
-    .tree li.collapsed > ul {
-        display: block;
+    .spouse{
+        font-size:9px;
     }
 }
 </style>
 </head>
 
-
 <body>
 
-<!-- ================= HEADER ================= -->
-
-<header>
-
-    <div>
-
-        <h1>
-            شجره‌نامه خاندان غلامحسین قاسم زائر غلامحسین
-        </h1>
-
-        <p>
-            نسل‌ها و خانواده‌های خاندان قباکلکی
-        </p>
-
-    </div>
-
+<header class="header">
+    <h1>🌳 شجره‌نامه قباکلکی</h1>
+    <p>غلامحسین قاسم زائر غلامحسین</p>
 </header>
 
+<div class="toolbar">
 
-<!-- ================= CONTROLS ================= -->
+    <input
+        id="search"
+        class="search"
+        type="text"
+        placeholder="🔍 جستجوی نام..."
+    >
 
-<div class="controls">
+    <button onclick="zoomIn()">＋ بزرگ‌نمایی</button>
+    <button onclick="zoomOut()">－ کوچک‌نمایی</button>
+    <button onclick="resetZoom()">۱۰۰٪</button>
+    <button onclick="expandAll()">باز کردن همه</button>
+    <button onclick="collapseAll()">بستن شاخه‌ها</button>
 
-    <div class="controls-inner">
+</div>
 
-        <input
-            id="search"
-            class="search-box"
-            type="search"
-            placeholder="جستجوی نام..."
-            autocomplete="off"
-        >
+<div class="tree-wrapper">
 
-        <button
-            class="control-btn"
-            onclick="expandAll()"
-        >
-            باز کردن همه
-        </button>
+<div class="tree" id="tree">
 
-        <button
-            class="control-btn secondary"
-            onclick="collapseAll()"
-        >
-            بستن همه
-        </button>
+<!-- ========================================================= -->
+<!-- نسل اول -->
+<!-- ========================================================= -->
 
-        <button
-            class="control-btn secondary"
-            onclick="window.print()"
-        >
-            چاپ شجره‌نامه
-        </button>
+<div class="root">
+    <div class="root-card">
+        غلامحسین قاسم زائر غلامحسین
+    </div>
+</div>
 
+<div class="family-list">
+
+<!-- ========================================================= -->
+<!-- همسر اول: پریزاد -->
+<!-- ========================================================= -->
+
+<div class="family">
+
+    <div class="spouse">
+        💍 همسر اول: پریزاد
+    </div>
+
+    <div class="person-box has-children" onclick="toggleChildren(this)">
+        <div class="person-name">قاسم</div>
+    </div>
+
+    <div class="children">
+
+        <div class="family-list">
+
+            <!-- اصغر -->
+            <div class="family">
+                <div class="person-box has-children" onclick="toggleChildren(this)">
+                    <div class="person-name">اصغر</div>
+                    <div class="gender">همسر: حکیمه حاج محمد</div>
+                </div>
+
+                <div class="children">
+                    <div class="family-list">
+
+                        <div class="family">
+                            <div class="person-box">
+                                <div class="person-name">علی</div>
+                            </div>
+                        </div>
+
+                        <div class="family">
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">رباب</div>
+                                <div class="gender">همسر: طالب بهادر</div>
+                            </div>
+
+                            <div class="children">
+                                <div class="family-list">
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">شاهین</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">شاهرخ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="family">
+                            <div class="person-box">
+                                <div class="person-name">زینب</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- اکبر -->
+            <div class="family">
+
+                <div class="person-box has-children" onclick="toggleChildren(this)">
+                    <div class="person-name">اکبر</div>
+                    <div class="gender">همسر: روشن میش علی بهادر</div>
+                </div>
+
+                <div class="children">
+
+                    <div class="family-list">
+
+                        <div class="family">
+                            <div class="person-box">
+                                <div class="person-name">علی</div>
+                                <div class="gender">همسر: بهاره بهادر</div>
+                            </div>
+                        </div>
+
+                        <div class="family">
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">لاله</div>
+                                <div class="gender">همسر: موسی جعفر میش محمدعلی</div>
+                            </div>
+
+                            <div class="children">
+                                <div class="family-list">
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">مهراوه</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">محمد</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">مارال</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="family">
+                            <div class="person-box">
+                                <div class="person-name">فاطمه</div>
+                                <div class="gender">همسر: سعید امرالله</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- پرویز -->
+            <div class="family">
+
+                <div class="person-box has-children" onclick="toggleChildren(this)">
+                    <div class="person-name">پرویز</div>
+                    <div class="gender">همسر: مژگان</div>
+                </div>
+
+                <div class="children">
+
+                    <div class="family-list">
+
+                        <div class="family">
+                            <div class="person-box">
+                                <div class="person-name">کوثر</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- جهانگیر -->
+            <div class="family">
+
+                <div class="person-box has-children" onclick="toggleChildren(this)">
+                    <div class="person-name">جهانگیر</div>
+                    <div class="gender">همسر: ماه‌بگم جمالی</div>
+                </div>
+
+                <div class="children">
+
+                    <div class="family-list">
+
+                        <div class="family">
+                            <div class="person-box">
+                                <div class="person-name">محمد</div>
+                            </div>
+                        </div>
+
+                        <div class="family">
+                            <div class="person-box">
+                                <div class="person-name">قاسم</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- شیرین -->
+            <div class="family">
+
+                <div class="person-box">
+                    <div class="person-name">شیرین</div>
+                </div>
+
+            </div>
+
+
+            <!-- غلامحسین -->
+            <div class="family">
+
+                <div class="person-box has-children" onclick="toggleChildren(this)">
+                    <div class="person-name">غلامحسین</div>
+                    <div class="gender">همسر: رباب کنگانی</div>
+                </div>
+
+                <div class="children">
+
+                    <div class="family-list">
+
+                        <div class="family">
+                            <div class="person-box">
+                                <div class="person-name">رضا</div>
+                            </div>
+                        </div>
+
+                        <div class="family">
+                            <div class="person-box">
+                                <div class="person-name">ساواش</div>
+                            </div>
+                        </div>
+
+                        <div class="family">
+                            <div class="person-box">
+                                <div class="person-name">رادمهر</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- مریم -->
+            <div class="family">
+
+                <div class="person-box has-children" onclick="toggleChildren(this)">
+                    <div class="person-name">مریم</div>
+                    <div class="gender">همسر: رضا حاج عبدالرشید</div>
+                </div>
+
+                <div class="children">
+
+                    <div class="family-list">
+
+                        <div class="family">
+                            <div class="person-box">
+                                <div class="person-name">ابراهیم</div>
+                            </div>
+                        </div>
+
+                        <div class="family">
+                            <div class="person-box">
+                                <div class="person-name">ریحانه</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
     </div>
 
 </div>
 
 
-<!-- ================= MAIN ================= -->
+<!-- ========================================================= -->
+<!-- همسر دوم: خیر محمد زائر عبدالرشید -->
+<!-- ========================================================= -->
 
-<main class="container">
+<div class="family">
 
-    <div class="title">
-
-        <h2>
-            شجره‌نامه درختی
-        </h2>
-
-        <p>
-            روی هر فردی که دارای فرزند است کلیک کنید تا شاخه او باز یا بسته شود.
-        </p>
-
+    <div class="spouse">
+        💍 همسر دوم: خیر محمد زائر عبدالرشید
     </div>
 
+    <div class="children">
 
-    <!-- LEGEND -->
+        <div class="family-list">
 
-    <div class="legend">
+            <!-- امیر -->
+            <div class="family">
 
-        <div class="legend-item">
+                <div class="person-box has-children" onclick="toggleChildren(this)">
+                    <div class="person-name">امیر</div>
+                    <div class="gender">همسر: مهین حاج محمد</div>
+                </div>
 
-            <span class="legend-box legend-root"></span>
+                <div class="children">
 
-            <span>نسل اصلی</span>
+                    <div class="family-list">
 
-        </div>
+                        <div class="family">
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">صدیقه</div>
+                                <div class="gender">همسر: منصور محمدعلی زائرعباس</div>
+                            </div>
 
-        <div class="legend-item">
+                            <div class="children">
+                                <div class="family-list">
 
-            <span class="legend-box legend-person"></span>
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">محمدعلی</div>
+                                        </div>
+                                    </div>
 
-            <span>عضو خاندان</span>
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">ژاله</div>
+                                        </div>
+                                    </div>
 
-        </div>
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">یکتا</div>
+                                            <div class="gender">همسر: علی جبرئیل</div>
+                                        </div>
+                                    </div>
 
-        <div class="legend-item">
-
-            <span class="legend-box legend-spouse"></span>
-
-            <span>همسر</span>
-
-        </div>
-
-    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
-    <!-- TREE -->
+                        <div class="family">
 
-    <div class="tree-wrapper">
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">صادق</div>
+                                <div class="gender">همسر: فریده احمد</div>
+                            </div>
 
-        <div class="tree">
-
-            <ul>
-
-                <!-- ================================================= -->
-                <!-- ROOT -->
-                <!-- ================================================= -->
-
-                <li>
-
-                    <div class="family">
-
-                        <div
-                            class="person root"
-                            onclick="toggleNode(this)"
-                        >
-
-                            <span class="toggle"></span>
-
-                            غلامحسین قاسم زائر غلامحسین
+                            <div class="children">
+                                <div class="family-list">
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">کاملیا</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
 
 
-                        <!-- ================= ROOT CHILDREN ================= -->
+                        <div class="family">
 
-                        <ul>
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">صمد</div>
+                                <div class="gender">همسر: زهرا محمدعلی زائرعباس</div>
+                            </div>
 
+                            <div class="children">
+                                <div class="family-list">
 
-                            <!-- ================================================= -->
-                            <!-- FIRST WIFE: PARIZAD -->
-                            <!-- ================================================= -->
-
-                            <li>
-
-                                <div class="family">
-
-                                    <div class="spouse">
-                                        همسر اول: پریزاد
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">نیلوفر</div>
+                                        </div>
                                     </div>
 
-
-                                    <div
-                                        class="person"
-                                        onclick="toggleNode(this)"
-                                    >
-
-                                        <span class="toggle"></span>
-
-                                        قاسم
-
-                                    </div>
-
-
-                                    <ul>
-
-                                        <!-- ================================================= -->
-                                        <!-- QASEM -->
-                                        <!-- ================================================= -->
-
-                                        <li>
-
-                                            <div class="family">
-
-                                                <div class="spouse">
-                                                    همسر اول: ایران ولی
-                                                </div>
-
-                                                <div class="spouse">
-                                                    همسر دوم: سکینه حیدری
-                                                </div>
-
-                                            </div>
-
-                                            <ul>
-
-
-                                                <!-- ================= ASGHAR ================= -->
-
-                                                <li>
-
-                                                    <div class="family">
-
-                                                        <div
-                                                            class="person"
-                                                            onclick="toggleNode(this)"
-                                                        >
-
-                                                            <span class="toggle"></span>
-
-                                                            اصغر
-
-                                                        </div>
-
-                                                        <div class="spouse">
-                                                            همسر: حکیمه حاج محمد
-                                                        </div>
-
-                                                    </div>
-
-                                                    <ul>
-
-                                                        <li>
-                                                            <div class="person childless">
-                                                                علی
-                                                            </div>
-                                                        </li>
-
-
-                                                        <li>
-
-                                                            <div class="family">
-
-                                                                <div
-                                                                    class="person"
-                                                                    onclick="toggleNode(this)"
-                                                                >
-
-                                                                    <span class="toggle"></span>
-
-                                                                    رباب
-
-                                                                </div>
-
-                                                                <div class="spouse">
-                                                                    همسر: طالب بهادر
-                                                                </div>
-
-                                                            </div>
-
-                                                            <ul>
-
-                                                                <li>
-                                                                    <div class="person childless">
-                                                                        شاهین
-                                                                    </div>
-                                                                </li>
-
-                                                                <li>
-                                                                    <div class="person childless">
-                                                                        شاهرخ
-                                                                    </div>
-                                                                </li>
-
-                                                            </ul>
-
-                                                        </li>
-
-
-                                                        <li>
-                                                            <div class="person childless">
-                                                                زینب
-                                                            </div>
-                                                        </li>
-
-                                                    </ul>
-
-                                                </li>
-
-
-                                                <!-- ================= AKBAR ================= -->
-
-                                                <li>
-
-                                                    <div class="family">
-
-                                                        <div
-                                                            class="person"
-                                                            onclick="toggleNode(this)"
-                                                        >
-
-                                                            <span class="toggle"></span>
-
-                                                            اکبر
-
-                                                        </div>
-
-                                                        <div class="spouse">
-                                                            همسر: روشن میش علی بهادر
-                                                        </div>
-
-                                                    </div>
-
-                                                    <ul>
-
-                                                        <li>
-
-                                                            <div class="family">
-
-                                                                <div class="person childless">
-                                                                    علی
-                                                                </div>
-
-                                                                <div class="spouse">
-                                                                    همسر: بهاره بهادر
-                                                                </div>
-
-                                                            </div>
-
-                                                        </li>
-
-
-                                                        <li>
-
-                                                            <div class="family">
-
-                                                                <div
-                                                                    class="person"
-                                                                    onclick="toggleNode(this)"
-                                                                >
-
-                                                                    <span class="toggle"></span>
-
-                                                                    لاله
-
-                                                                </div>
-
-                                                                <div class="spouse">
-                                                                    همسر: موسی جعفر میش محمدعلی
-                                                                </div>
-
-                                                            </div>
-
-                                                            <ul>
-
-                                                                <li>
-                                                                    <div class="person childless">
-                                                                        مهراوه
-                                                                    </div>
-                                                                </li>
-
-                                                                <li>
-                                                                    <div class="person childless">
-                                                                        محمد
-                                                                    </div>
-                                                                </li>
-
-                                                                <li>
-                                                                    <div class="person childless">
-                                                                        مارال
-                                                                    </div>
-                                                                </li>
-
-                                                            </ul>
-
-                                                        </li>
-
-
-                                                        <li>
-
-                                                            <div class="family">
-
-                                                                <div class="person childless">
-                                                                    فاطمه
-                                                                </div>
-
-                                                                <div class="spouse">
-                                                                    همسر: سعید امرالله
-                                                                </div>
-
-                                                            </div>
-
-                                                        </li>
-
-                                                    </ul>
-
-                                                </li>
-
-
-                                                <!-- ================= PARVIZ ================= -->
-
-                                                <li>
-
-                                                    <div class="family">
-
-                                                        <div
-                                                            class="person"
-                                                            onclick="toggleNode(this)"
-                                                        >
-
-                                                            <span class="toggle"></span>
-
-                                                            پرویز
-
-                                                        </div>
-
-                                                        <div class="spouse">
-                                                            همسر: مژگان
-                                                        </div>
-
-                                                    </div>
-
-                                                    <ul>
-
-                                                        <li>
-                                                            <div class="person childless">
-                                                                کوثر
-                                                            </div>
-                                                        </li>
-
-                                                    </ul>
-
-                                                </li>
-
-
-                                                <!-- ================= JAHANGIR ================= -->
-
-                                                <li>
-
-                                                    <div class="family">
-
-                                                        <div
-                                                            class="person"
-                                                            onclick="toggleNode(this)"
-                                                        >
-
-                                                            <span class="toggle"></span>
-
-                                                            جهانگیر
-
-                                                        </div>
-
-                                                        <div class="spouse">
-                                                            همسر: ماه‌بگم جمالی
-                                                        </div>
-
-                                                    </div>
-
-                                                    <ul>
-
-                                                        <li>
-                                                            <div class="person childless">
-                                                                محمد
-                                                            </div>
-                                                        </li>
-
-                                                        <li>
-                                                            <div class="person childless">
-                                                                قاسم
-                                                            </div>
-                                                        </li>
-
-                                                    </ul>
-
-                                                </li>
-
-
-                                                <!-- ================= SHIRIN ================= -->
-
-                                                <li>
-
-                                                    <div class="person childless">
-                                                        شیرین
-                                                    </div>
-
-                                                </li>
-
-
-                                                <!-- ================= GHOLAMHOSSEIN ================= -->
-
-                                                <li>
-
-                                                    <div class="family">
-
-                                                        <div
-                                                            class="person"
-                                                            onclick="toggleNode(this)"
-                                                        >
-
-                                                            <span class="toggle"></span>
-
-                                                            غلامحسین
-
-                                                        </div>
-
-                                                        <div class="spouse">
-                                                            همسر: رباب کنگانی
-                                                        </div>
-
-                                                    </div>
-
-                                                    <ul>
-
-                                                        <li>
-                                                            <div class="person childless">
-                                                                رضا
-                                                            </div>
-                                                        </li>
-
-                                                        <li>
-                                                            <div class="person childless">
-                                                                ساواش
-                                                            </div>
-                                                        </li>
-
-                                                        <li>
-                                                            <div class="person childless">
-                                                                رادمهر
-                                                            </div>
-                                                        </li>
-
-                                                    </ul>
-
-                                                </li>
-
-
-                                                <!-- ================= MARYAM ================= -->
-
-                                                <li>
-
-                                                    <div class="family">
-
-                                                        <div
-                                                            class="person"
-                                                            onclick="toggleNode(this)"
-                                                        >
-
-                                                            <span class="toggle"></span>
-
-                                                            مریم
-
-                                                        </div>
-
-                                                        <div class="spouse">
-                                                            همسر: رضا حاج عبدالرشید
-                                                        </div>
-
-                                                    </div>
-
-                                                    <ul>
-
-                                                        <li>
-                                                            <div class="person childless">
-                                                                ابراهیم
-                                                            </div>
-                                                        </li>
-
-                                                        <li>
-                                                            <div class="person childless">
-                                                                ریحانه
-                                                            </div>
-                                                        </li>
-
-                                                    </ul>
-
-                                                </li>
-
-                                            </ul>
-
-                                        </li>
-
-                                    </ul>
-
-                                </div>
-
-                            </li>
-
-
-                            <!-- ================================================= -->
-                            <!-- SECOND WIFE -->
-                            <!-- ================================================= -->
-
-                            <li>
-
-                                <div class="family">
-
-                                    <div class="spouse">
-                                        همسر دوم: خیر محمد زائر عبدالرشید
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">مریلا</div>
+                                        </div>
                                     </div>
 
                                 </div>
+                            </div>
 
+                        </div>
 
-                                <ul>
 
+                        <div class="family">
+                            <div class="person-box">
+                                <div class="person-name">فاطمه</div>
+                            </div>
+                        </div>
 
-                                    <!-- ================= AMIR ================= -->
 
-                                    <li>
-
-                                        <div class="family">
-
-                                            <div
-                                                class="person"
-                                                onclick="toggleNode(this)"
-                                            >
-
-                                                <span class="toggle"></span>
-
-                                                امیر
-
-                                            </div>
-
-                                            <div class="spouse">
-                                                همسر: مهین حاج محمد
-                                            </div>
-
-                                        </div>
-
-                                        <ul>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        صدیقه
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: منصور محمدعلی زائرعباس
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            محمدعلی
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            ژاله
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-
-                                                        <div class="family">
-
-                                                            <div class="person childless">
-                                                                یکتا
-                                                            </div>
-
-                                                            <div class="spouse">
-                                                                همسر: علی جبرئیل
-                                                            </div>
-
-                                                        </div>
-
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div class="person childless">
-                                                        صادق
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: فریده احمد
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            کاملیا
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div class="person childless">
-                                                        صمد
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: زهرا محمدعلی زائرعباس
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            نیلوفر
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            مریلا
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-                                                <div class="person childless">
-                                                    فاطمه
-                                                </div>
-                                            </li>
-
-                                            <li>
-                                                <div class="person childless">
-                                                    مریم
-                                                </div>
-                                            </li>
-
-                                        </ul>
-
-                                    </li>
-
-
-                                    <!-- ================= AHMAD ================= -->
-
-                                    <li>
-
-                                        <div class="family">
-
-                                            <div
-                                                class="person"
-                                                onclick="toggleNode(this)"
-                                            >
-
-                                                <span class="toggle"></span>
-
-                                                احمد
-
-                                            </div>
-
-                                            <div class="spouse">
-                                                همسر: شیرین حاج عبدالرشید
-                                            </div>
-
-                                        </div>
-
-                                        <ul>
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        فریده
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: صادق
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            کاملیا
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        فجر
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: فاطمه
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            باران
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        غلامحسین
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: سمیه عبدالکریم
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            لیانا
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div class="person childless">
-                                                        فیض
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: سمیه اسپرغم
-                                                    </div>
-
-                                                </div>
-
-                                            </li>
-
-
-                                            <li>
-                                                <div class="person childless">
-                                                    پدرام
-                                                </div>
-                                            </li>
-
-                                        </ul>
-
-                                    </li>
-
-
-                                    <!-- ================= NASER ================= -->
-
-                                    <li>
-
-                                        <div class="family">
-
-                                            <div
-                                                class="person"
-                                                onclick="toggleNode(this)"
-                                            >
-
-                                                <span class="toggle"></span>
-
-                                                ناصر
-
-                                            </div>
-
-                                            <div class="spouse">
-                                                همسر اول: سکینه رحمت
-                                            </div>
-
-                                            <div class="spouse">
-                                                همسر دوم: مریم غلامی
-                                            </div>
-
-                                        </div>
-
-                                        <ul>
-
-
-                                            <!-- first wife children -->
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        ساجد
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: فاطمه حسین معلی
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            شاهرخ
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            سما
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        محمد
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: فاطمه
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            ناصر
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        سعید
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: مریم جعفری
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            ابراهیم
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            ناصر
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div class="person childless">
-                                                        حسین
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: هما یوسف نوشاد
-                                                    </div>
-
-                                                </div>
-
-                                            </li>
-
-
-                                            <li>
-                                                <div class="person childless">
-                                                    علی
-                                                </div>
-                                            </li>
-
-
-                                            <!-- second wife -->
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        فاطمه
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: محمد
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            هیراد
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            آراد
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-                                                <div class="person childless">
-                                                    ابوالفضل
-                                                </div>
-                                            </li>
-
-                                        </ul>
-
-                                    </li>
-
-
-                                    <!-- ================= BEGOM ================= -->
-
-                                    <li>
-
-                                        <div class="family">
-
-                                            <div
-                                                class="person"
-                                                onclick="toggleNode(this)"
-                                            >
-
-                                                <span class="toggle"></span>
-
-                                                بگم
-
-                                            </div>
-
-                                            <div class="spouse">
-                                                همسر: محمدعلی عبدالله
-                                            </div>
-
-                                        </div>
-
-                                        <ul>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div class="person childless">
-                                                        فاطمه
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: غلامحسین علی مصطفی
-                                                    </div>
-
-                                                </div>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        عبدالمجید
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: حکیمه جعفری
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            علی
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            ماهان
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-
-                                                        <div class="family">
-
-                                                            <div class="person childless">
-                                                                مهرداد
-                                                            </div>
-
-                                                            <div class="spouse">
-                                                                همسر: زهرا موسی
-                                                            </div>
-
-                                                        </div>
-
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        عیسی
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: زبیده جعفر
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            مهدی
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            محمد
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        سکینه
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: غلامرضا نوربخش
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            امیرحسین
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            عرفان
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-
-                                                        <div class="family">
-
-                                                            <div class="person childless">
-                                                                یلدا
-                                                            </div>
-
-                                                            <div class="spouse">
-                                                                همسر: خشایار بهادر
-                                                            </div>
-
-                                                        </div>
-
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-                                                <div class="person childless">
-                                                    خدیجه
-                                                </div>
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        موسی
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: مریم نوربخش
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            هادی
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-
-                                                        <div class="family">
-
-                                                            <div class="person childless">
-                                                                زهرا
-                                                            </div>
-
-                                                            <div class="spouse">
-                                                                همسر: مهرداد عبدالله
-                                                            </div>
-
-                                                        </div>
-
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        راضیه
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: حسین نوربخش
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            ابوالفضل
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            علی‌اصغر
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        روح‌الله
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: فاطمه
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            محمدعلی
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-                                        </ul>
-
-                                    </li>
-
-
-                                    <!-- ================= SOGOL ================= -->
-
-                                    <li>
-
-                                        <div class="family">
-
-                                            <div
-                                                class="person"
-                                                onclick="toggleNode(this)"
-                                            >
-
-                                                <span class="toggle"></span>
-
-                                                سوگل
-
-                                            </div>
-
-                                            <div class="spouse">
-                                                همسر: حسین علی‌اکبر
-                                            </div>
-
-                                        </div>
-
-                                        <ul>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        غلامرضا
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: زینت معلی مصطفی
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-
-                                                        <div class="family">
-
-                                                            <div
-                                                                class="person"
-                                                                onclick="toggleNode(this)"
-                                                            >
-
-                                                                <span class="toggle"></span>
-
-                                                                مهران
-
-                                                            </div>
-
-                                                            <div class="spouse">
-                                                                همسر: زینب ترازویی
-                                                            </div>
-
-                                                        </div>
-
-                                                        <ul>
-
-                                                            <li>
-                                                                <div class="person childless">
-                                                                    لیا
-                                                                </div>
-                                                            </li>
-
-                                                        </ul>
-
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        علی
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: شیرین قاسم
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            حسین
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            حسن
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            سوسن
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            پوران
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        طالب
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: رباب
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            شاهرخ
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            شاهین
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        عابد
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: صفیحه رحیم ارمات
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            امیرارسلان
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            نازگل
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div class="person childless">
-                                                        فاطمه
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: اسماعیل بزرگ
-                                                    </div>
-
-                                                </div>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        گلبهار
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: داریوش عبدالرسول
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-
-                                                        <div class="family">
-
-                                                            <div
-                                                                class="person"
-                                                                onclick="toggleNode(this)"
-                                                            >
-
-                                                                <span class="toggle"></span>
-
-                                                                ازیتا
-
-                                                            </div>
-
-                                                            <div class="spouse">
-                                                                همسر: مهدی عبدالکریم
-                                                            </div>
-
-                                                        </div>
-
-                                                        <ul>
-
-                                                            <li>
-                                                                <div class="person childless">
-                                                                    گلبهار
-                                                                </div>
-                                                            </li>
-
-                                                            <li>
-                                                                <div class="person childless">
-                                                                    گلسا
-                                                                </div>
-                                                            </li>
-
-                                                        </ul>
-
-                                                    </li>
-
-
-                                                    <li>
-
-                                                        <div class="family">
-
-                                                            <div class="person childless">
-                                                                عزیزه
-                                                            </div>
-
-                                                            <div class="spouse">
-                                                                همسر: علی عبدالجبار
-                                                            </div>
-
-                                                        </div>
-
-                                                        <ul>
-
-                                                            <li>
-                                                                <div class="person childless">
-                                                                    داریوش
-                                                                </div>
-                                                            </li>
-
-                                                            <li>
-                                                                <div class="person childless">
-                                                                    حسین
-                                                                </div>
-                                                            </li>
-
-                                                        </ul>
-
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-                                        </ul>
-
-                                    </li>
-
-
-                                    <!-- ================= MANIJEH ================= -->
-
-                                    <li>
-
-                                        <div class="family">
-
-                                            <div
-                                                class="person"
-                                                onclick="toggleNode(this)"
-                                            >
-
-                                                <span class="toggle"></span>
-
-                                                منیجه
-
-                                            </div>
-
-                                            <div class="spouse">
-                                                همسر: جعفر حاج عبدالرشید
-                                            </div>
-
-                                        </div>
-
-                                        <ul>
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        علی
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: فاطمه
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            امیرحسین
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            احسان
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        زبیده
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: عیسی محمدعلی
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            مهدی
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            محمد
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-                                        </ul>
-
-                                    </li>
-
-
-                                    <!-- ================= HALIMEH ================= -->
-
-                                    <li>
-
-                                        <div class="family">
-
-                                            <div
-                                                class="person"
-                                                onclick="toggleNode(this)"
-                                            >
-
-                                                <span class="toggle"></span>
-
-                                                حلیمه
-
-                                            </div>
-
-                                            <div class="spouse">
-                                                همسر: خدابخش حاج جعفر عباس
-                                            </div>
-
-                                        </div>
-
-                                        <ul>
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        مژگان
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: پرویز قاسم
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            کوثر
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-
-                                                <div class="family">
-
-                                                    <div
-                                                        class="person"
-                                                        onclick="toggleNode(this)"
-                                                    >
-
-                                                        <span class="toggle"></span>
-
-                                                        فاطمه
-
-                                                    </div>
-
-                                                    <div class="spouse">
-                                                        همسر: فجر احمد
-                                                    </div>
-
-                                                </div>
-
-                                                <ul>
-
-                                                    <li>
-                                                        <div class="person childless">
-                                                            باران
-                                                        </div>
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-
-                                            <li>
-                                                <div class="person childless">
-                                                    عباس
-                                                </div>
-                                            </li>
-
-                                        </ul>
-
-                                    </li>
-
-                                </ul>
-
-                            </li>
-
-                        </ul>
+                        <div class="family">
+                            <div class="person-box">
+                                <div class="person-name">مریم</div>
+                            </div>
+                        </div>
 
                     </div>
 
-                </li>
+                </div>
 
-            </ul>
+            </div>
+
+
+            <!-- احمد -->
+            <div class="family">
+
+                <div class="person-box has-children" onclick="toggleChildren(this)">
+                    <div class="person-name">احمد</div>
+                    <div class="gender">همسر: شیرین حاج عبدالرشید</div>
+                </div>
+
+                <div class="children">
+
+                    <div class="family-list">
+
+                        <div class="family">
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">فریده</div>
+                                <div class="gender">همسر: صادق</div>
+                            </div>
+
+                            <div class="children">
+                                <div class="family-list">
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">کاملیا</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="family">
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">فجر</div>
+                                <div class="gender">همسر: فاطمه</div>
+                            </div>
+
+                            <div class="children">
+                                <div class="family-list">
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">باران</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="family">
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">غلامحسین</div>
+                                <div class="gender">همسر: سمیه عبدالکریم</div>
+                            </div>
+
+                            <div class="children">
+                                <div class="family-list">
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">لیانا</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="family">
+                            <div class="person-box">
+                                <div class="person-name">فیض</div>
+                                <div class="gender">همسر: سمیه اسپرغم</div>
+                            </div>
+                        </div>
+
+
+                        <div class="family">
+                            <div class="person-box">
+                                <div class="person-name">پدرام</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ناصر -->
+            <div class="family">
+
+                <div class="person-box has-children" onclick="toggleChildren(this)">
+                    <div class="person-name">ناصر</div>
+                    <div class="gender">همسر اول: سکینه رحمت<br>همسر دوم: مریم غلامی</div>
+                </div>
+
+                <div class="children">
+
+                    <!-- ازدواج اول -->
+                    <div class="spouse">
+                        💍 فرزندان از همسر اول: سکینه رحمت
+                    </div>
+
+                    <div class="family-list">
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">ساجد</div>
+                                <div class="gender">همسر: فاطمه حسین معلی</div>
+                            </div>
+
+                            <div class="children">
+                                <div class="family-list">
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">شاهرخ</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">سما</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">محمد</div>
+                                <div class="gender">همسر: فاطمه</div>
+                            </div>
+
+                            <div class="children">
+                                <div class="family-list">
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">ناصر</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">سعید</div>
+                                <div class="gender">همسر: مریم جعفری</div>
+                            </div>
+
+                            <div class="children">
+                                <div class="family-list">
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">ابراهیم</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">ناصر</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box">
+                                <div class="person-name">حسین</div>
+                                <div class="gender">همسر: هما یوسف نوشاد</div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box">
+                                <div class="person-name">علی</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ازدواج دوم -->
+                    <div class="spouse" style="margin-top:20px;">
+                        💍 فرزندان از همسر دوم: مریم غلامی
+                    </div>
+
+                    <div class="family-list">
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">فاطمه</div>
+                                <div class="gender">همسر: محمد</div>
+                            </div>
+
+                            <div class="children">
+                                <div class="family-list">
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">هیراد</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">آراد</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box">
+                                <div class="person-name">ابوالفضل</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- بگم -->
+            <div class="family">
+
+                <div class="person-box has-children" onclick="toggleChildren(this)">
+                    <div class="person-name">بگم</div>
+                    <div class="gender">همسر: محمدعلی عبدالله</div>
+                </div>
+
+                <div class="children">
+
+                    <div class="family-list">
+
+                        <div class="family">
+
+                            <div class="person-box">
+                                <div class="person-name">فاطمه</div>
+                                <div class="gender">همسر: غلامحسین علی مصطفی</div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">عبدالمجید</div>
+                                <div class="gender">همسر: حکیمه جعفری</div>
+                            </div>
+
+                            <div class="children">
+
+                                <div class="family-list">
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">علی</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">ماهان</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">مهرداد</div>
+                                            <div class="gender">همسر: زهرا موسی</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">عیسی</div>
+                                <div class="gender">همسر: زبیده جعفر</div>
+                            </div>
+
+                            <div class="children">
+
+                                <div class="family-list">
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">مهدی</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">محمد</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">سکینه</div>
+                                <div class="gender">همسر: غلامرضا نوربخش</div>
+                            </div>
+
+                            <div class="children">
+
+                                <div class="family-list">
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">امیرحسین</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">عرفان</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">یلدا</div>
+                                            <div class="gender">همسر: خشایار بهادر</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box">
+                                <div class="person-name">خدیجه</div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">موسی</div>
+                                <div class="gender">همسر: مریم نوربخش</div>
+                            </div>
+
+                            <div class="children">
+
+                                <div class="family-list">
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">هادی</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">زهرا</div>
+                                            <div class="gender">همسر: مهرداد عبدالله</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">راضیه</div>
+                                <div class="gender">همسر: حسین نوربخش</div>
+                            </div>
+
+                            <div class="children">
+
+                                <div class="family-list">
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">ابوالفضل</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">علی‌اصغر</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">روح‌الله</div>
+                                <div class="gender">همسر: فاطمه</div>
+                            </div>
+
+                            <div class="children">
+
+                                <div class="family-list">
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">محمدعلی</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- سوگل -->
+            <div class="family">
+
+                <div class="person-box has-children" onclick="toggleChildren(this)">
+                    <div class="person-name">سوگل</div>
+                    <div class="gender">همسر: حسین علی‌اکبر</div>
+                </div>
+
+                <div class="children">
+
+                    <div class="family-list">
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">غلامرضا</div>
+                                <div class="gender">همسر: زینت معلی مصطفی</div>
+                            </div>
+
+                            <div class="children">
+                                <div class="family-list">
+
+                                    <div class="family">
+                                        <div class="person-box has-children" onclick="toggleChildren(this)">
+                                            <div class="person-name">مهران</div>
+                                            <div class="gender">همسر: زینب ترازویی</div>
+                                        </div>
+
+                                        <div class="children">
+                                            <div class="family-list">
+                                                <div class="family">
+                                                    <div class="person-box">
+                                                        <div class="person-name">لیا</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">علی</div>
+                                <div class="gender">همسر: شیرین قاسم</div>
+                            </div>
+
+                            <div class="children">
+
+                                <div class="family-list">
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">حسین</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">حسن</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">سوسن</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">پوران</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">طالب</div>
+                                <div class="gender">همسر: رباب</div>
+                            </div>
+
+                            <div class="children">
+
+                                <div class="family-list">
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">شاهرخ</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">شاهین</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">عابد</div>
+                                <div class="gender">همسر: صفیحه رحیم ارمات</div>
+                            </div>
+
+                            <div class="children">
+
+                                <div class="family-list">
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">امیرارسلان</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">نازگل</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box">
+                                <div class="person-name">فاطمه</div>
+                                <div class="gender">همسر: اسماعیل بزرگ</div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">گلبهار</div>
+                                <div class="gender">همسر: داریوش عبدالرسول</div>
+                            </div>
+
+                            <div class="children">
+
+                                <div class="family-list">
+
+                                    <div class="family">
+
+                                        <div class="person-box has-children" onclick="toggleChildren(this)">
+                                            <div class="person-name">ازیتا</div>
+                                            <div class="gender">همسر: مهدی عبدالکریم</div>
+                                        </div>
+
+                                        <div class="children">
+
+                                            <div class="family-list">
+
+                                                <div class="family">
+                                                    <div class="person-box">
+                                                        <div class="person-name">گلبهار</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="family">
+                                                    <div class="person-box">
+                                                        <div class="person-name">گلسا</div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="family">
+
+                                        <div class="person-box has-children" onclick="toggleChildren(this)">
+                                            <div class="person-name">عزیزه</div>
+                                            <div class="gender">همسر: علی عبدالجبار</div>
+                                        </div>
+
+                                        <div class="children">
+
+                                            <div class="family-list">
+
+                                                <div class="family">
+                                                    <div class="person-box">
+                                                        <div class="person-name">داریوش</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="family">
+                                                    <div class="person-box">
+                                                        <div class="person-name">حسین</div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- منیجه -->
+            <div class="family">
+
+                <div class="person-box has-children" onclick="toggleChildren(this)">
+                    <div class="person-name">منیجه</div>
+                    <div class="gender">همسر: جعفر حاج عبدالرشید</div>
+                </div>
+
+                <div class="children">
+
+                    <div class="family-list">
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">علی</div>
+                                <div class="gender">همسر: فاطمه</div>
+                            </div>
+
+                            <div class="children">
+
+                                <div class="family-list">
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">امیرحسین</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">احسان</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">زبیده</div>
+                                <div class="gender">همسر: عیسی محمدعلی</div>
+                            </div>
+
+                            <div class="children">
+
+                                <div class="family-list">
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">مهدی</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">محمد</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- حلیمه -->
+            <div class="family">
+
+                <div class="person-box has-children" onclick="toggleChildren(this)">
+                    <div class="person-name">حلیمه</div>
+                    <div class="gender">همسر: خدابخش حاج جعفر عباس</div>
+                </div>
+
+                <div class="children">
+
+                    <div class="family-list">
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">مژگان</div>
+                                <div class="gender">همسر: پرویز قاسم</div>
+                            </div>
+
+                            <div class="children">
+
+                                <div class="family-list">
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">کوثر</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box has-children" onclick="toggleChildren(this)">
+                                <div class="person-name">فاطمه</div>
+                                <div class="gender">همسر: فجر احمد</div>
+                            </div>
+
+                            <div class="children">
+
+                                <div class="family-list">
+
+                                    <div class="family">
+                                        <div class="person-box">
+                                            <div class="person-name">باران</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="family">
+
+                            <div class="person-box">
+                                <div class="person-name">عباس</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
     </div>
 
+</div>
 
-    <!-- BACK -->
+</div>
 
-    <div class="back-area">
+</div>
 
-        <a
-            href="index.html"
-            class="back-link"
-        >
-            ← بازگشت به صفحه خاندان‌ها
-        </a>
+</div>
 
-    </div>
+<div class="legend">
+    <span>👤 شخص</span>
+    <span>💍 همسر</span>
+    <span>👶 فرزند</span>
+    <span>برای باز و بسته کردن شاخه روی فرد کلیک کنید</span>
+</div>
 
-</main>
-
-
-<footer>
-
-    شجره‌نامه مردم قباکلکی
-
-</footer>
-
-
-<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
-/*
-    باز و بسته کردن یک شاخه
-*/
+let scale = 1;
 
-function toggleNode(element) {
+function zoomIn(){
+    scale += 0.1;
+    if(scale > 1.8) scale = 1.8;
+    applyZoom();
+}
 
-    const li = element.closest("li");
+function zoomOut(){
+    scale -= 0.1;
+    if(scale < 0.4) scale = 0.4;
+    applyZoom();
+}
 
-    if (!li) {
-        return;
-    }
+function resetZoom(){
+    scale = 1;
+    applyZoom();
+}
 
-    const children = li.querySelector(":scope > ul");
-
-    if (!children) {
-        return;
-    }
-
-    li.classList.toggle("collapsed");
-
+function applyZoom(){
+    document.getElementById("tree").style.transform =
+        "scale(" + scale + ")";
 }
 
 
-/*
-    باز کردن تمام شاخه‌ها
-*/
+/* باز و بسته کردن شاخه */
+function toggleChildren(element){
 
-function expandAll() {
+    const family = element.closest(".family");
 
-    document
-        .querySelectorAll(".tree li")
-        .forEach(function(li) {
+    if(!family) return;
 
-            li.classList.remove("collapsed");
+    const children = family.querySelector(":scope > .children");
 
-        });
+    if(!children) return;
 
+    children.classList.toggle("hidden");
+    family.classList.toggle("collapsed");
 }
 
 
-/*
-    بستن تمام شاخه‌ها
+/* باز کردن همه */
+function expandAll(){
 
-    ریشه را باز نگه می‌داریم
-*/
-
-function collapseAll() {
-
-    document
-        .querySelectorAll(".tree li")
-        .forEach(function(li) {
-
-            if (li.querySelector(":scope > ul")) {
-                li.classList.add("collapsed");
-            }
-
-        });
-
-    const root = document.querySelector(".person.root");
-
-    if (root) {
-
-        const rootLi = root.closest("li");
-
-        if (rootLi) {
-            rootLi.classList.remove("collapsed");
-        }
-
-    }
-
-}
-
-
-/*
-    جستجوی نام
-*/
-
-const searchInput = document.getElementById("search");
-
-searchInput.addEventListener("input", function() {
-
-    const value =
-        this.value
-            .trim()
-            .toLowerCase();
-
-    const persons =
-        document.querySelectorAll(".person");
-
-    persons.forEach(function(person) {
-
-        person.classList.remove("search-match");
-        person.parentElement.parentElement?.classList.remove("hidden-search");
-
+    document.querySelectorAll(".children").forEach(function(el){
+        el.classList.remove("hidden");
     });
 
-
-    if (!value) {
-
-        return;
-
-    }
+    document.querySelectorAll(".family").forEach(function(el){
+        el.classList.remove("collapsed");
+    });
+}
 
 
-    let firstMatch = null;
+/* بستن شاخه‌ها */
+function collapseAll(){
 
-
-    persons.forEach(function(person) {
-
-        const name =
-            person.textContent
-                .replace("−", "")
-                .replace("+", "")
-                .trim()
-                .toLowerCase();
-
-        if (name.includes(value)) {
-
-            person.classList.add("search-match");
-
-            if (!firstMatch) {
-                firstMatch = person;
-            }
-
-            /*
-                تمام والدین را باز می‌کنیم
-            */
-
-            let current = person.closest("li");
-
-            while (current) {
-
-                current.classList.remove("collapsed");
-
-                current =
-                    current.parentElement
-                        ?.closest("li");
-
-            }
-
-        }
-
+    document.querySelectorAll(".children").forEach(function(el){
+        el.classList.add("hidden");
     });
 
+    document.querySelectorAll(".family").forEach(function(el){
+        if(el.querySelector(":scope > .children")){
+            el.classList.add("collapsed");
+        }
+    });
+}
 
-    if (firstMatch) {
 
-        setTimeout(function() {
+/* جستجو */
+const searchBox = document.getElementById("search");
 
-            firstMatch.scrollIntoView({
-                behavior: "smooth",
-                block: "center",
-                inline: "center"
+searchBox.addEventListener("input", function(){
+
+    const value = this.value.trim();
+
+    document.querySelectorAll(".person-box").forEach(function(box){
+        box.classList.remove("highlight");
+    });
+
+    if(!value) return;
+
+    const boxes = document.querySelectorAll(".person-box");
+
+    for(let box of boxes){
+
+        const name = box.innerText;
+
+        if(name.includes(value)){
+
+            /* والدهای این شخص را باز کن */
+            let family = box.closest(".family");
+
+            while(family){
+
+                const parentChildren =
+                    family.parentElement?.closest(".family")?.querySelector(":scope > .children");
+
+                if(parentChildren){
+                    parentChildren.classList.remove("hidden");
+                }
+
+                family =
+                    family.parentElement?.closest(".family");
+            }
+
+            box.classList.add("highlight");
+
+            box.scrollIntoView({
+                behavior:"smooth",
+                block:"center",
+                inline:"center"
             });
 
-        }, 100);
-
+            break;
+        }
     }
-
-});
-
-
-/*
-    وقتی صفحه باز می‌شود،
-    شاخه‌های عمیق‌تر بسته هستند تا صفحه شلوغ نشود.
-*/
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    /*
-        ابتدا همه را باز می‌کنیم
-        تا ساختار اولیه کامل باشد.
-    */
-
-    expandAll();
 
 });
 
 </script>
 
 </body>
-                                                          </html>
+                            </html>
