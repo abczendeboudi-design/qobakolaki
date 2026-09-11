@@ -1,734 +1,200 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>شجره‌نامه خاندان</title>
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-
-            font-family:
-                Tahoma,
-                Arial,
-                sans-serif;
-
-            background: #f3f7f4;
-
-            color: #173c29;
-        }
-
-
-        /* -------------------------
-           Header
-        ------------------------- */
-
-        header {
-
-            background: #124b30;
-
-            color: white;
-
-            padding: 18px 15px;
-
-            text-align: center;
-
-            position: sticky;
-
-            top: 0;
-
-            z-index: 20;
-
-            box-shadow:
-                0 3px 15px
-                rgba(0, 0, 0, 0.12);
-        }
-
-
-        header h1 {
-
-            margin: 0;
-
-            font-size: 22px;
-
-        }
-
-
-        /* -------------------------
-           Main
-        ------------------------- */
-
-        main {
-
-            width: min(1200px, 95%);
-
-            margin: 25px auto 50px;
-
-        }
-
-
-        .page-title {
-
-            text-align: center;
-
-            margin-bottom: 25px;
-
-        }
-
-
-        .page-title h2 {
-
-            margin: 0 0 10px;
-
-            font-size: 28px;
-
-            color: #125b38;
-
-        }
-
-
-        .page-title p {
-
-            margin: 0;
-
-            color: #66776d;
-
-            line-height: 1.9;
-
-        }
-
-
-        /* -------------------------
-           Book image box
-        ------------------------- */
-
-        .book-box {
-
-            background: white;
-
-            border-radius: 20px;
-
-            padding: 15px;
-
-            box-shadow:
-                0 8px 30px
-                rgba(0, 0, 0, 0.09);
-
-            border:
-                1px solid #dce8df;
-
-            text-align: center;
-
-        }
-
-
-        .book-label {
-
-            display: inline-block;
-
-            background: #e9f4ed;
-
-            color: #146039;
-
-            padding: 8px 15px;
-
-            border-radius: 50px;
-
-            font-size: 14px;
-
-            margin-bottom: 15px;
-
-        }
-
-
-        /*
-         * خود تصویر داخل لینک قرار گرفته
-         * بنابراین با لمس تصویر وارد
-         * شجره دیجیتال می‌شویم.
-         */
-
-        .book-image-link {
-
-            display: block;
-
-            cursor: pointer;
-
-            text-decoration: none;
-
-        }
-
-
-        .book-image {
-
-            display: block;
-
-            width: 100%;
-
-            height: auto;
-
-            max-height: 85vh;
-
-            object-fit: contain;
-
-            margin: 0 auto;
-
-            border-radius: 10px;
-
-            box-shadow:
-                0 3px 18px
-                rgba(0, 0, 0, 0.15);
-
-            transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
-
-        }
-
-
-        .book-image-link:hover .book-image {
-
-            transform: scale(1.01);
-
-            box-shadow:
-                0 7px 25px
-                rgba(0, 0, 0, 0.20);
-
-        }
-
-
-        .click-message {
-
-            margin: 16px 0 5px;
-
-            color: #12613b;
-
-            font-weight: bold;
-
-            font-size: 16px;
-
-        }
-
-
-        .click-subtitle {
-
-            margin: 0;
-
-            color: #7a877e;
-
-            font-size: 13px;
-
-        }
-
-
-        /* -------------------------
-           Buttons
-        ------------------------- */
-
-        .actions {
-
-            display: flex;
-
-            justify-content: center;
-
-            gap: 10px;
-
-            flex-wrap: wrap;
-
-            margin-top: 25px;
-
-        }
-
-
-        .btn {
-
-            border: none;
-
-            text-decoration: none;
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            padding: 12px 22px;
-
-            border-radius: 11px;
-
-            font-family: inherit;
-
-            font-size: 14px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            transition: 0.2s;
-
-        }
-
-
-        .btn-primary {
-
-            background: #12613b;
-
-            color: white;
-
-        }
-
-
-        .btn-primary:hover {
-
-            background: #0d482c;
-
-            transform: translateY(-2px);
-
-        }
-
-
-        .btn-secondary {
-
-            background: #e5eee8;
-
-            color: #185536;
-
-        }
-
-
-        .btn-secondary:hover {
-
-            background: #d7e6dc;
-
-        }
-
-
-        /* -------------------------
-           Information
-        ------------------------- */
-
-        .info-box {
-
-            background: #fffdf6;
-
-            border:
-
-                1px solid #eadfbd;
-
-            border-radius: 15px;
-
-            padding: 18px;
-
-            margin-top: 25px;
-
-            line-height: 2;
-
-            color: #625b45;
-
-            font-size: 14px;
-
-        }
-
-
-        .info-box strong {
-
-            color: #554b2f;
-
-        }
-
-
-        /* -------------------------
-           Footer
-        ------------------------- */
-
-        footer {
-
-            background: #103d28;
-
-            color: white;
-
-            text-align: center;
-
-            padding: 25px 15px;
-
-            font-size: 13px;
-
-        }
-
-
-        /* -------------------------
-           Mobile
-        ------------------------- */
-
-        @media (max-width: 600px) {
-
-            header h1 {
-
-                font-size: 18px;
-
-            }
-
-
-            main {
-
-                width: 94%;
-
-                margin-top: 18px;
-
-            }
-
-
-            .page-title h2 {
-
-                font-size: 22px;
-
-            }
-
-
-            .page-title p {
-
-                font-size: 14px;
-
-            }
-
-
-            .book-box {
-
-                padding: 8px;
-
-                border-radius: 14px;
-
-            }
-
-
-            .book-image {
-
-                border-radius: 7px;
-
-            }
-
-
-            .click-message {
-
-                font-size: 14px;
-
-            }
-
-
-            .btn {
-
-                width: 100%;
-
-            }
-
-        }
-
-
-        /* -------------------------
-           Print
-        ------------------------- */
-
-        @media print {
-
-            header,
-            .actions,
-            .info-box,
-            footer,
-            .click-message,
-            .click-subtitle,
-            .book-label {
-
-                display: none !important;
-
-            }
-
-
-            body {
-
-                background: white;
-
-            }
-
-
-            main {
-
-                width: 100%;
-
-                margin: 0;
-
-            }
-
-
-            .book-box {
-
-                box-shadow: none;
-
-                border: none;
-
-                padding: 0;
-
-            }
-
-
-            .book-image {
-
-                max-height: none;
-
-                box-shadow: none;
-
-            }
-
-        }
-
-    </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>شجره‌نامه</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f5f1e8;
+      color: #24352a;
+    }
+
+    header {
+      background: #315b42;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 25px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 10px;
+      color: white;
+      text-decoration: none;
+      background: rgba(255,255,255,0.15);
+      padding: 9px 16px;
+      border-radius: 10px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+
+    .description {
+      background: white;
+      border-radius: 15px;
+      padding: 18px;
+      margin-bottom: 20px;
+      text-align: center;
+      border: 1px solid #ddd4c5;
+    }
+
+    .scan-box {
+      background: white;
+      padding: 15px;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .scan-box a {
+      display: block;
+      cursor: zoom-in;
+    }
+
+    .scan-box img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 85vh;
+      object-fit: contain;
+      margin: auto;
+      border-radius: 8px;
+    }
+
+    .digital-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 24px;
+      background: #315b42;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: bold;
+    }
+
+    .error {
+      background: #fff0f0;
+      border: 1px solid #e0aaaa;
+      color: #8b3030;
+      padding: 20px;
+      border-radius: 12px;
+      line-height: 2;
+    }
+  </style>
 </head>
-
 
 <body>
 
-
 <header>
-
-    <h1 id="headerTitle">
-        شجره‌نامه قباکلکی
-    </h1>
-
+  <h1 id="pageTitle">شجره‌نامه</h1>
+  <a class="back" href="index.html">بازگشت به صفحه اصلی</a>
 </header>
-
-
 
 <main>
 
-
-    <section class="page-title">
-
-        <h2 id="familyTitle">
-            خاندان غلامحسین قاسم زائر غلامحسین
-        </h2>
-
-        <p>
-            تصویر شجره‌نامه از کتاب
-        </p>
-
-    </section>
-
-
-
-    <section class="book-box">
-
-
-        <div class="book-label">
-
-            سند تصویری شجره‌نامه
-
-        </div>
-
-
-        <!--
-            با کلیک روی عکس، وارد family.html می‌شویم.
-        -->
-
-        <a
-            id="imageLink"
-            class="book-image-link"
-            href="family.html?family=gholamhossein-qasem"
-            title="ورود به شجره دیجیتال"
-        >
-
-            <img
-                id="genealogyImage"
-                class="book-image"
-                src="images/genealogy/gholamhossein-qasem.png"
-                alt="تصویر شجره‌نامه خاندان غلامحسین قاسم زائر غلامحسین"
-            >
-
-            <p class="click-message">
-                👆 برای ورود به شجره دیجیتال روی تصویر بزنید
-            </p>
-
-            <p class="click-subtitle">
-                مشاهده اعضای خانواده، نسل‌ها و روابط خانوادگی
-            </p>
-
-        </a>
-
-
-
-        <div class="actions">
-
-
-            <a
-                id="enterButton"
-                class="btn btn-primary"
-                href="family.html?family=gholamhossein-qasem"
-            >
-                ورود به شجره دیجیتال
-            </a>
-
-
-            <a
-                href="index.html"
-                class="btn btn-secondary"
-            >
-                بازگشت به خاندان‌ها
-            </a>
-
-
-            <button
-                class="btn btn-secondary"
-                onclick="window.print()"
-            >
-                🖨 چاپ تصویر
-            </button>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <div class="info-box">
-
-        <strong>
-            نکته:
-        </strong>
-
-        تصویر بالا همان تصویر کتاب است و قرار نیست
-        اطلاعات تاریخی آن با طراحی سایت جایگزین شود.
-        در مرحله بعد، شجره دیجیتال اعضای خاندان جداگانه
-        ساخته می‌شود و اطلاعات افراد به‌صورت قابل کلیک
-        نمایش داده خواهد شد.
-
-    </div>
-
+  <div id="content"></div>
 
 </main>
 
-
-
-<footer>
-
-    شجره‌نامه مردم قباکلکی
-
-</footer>
-
-
-
-<!--
-    اطلاعات خاندان‌ها از فایل مرکزی خوانده می‌شود.
-    این فایل باعث می‌شود در آینده اضافه کردن
-    خاندان‌های دیگر بسیار ساده باشد.
--->
-
 <script src="data/families.js"></script>
 
-
-
 <script>
+  const params = new URLSearchParams(window.location.search);
+  const familyId = params.get("family");
 
-    /*
-     * خواندن خاندان انتخاب‌شده از آدرس صفحه
-     *
-     * مثال:
-     * genealogy.html?family=gholamhossein-qasem
-     */
+  const content = document.getElementById("content");
+  const pageTitle = document.getElementById("pageTitle");
 
-    const params =
-        new URLSearchParams(window.location.search);
+  const families =
+    window.GENEALOGY_DATA &&
+    Array.isArray(window.GENEALOGY_DATA.families)
+      ? window.GENEALOGY_DATA.families
+      : [];
 
-    const familyId =
-        params.get("family")
-        || "gholamhossein-qasem";
+  const family = families.find(f => f.id === familyId);
 
+  if (!family) {
 
-    /*
-     * پیدا کردن خاندان
-     */
+    content.innerHTML = `
+      <div class="error">
+        شجره‌نامه مورد نظر پیدا نشد.
+        <br>
+        لطفاً از صفحه اصلی دوباره انتخاب کنید.
+      </div>
+    `;
 
-    const family =
-        window.GENEALOGY_DATA &&
-        Array.isArray(window.GENEALOGY_DATA.families)
-            ? window.GENEALOGY_DATA.families.find(
-                item => item.id === familyId
-            )
-            : null;
+  } else {
 
+    pageTitle.textContent = family.name;
 
-    /*
-     * اگر خاندان در فایل اطلاعات وجود داشت،
-     * اطلاعات صفحه را از همان‌جا بخوان.
-     */
+    content.innerHTML = `
 
-    if (family) {
+      <div class="description">
+        <strong>${family.name}</strong>
+        <br>
+        <span>
+          تصویر اصلی شجره‌نامه از نسخه اسکن‌شده کتاب
+        </span>
+      </div>
 
-        document.title =
-            family.name + " | شجره‌نامه قباکلکی";
+      <div class="scan-box">
 
+        <a href="${family.image}" target="_blank">
+          <img
+            src="${family.image}"
+            alt="تصویر شجره‌نامه ${family.name}"
+            onerror="showImageError()"
+          >
+        </a>
 
-        document.getElementById("familyTitle")
-            .textContent =
-            family.name;
+        <div>
+          <a
+            class="digital-button"
+            href="family.html?family=${encodeURIComponent(family.id)}"
+          >
+            مشاهده شجره‌نامه دیجیتال
+          </a>
+        </div>
 
+      </div>
+    `;
+  }
 
-        document.getElementById("headerTitle")
-            .textContent =
-            "شجره‌نامه " + family.name;
+  function showImageError() {
+    const box = document.querySelector(".scan-box");
 
-
-        const image =
-            document.getElementById("genealogyImage");
-
-
-        if (family.scan) {
-
-            image.src =
-                family.scan;
-
-        }
-
-
-        image.alt =
-            "تصویر شجره‌نامه " + family.name;
-
-
-        const familyUrl =
-            "family.html?family=" +
-            encodeURIComponent(family.id);
-
-
-        document.getElementById("imageLink")
-            .href =
-            familyUrl;
-
-
-        document.getElementById("enterButton")
-            .href =
-            familyUrl;
-
+    if (box) {
+      box.innerHTML = `
+        <div class="error">
+          تصویر شجره‌نامه پیدا نشد.
+          <br><br>
+          لطفاً بررسی کن که فایل دقیقاً در این مسیر باشد:
+          <br>
+          <strong>
+            images/genealogy/gholamhossein-qasem.png
+          </strong>
+        </div>
+      `;
     }
-
+  }
 </script>
 
-
 </body>
-
 </html>
