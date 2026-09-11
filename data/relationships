@@ -2,9 +2,9 @@ window.GENEALOGY_DATA = window.GENEALOGY_DATA || {};
 
 window.GENEALOGY_DATA.relationships = [
 
-    /*
-     * رابطه همسران
-     */
+    /* =====================================
+       غلامحسین
+    ===================================== */
 
     {
         type: "spouse",
@@ -12,10 +12,11 @@ window.GENEALOGY_DATA.relationships = [
         person2: "parizad"
     },
 
-
-    /*
-     * رابطه والد و فرزند
-     */
+    {
+        type: "spouse",
+        person1: "gholamhossein-qasem-zayer-gholamhossein",
+        person2: "kheyr-mohammad-zayer-abdolrashid"
+    },
 
     {
         type: "parent",
@@ -29,15 +30,2039 @@ window.GENEALOGY_DATA.relationships = [
         child: "qasem"
     },
 
+    {
+        type: "parent",
+        parent: "gholamhossein-qasem-zayer-gholamhossein",
+        child: "amir"
+    },
 
-    /*
-     * خانواده قاسم و ایران ولی
-     */
+    {
+        type: "parent",
+        parent: "kheyr-mohammad-zayer-abdolrashid",
+        child: "amir"
+    },
+
+    {
+        type: "parent",
+        parent: "gholamhossein-qasem-zayer-gholamhossein",
+        child: "ahmad"
+    },
+
+    {
+        type: "parent",
+        parent: "kheyr-mohammad-zayer-abdolrashid",
+        child: "ahmad"
+    },
+
+    {
+        type: "parent",
+        parent: "gholamhossein-qasem-zayer-gholamhossein",
+        child: "naser"
+    },
+
+    {
+        type: "parent",
+        parent: "kheyr-mohammad-zayer-abdolrashid",
+        child: "naser"
+    },
+
+    {
+        type: "parent",
+        parent: "gholamhossein-qasem-zayer-gholamhossein",
+        child: "begom"
+    },
+
+    {
+        type: "parent",
+        parent: "kheyr-mohammad-zayer-abdolrashid",
+        child: "begom"
+    },
+
+    {
+        type: "parent",
+        parent: "gholamhossein-qasem-zayer-gholamhossein",
+        child: "sogol"
+    },
+
+    {
+        type: "parent",
+        parent: "kheyr-mohammad-zayer-abdolrashid",
+        child: "sogol"
+    },
+
+    {
+        type: "parent",
+        parent: "gholamhossein-qasem-zayer-gholamhossein",
+        child: "manijeh"
+    },
+
+    {
+        type: "parent",
+        parent: "kheyr-mohammad-zayer-abdolrashid",
+        child: "manijeh"
+    },
+
+    {
+        type: "parent",
+        parent: "gholamhossein-qasem-zayer-gholamhossein",
+        child: "halimeh"
+    },
+
+    {
+        type: "parent",
+        parent: "kheyr-mohammad-zayer-abdolrashid",
+        child: "halimeh"
+    },
+
+
+    /* =====================================
+       قاسم و ایران ولی
+    ===================================== */
 
     {
         type: "spouse",
         person1: "qasem",
         person2: "iran-vali"
+    },
+
+    {
+        type: "spouse",
+        person1: "qasem",
+        person2: "sakineh-heydari"
+    },
+
+    {
+        type: "parent",
+        parent: "qasem",
+        child: "asghar"
+    },
+
+    {
+        type: "parent",
+        parent: "iran-vali",
+        child: "asghar"
+    },
+
+    {
+        type: "parent",
+        parent: "qasem",
+        child: "akbar"
+    },
+
+    {
+        type: "parent",
+        parent: "iran-vali",
+        child: "akbar"
+    },
+
+    {
+        type: "parent",
+        parent: "qasem",
+        child: "parviz"
+    },
+
+    {
+        type: "parent",
+        parent: "iran-vali",
+        child: "parviz"
+    },
+
+    {
+        type: "parent",
+        parent: "qasem",
+        child: "jahan-gir"
+    },
+
+    {
+        type: "parent",
+        parent: "iran-vali",
+        child: "jahan-gir"
+    },
+
+    {
+        type: "parent",
+        parent: "qasem",
+        child: "shirin"
+    },
+
+    {
+        type: "parent",
+        parent: "iran-vali",
+        child: "shirin"
+    },
+
+    {
+        type: "parent",
+        parent: "qasem",
+        child: "gholamhossein-qasem-branch"
+    },
+
+    {
+        type: "parent",
+        parent: "iran-vali",
+        child: "gholamhossein-qasem-branch"
+    },
+
+    {
+        type: "parent",
+        parent: "qasem",
+        child: "maryam-qasem"
+    },
+
+    {
+        type: "parent",
+        parent: "iran-vali",
+        child: "maryam-qasem"
+    },
+
+
+    /* =====================================
+       اصغر
+    ===================================== */
+
+    {
+        type: "spouse",
+        person1: "asghar",
+        person2: "hakimeh-haj-mohammad"
+    },
+
+    {
+        type: "parent",
+        parent: "asghar",
+        child: "ali-asghar"
+    },
+
+    {
+        type: "parent",
+        parent: "hakimeh-haj-mohammad",
+        child: "ali-asghar"
+    },
+
+    {
+        type: "parent",
+        parent: "asghar",
+        child: "robbab-asghar"
+    },
+
+    {
+        type: "parent",
+        parent: "hakimeh-haj-mohammad",
+        child: "robbab-asghar"
+    },
+
+    {
+        type: "parent",
+        parent: "asghar",
+        child: "zeynab-asghar"
+    },
+
+    {
+        type: "parent",
+        parent: "hakimeh-haj-mohammad",
+        child: "zeynab-asghar"
+    },
+
+    {
+        type: "spouse",
+        person1: "robbab-asghar",
+        person2: "taleb-bahador"
+    },
+
+    {
+        type: "parent",
+        parent: "robbab-asghar",
+        child: "shahin-robbab-asghar"
+    },
+
+    {
+        type: "parent",
+        parent: "taleb-bahador",
+        child: "shahin-robbab-asghar"
+    },
+
+    {
+        type: "parent",
+        parent: "robbab-asghar",
+        child: "shahrokh-robbab-asghar"
+    },
+
+    {
+        type: "parent",
+        parent: "taleb-bahador",
+        child: "shahrokh-robbab-asghar"
+    },
+
+
+    /* =====================================
+       اکبر
+    ===================================== */
+
+    {
+        type: "spouse",
+        person1: "akbar",
+        person2: "roshan-mish-ali-bahador"
+    },
+
+    {
+        type: "parent",
+        parent: "akbar",
+        child: "ali-akbar"
+    },
+
+    {
+        type: "parent",
+        parent: "roshan-mish-ali-bahador",
+        child: "ali-akbar"
+    },
+
+    {
+        type: "spouse",
+        person1: "ali-akbar",
+        person2: "bahareh-bahador"
+    },
+
+    {
+        type: "parent",
+        parent: "akbar",
+        child: "laleh"
+    },
+
+    {
+        type: "parent",
+        parent: "roshan-mish-ali-bahador",
+        child: "laleh"
+    },
+
+    {
+        type: "spouse",
+        person1: "laleh",
+        person2: "musa-jafar-mish-mohammadali"
+    },
+
+    {
+        type: "parent",
+        parent: "laleh",
+        child: "meh-rah"
+    },
+
+    {
+        type: "parent",
+        parent: "musa-jafar-mish-mohammadali",
+        child: "meh-rah"
+    },
+
+    {
+        type: "parent",
+        parent: "laleh",
+        child: "mohammad-laleh"
+    },
+
+    {
+        type: "parent",
+        parent: "musa-jafar-mish-mohammadali",
+        child: "mohammad-laleh"
+    },
+
+    {
+        type: "parent",
+        parent: "laleh",
+        child: "maral"
+    },
+
+    {
+        type: "parent",
+        parent: "musa-jafar-mish-mohammadali",
+        child: "maral"
+    },
+
+    {
+        type: "parent",
+        parent: "akbar",
+        child: "fatemeh-akbar"
+    },
+
+    {
+        type: "parent",
+        parent: "roshan-mish-ali-bahador",
+        child: "fatemeh-akbar"
+    },
+
+    {
+        type: "spouse",
+        person1: "fatemeh-akbar",
+        person2: "saeed-amrollah"
+    },
+
+
+    /* =====================================
+       پرویز
+    ===================================== */
+
+    {
+        type: "spouse",
+        person1: "parviz",
+        person2: "mozhgan"
+    },
+
+    {
+        type: "parent",
+        parent: "parviz",
+        child: "kosar"
+    },
+
+    {
+        type: "parent",
+        parent: "mozhgan",
+        child: "kosar"
+    },
+
+
+    /* =====================================
+       جهانگیر
+    ===================================== */
+
+    {
+        type: "spouse",
+        person1: "jahan-gir",
+        person2: "mah-begom-jamali"
+    },
+
+    {
+        type: "parent",
+        parent: "jahan-gir",
+        child: "mohammad-jahangir"
+    },
+
+    {
+        type: "parent",
+        parent: "mah-begom-jamali",
+        child: "mohammad-jahangir"
+    },
+
+    {
+        type: "parent",
+        parent: "jahan-gir",
+        child: "qasem-jahangir"
+    },
+
+    {
+        type: "parent",
+        parent: "mah-begom-jamali",
+        child: "qasem-jahangir"
+    },
+
+
+    /* =====================================
+       غلامحسین این شاخه
+    ===================================== */
+
+    {
+        type: "spouse",
+        person1: "gholamhossein-qasem-branch",
+        person2: "robbab-kangani"
+    },
+
+    {
+        type: "parent",
+        parent: "gholamhossein-qasem-branch",
+        child: "reza-gholamhossein"
+    },
+
+    {
+        type: "parent",
+        parent: "robbab-kangani",
+        child: "reza-gholamhossein"
+    },
+
+    {
+        type: "parent",
+        parent: "gholamhossein-qasem-branch",
+        child: "savash"
+    },
+
+    {
+        type: "parent",
+        parent: "robbab-kangani",
+        child: "savash"
+    },
+
+    {
+        type: "parent",
+        parent: "gholamhossein-qasem-branch",
+        child: "radmehr"
+    },
+
+    {
+        type: "parent",
+        parent: "robbab-kangani",
+        child: "radmehr"
+    },
+
+
+    /* =====================================
+       مریم قاسم
+    ===================================== */
+
+    {
+        type: "spouse",
+        person1: "maryam-qasem",
+        person2: "reza-haj-abdolrashid"
+    },
+
+    {
+        type: "parent",
+        parent: "maryam-qasem",
+        child: "ebrahim-maryam-qasem"
+    },
+
+    {
+        type: "parent",
+        parent: "reza-haj-abdolrashid",
+        child: "ebrahim-maryam-qasem"
+    },
+
+    {
+        type: "parent",
+        parent: "maryam-qasem",
+        child: "reyhaneh-maryam-qasem"
+    },
+
+    {
+        type: "parent",
+        parent: "reza-haj-abdolrashid",
+        child: "reyhaneh-maryam-qasem"
+    },
+
+
+    /* =====================================
+       امیر
+    ===================================== */
+
+    {
+        type: "spouse",
+        person1: "amir",
+        person2: "mahin-haj-mohammad"
+    },
+
+    {
+        type: "parent",
+        parent: "amir",
+        child: "sedigheh"
+    },
+
+    {
+        type: "parent",
+        parent: "mahin-haj-mohammad",
+        child: "sedigheh"
+    },
+
+    {
+        type: "parent",
+        parent: "amir",
+        child: "sadiq-amir"
+    },
+
+    {
+        type: "parent",
+        parent: "mahin-haj-mohammad",
+        child: "sadiq-amir"
+    },
+
+    {
+        type: "parent",
+        parent: "amir",
+        child: "samad"
+    },
+
+    {
+        type: "parent",
+        parent: "mahin-haj-mohammad",
+        child: "samad"
+    },
+
+    {
+        type: "parent",
+        parent: "amir",
+        child: "fatemeh-amir"
+    },
+
+    {
+        type: "parent",
+        parent: "mahin-haj-mohammad",
+        child: "fatemeh-amir"
+    },
+
+    {
+        type: "parent",
+        parent: "amir",
+        child: "maryam-amir"
+    },
+
+    {
+        type: "parent",
+        parent: "mahin-haj-mohammad",
+        child: "maryam-amir"
+    },
+
+
+    /* صدیقه */
+
+    {
+        type: "spouse",
+        person1: "sedigheh",
+        person2: "mansour-mohammadali-zayerabbas"
+    },
+
+    {
+        type: "parent",
+        parent: "sedigheh",
+        child: "mohammadali-sedigheh"
+    },
+
+    {
+        type: "parent",
+        parent: "mansour-mohammadali-zayerabbas",
+        child: "mohammadali-sedigheh"
+    },
+
+    {
+        type: "parent",
+        parent: "sedigheh",
+        child: "jhaleh"
+    },
+
+    {
+        type: "parent",
+        parent: "mansour-mohammadali-zayerabbas",
+        child: "jhaleh"
+    },
+
+    {
+        type: "parent",
+        parent: "sedigheh",
+        child: "yekta"
+    },
+
+    {
+        type: "parent",
+        parent: "mansour-mohammadali-zayerabbas",
+        child: "yekta"
+    },
+
+    {
+        type: "spouse",
+        person1: "yekta",
+        person2: "ali-jebrail"
+    },
+
+
+    /* صادق */
+
+    {
+        type: "spouse",
+        person1: "sadiq-amir",
+        person2: "farideh-ahmad"
+    },
+
+    {
+        type: "spouse",
+        person1: "sadegh",
+        person2: "farideh-ahmad"
+    },
+
+    {
+        type: "parent",
+        parent: "sadiq-amir",
+        child: "kamelia"
+    },
+
+    {
+        type: "parent",
+        parent: "farideh-ahmad",
+        child: "kamelia"
+    },
+
+
+    /* صمد */
+
+    {
+        type: "spouse",
+        person1: "samad",
+        person2: "zahra-mohammadali-zayerabbas"
+    },
+
+    {
+        type: "parent",
+        parent: "samad",
+        child: "niloufar"
+    },
+
+    {
+        type: "parent",
+        parent: "zahra-mohammadali-zayerabbas",
+        child: "niloufar"
+    },
+
+    {
+        type: "parent",
+        parent: "samad",
+        child: "marila"
+    },
+
+    {
+        type: "parent",
+        parent: "zahra-mohammadali-zayerabbas",
+        child: "marila"
+    },
+
+
+    /* =====================================
+       احمد
+    ===================================== */
+
+    {
+        type: "spouse",
+        person1: "ahmad",
+        person2: "shirin-haj-abdolrashid"
+    },
+
+    {
+        type: "parent",
+        parent: "ahmad",
+        child: "farideh-ahmad"
+    },
+
+    {
+        type: "parent",
+        parent: "shirin-haj-abdolrashid",
+        child: "farideh-ahmad"
+    },
+
+    {
+        type: "parent",
+        parent: "ahmad",
+        child: "fajr"
+    },
+
+    {
+        type: "parent",
+        parent: "shirin-haj-abdolrashid",
+        child: "fajr"
+    },
+
+    {
+        type: "parent",
+        parent: "ahmad",
+        child: "gholamhossein-ahmad"
+    },
+
+    {
+        type: "parent",
+        parent: "shirin-haj-abdolrashid",
+        child: "gholamhossein-ahmad"
+    },
+
+    {
+        type: "parent",
+        parent: "ahmad",
+        child: "feiz"
+    },
+
+    {
+        type: "parent",
+        parent: "shirin-haj-abdolrashid",
+        child: "feiz"
+    },
+
+    {
+        type: "parent",
+        parent: "ahmad",
+        child: "pedram"
+    },
+
+    {
+        type: "parent",
+        parent: "shirin-haj-abdolrashid",
+        child: "pedram"
+    },
+
+
+    /* فجر */
+
+    {
+        type: "spouse",
+        person1: "fajr",
+        person2: "fatemeh-fajr"
+    },
+
+    {
+        type: "parent",
+        parent: "fajr",
+        child: "baran"
+    },
+
+    {
+        type: "parent",
+        parent: "fatemeh-fajr",
+        child: "baran"
+    },
+
+
+    /* غلامحسین احمد */
+
+    {
+        type: "spouse",
+        person1: "gholamhossein-ahmad",
+        person2: "somayeh-abdolkarim"
+    },
+
+    {
+        type: "parent",
+        parent: "gholamhossein-ahmad",
+        child: "liana"
+    },
+
+    {
+        type: "parent",
+        parent: "somayeh-abdolkarim",
+        child: "liana"
+    },
+
+    {
+        type: "spouse",
+        person1: "feiz",
+        person2: "somayeh-aspargham"
+    },
+
+
+    /* =====================================
+       ناصر
+    ===================================== */
+
+    {
+        type: "spouse",
+        person1: "naser",
+        person2: "sakineh-rahmat"
+    },
+
+    {
+        type: "spouse",
+        person1: "naser",
+        person2: "maryam-gholami"
+    },
+
+    {
+        type: "parent",
+        parent: "naser",
+        child: "sajed"
+    },
+
+    {
+        type: "parent",
+        parent: "sakineh-rahmat",
+        child: "sajed"
+    },
+
+    {
+        type: "parent",
+        parent: "naser",
+        child: "mohammad-naser"
+    },
+
+    {
+        type: "parent",
+        parent: "sakineh-rahmat",
+        child: "mohammad-naser"
+    },
+
+    {
+        type: "parent",
+        parent: "naser",
+        child: "saeed-naser"
+    },
+
+    {
+        type: "parent",
+        parent: "sakineh-rahmat",
+        child: "saeed-naser"
+    },
+
+    {
+        type: "parent",
+        parent: "naser",
+        child: "hossein-naser"
+    },
+
+    {
+        type: "parent",
+        parent: "sakineh-rahmat",
+        child: "hossein-naser"
+    },
+
+    {
+        type: "parent",
+        parent: "naser",
+        child: "ali-naser"
+    },
+
+    {
+        type: "parent",
+        parent: "sakineh-rahmat",
+        child: "ali-naser"
+    },
+
+    {
+        type: "parent",
+        parent: "naser",
+        child: "fatemeh-mohammad-naser"
+    },
+
+    {
+        type: "parent",
+        parent: "maryam-gholami",
+        child: "fatemeh-mohammad-naser"
+    },
+
+    {
+        type: "parent",
+        parent: "naser",
+        child: "abolfazl"
+    },
+
+    {
+        type: "parent",
+        parent: "maryam-gholami",
+        child: "abolfazl"
+    },
+
+
+    /* ساجد */
+
+    {
+        type: "spouse",
+        person1: "sajed",
+        person2: "fatemeh-hossein-mali"
+    },
+
+    {
+        type: "parent",
+        parent: "sajed",
+        child: "shahrokh-sajed"
+    },
+
+    {
+        type: "parent",
+        parent: "fatemeh-hossein-mali",
+        child: "shahrokh-sajed"
+    },
+
+    {
+        type: "parent",
+        parent: "sajed",
+        child: "sama"
+    },
+
+    {
+        type: "parent",
+        parent: "fatemeh-hossein-mali",
+        child: "sama"
+    },
+
+
+    /* محمد */
+
+    {
+        type: "spouse",
+        person1: "mohammad-naser",
+        person2: "fatemeh-mohammad-naser"
+    },
+
+    {
+        type: "parent",
+        parent: "mohammad-naser",
+        child: "naser-mohammad"
+    },
+
+    {
+        type: "parent",
+        parent: "fatemeh-mohammad-naser",
+        child: "naser-mohammad"
+    },
+
+
+    /* سعید */
+
+    {
+        type: "spouse",
+        person1: "saeed-naser",
+        person2: "maryam-jafari"
+    },
+
+    {
+        type: "parent",
+        parent: "saeed-naser",
+        child: "ebrahim-saeed"
+    },
+
+    {
+        type: "parent",
+        parent: "maryam-jafari",
+        child: "ebrahim-saeed"
+    },
+
+    {
+        type: "parent",
+        parent: "saeed-naser",
+        child: "naser-saeed"
+    },
+
+    {
+        type: "parent",
+        parent: "maryam-jafari",
+        child: "naser-saeed"
+    },
+
+
+    /* حسین */
+
+    {
+        type: "spouse",
+        person1: "hossein-naser",
+        person2: "homa-yousef-noshad"
+    },
+
+
+    /* فاطمه */
+
+    {
+        type: "spouse",
+        person1: "fatemeh-mohammad-naser",
+        person2: "mohammad-farideh"
+    },
+
+    {
+        type: "parent",
+        parent: "fatemeh-mohammad-naser",
+        child: "hirad"
+    },
+
+    {
+        type: "parent",
+        parent: "mohammad-farideh",
+        child: "hirad"
+    },
+
+    {
+        type: "parent",
+        parent: "fatemeh-mohammad-naser",
+        child: "arad"
+    },
+
+    {
+        type: "parent",
+        parent: "mohammad-farideh",
+        child: "arad"
+    },
+
+
+    /* =====================================
+       بگم
+    ===================================== */
+
+    {
+        type: "spouse",
+        person1: "begom",
+        person2: "mohammadali-abdollah"
+    },
+
+    {
+        type: "parent",
+        parent: "begom",
+        child: "fatemeh-begom"
+    },
+
+    {
+        type: "parent",
+        parent: "mohammadali-abdollah",
+        child: "fatemeh-begom"
+    },
+
+    {
+        type: "parent",
+        parent: "begom",
+        child: "abdulmajid"
+    },
+
+    {
+        type: "parent",
+        parent: "mohammadali-abdollah",
+        child: "abdulmajid"
+    },
+
+    {
+        type: "parent",
+        parent: "begom",
+        child: "isa"
+    },
+
+    {
+        type: "parent",
+        parent: "mohammadali-abdollah",
+        child: "isa"
+    },
+
+    {
+        type: "parent",
+        parent: "begom",
+        child: "sakineh-begom"
+    },
+
+    {
+        type: "parent",
+        parent: "mohammadali-abdollah",
+        child: "sakineh-begom"
+    },
+
+    {
+        type: "parent",
+        parent: "begom",
+        child: "khadijeh"
+    },
+
+    {
+        type: "parent",
+        parent: "mohammadali-abdollah",
+        child: "khadijeh"
+    },
+
+    {
+        type: "parent",
+        parent: "begom",
+        child: "musa-begom"
+    },
+
+    {
+        type: "parent",
+        parent: "mohammadali-abdollah",
+        child: "musa-begom"
+    },
+
+    {
+        type: "parent",
+        parent: "begom",
+        child: "raziyeh"
+    },
+
+    {
+        type: "parent",
+        parent: "mohammadali-abdollah",
+        child: "raziyeh"
+    },
+
+    {
+        type: "parent",
+        parent: "begom",
+        child: "roohollah-begom"
+    },
+
+    {
+        type: "parent",
+        parent: "mohammadali-abdollah",
+        child: "roohollah-begom"
+    },
+
+    {
+        type: "parent",
+        parent: "begom",
+        child: "zeynab-begom"
+    },
+
+    {
+        type: "parent",
+        parent: "mohammadali-abdollah",
+        child: "zeynab-begom"
+    },
+
+
+    /* فاطمه بگم */
+
+    {
+        type: "spouse",
+        person1: "fatemeh-begom",
+        person2: "gholamhossein-ali-mostafa"
+    },
+
+    {
+        type: "parent",
+        parent: "fatemeh-begom",
+        child: "ali-fatemeh-begom"
+    },
+
+    {
+        type: "parent",
+        parent: "gholamhossein-ali-mostafa",
+        child: "ali-fatemeh-begom"
+    },
+
+    {
+        type: "parent",
+        parent: "fatemeh-begom",
+        child: "kheiri"
+    },
+
+    {
+        type: "parent",
+        parent: "gholamhossein-ali-mostafa",
+        child: "kheiri"
+    },
+
+    {
+        type: "spouse",
+        person1: "ali-fatemeh-begom",
+        person2: "seddigheh-noorbakhsh"
+    },
+
+    {
+        type: "parent",
+        parent: "ali-fatemeh-begom",
+        child: "pouria"
+    },
+
+    {
+        type: "parent",
+        parent: "seddigheh-noorbakhsh",
+        child: "pouria"
+    },
+
+    {
+        type: "parent",
+        parent: "ali-fatemeh-begom",
+        child: "mohammad-ali-fatemeh"
+    },
+
+    {
+        type: "parent",
+        parent: "seddigheh-noorbakhsh",
+        child: "mohammad-ali-fatemeh"
+    },
+
+    {
+        type: "parent",
+        parent: "ali-fatemeh-begom",
+        child: "mehdi-ali-fatemeh"
+    },
+
+    {
+        type: "parent",
+        parent: "seddigheh-noorbakhsh",
+        child: "mehdi-ali-fatemeh"
+    },
+
+    {
+        type: "spouse",
+        person1: "kheiri",
+        person2: "roohollah-noorbakhsh"
+    },
+
+    {
+        type: "parent",
+        parent: "kheiri",
+        child: "narjes"
+    },
+
+    {
+        type: "parent",
+        parent: "roohollah-noorbakhsh",
+        child: "narjes"
+    },
+
+    {
+        type: "parent",
+        parent: "kheiri",
+        child: "bahar"
+    },
+
+    {
+        type: "parent",
+        parent: "roohollah-noorbakhsh",
+        child: "bahar"
+    },
+
+
+    /* عبدالمجید */
+
+    {
+        type: "spouse",
+        person1: "abdulmajid",
+        person2: "hakimeh-jafari"
+    },
+
+    {
+        type: "parent",
+        parent: "abdulmajid",
+        child: "ali-abdulmajid"
+    },
+
+    {
+        type: "parent",
+        parent: "hakimeh-jafari",
+        child: "ali-abdulmajid"
+    },
+
+    {
+        type: "parent",
+        parent: "abdulmajid",
+        child: "mahan"
+    },
+
+    {
+        type: "parent",
+        parent: "hakimeh-jafari",
+        child: "mahan"
+    },
+
+    {
+        type: "parent",
+        parent: "abdulmajid",
+        child: "mehrdad"
+    },
+
+    {
+        type: "parent",
+        parent: "hakimeh-jafari",
+        child: "mehrdad"
+    },
+
+    {
+        type: "spouse",
+        person1: "mehrdad",
+        person2: "zahra-musa"
+    },
+
+
+    /* عیسی */
+
+    {
+        type: "spouse",
+        person1: "isa",
+        person2: "zobeydeh-jafar"
+    },
+
+    {
+        type: "parent",
+        parent: "isa",
+        child: "mehdi-isa"
+    },
+
+    {
+        type: "parent",
+        parent: "zobeydeh-jafar",
+        child: "mehdi-isa"
+    },
+
+    {
+        type: "parent",
+        parent: "isa",
+        child: "mohammad-isa"
+    },
+
+    {
+        type: "parent",
+        parent: "zobeydeh-jafar",
+        child: "mohammad-isa"
+    },
+
+
+    /* سکینه */
+
+    {
+        type: "spouse",
+        person1: "sakineh-begom",
+        person2: "gholamreza-noorbakhsh"
+    },
+
+    {
+        type: "parent",
+        parent: "sakineh-begom",
+        child: "amirhossein"
+    },
+
+    {
+        type: "parent",
+        parent: "gholamreza-noorbakhsh",
+        child: "amirhossein"
+    },
+
+    {
+        type: "parent",
+        parent: "sakineh-begom",
+        child: "erfan"
+    },
+
+    {
+        type: "parent",
+        parent: "gholamreza-noorbakhsh",
+        child: "erfan"
+    },
+
+    {
+        type: "parent",
+        parent: "sakineh-begom",
+        child: "ylda"
+    },
+
+    {
+        type: "parent",
+        parent: "gholamreza-noorbakhsh",
+        child: "ylda"
+    },
+
+    {
+        type: "spouse",
+        person1: "ylda",
+        person2: "khashayar-bahador"
+    },
+
+
+    /* موسی */
+
+    {
+        type: "spouse",
+        person1: "musa-begom",
+        person2: "maryam-noorbakhsh"
+    },
+
+    {
+        type: "parent",
+        parent: "musa-begom",
+        child: "hadi"
+    },
+
+    {
+        type: "parent",
+        parent: "maryam-noorbakhsh",
+        child: "hadi"
+    },
+
+    {
+        type: "parent",
+        parent: "musa-begom",
+        child: "zahra-begom"
+    },
+
+    {
+        type: "parent",
+        parent: "maryam-noorbakhsh",
+        child: "zahra-begom"
+    },
+
+    {
+        type: "spouse",
+        person1: "zahra-begom",
+        person2: "mehrdad-abdollah"
+    },
+
+
+    /* راضیه */
+
+    {
+        type: "spouse",
+        person1: "raziyeh",
+        person2: "hossein-noorbakhsh"
+    },
+
+    {
+        type: "parent",
+        parent: "raziyeh",
+        child: "abolfazl-raziyeh"
+    },
+
+    {
+        type: "parent",
+        parent: "hossein-noorbakhsh",
+        child: "abolfazl-raziyeh"
+    },
+
+    {
+        type: "parent",
+        parent: "raziyeh",
+        child: "ali-asghar-raziyeh"
+    },
+
+    {
+        type: "parent",
+        parent: "hossein-noorbakhsh",
+        child: "ali-asghar-raziyeh"
+    },
+
+
+    /* روح الله */
+
+    {
+        type: "spouse",
+        person1: "roohollah-begom",
+        person2: "fatemeh-roohollah"
+    },
+
+    {
+        type: "parent",
+        parent: "roohollah-begom",
+        child: "mohammadali-roohollah"
+    },
+
+    {
+        type: "parent",
+        parent: "fatemeh-roohollah",
+        child: "mohammadali-roohollah"
+    },
+
+
+    /* زینب */
+
+    {
+        type: "spouse",
+        person1: "zeynab-begom",
+        person2: "haj-abdollah-zarei"
+    },
+
+    {
+        type: "parent",
+        parent: "zeynab-begom",
+        child: "sara-zeynab"
+    },
+
+    {
+        type: "parent",
+        parent: "haj-abdollah-zarei",
+        child: "sara-zeynab"
+    },
+
+    {
+        type: "parent",
+        parent: "zeynab-begom",
+        child: "nazanin-zeynab"
+    },
+
+    {
+        type: "parent",
+        parent: "haj-abdollah-zarei",
+        child: "nazanin-zeynab"
+    },
+
+    {
+        type: "parent",
+        parent: "zeynab-begom",
+        child: "milad-zeynab"
+    },
+
+    {
+        type: "parent",
+        parent: "haj-abdollah-zarei",
+        child: "milad-zeynab"
+    },
+
+
+    /* =====================================
+       سوگل
+    ===================================== */
+
+    {
+        type: "spouse",
+        person1: "sogol",
+        person2: "hossein-aliakbar"
+    },
+
+    {
+        type: "parent",
+        parent: "sogol",
+        child: "gholamreza-sogol"
+    },
+
+    {
+        type: "parent",
+        parent: "hossein-aliakbar",
+        child: "gholamreza-sogol"
+    },
+
+    {
+        type: "parent",
+        parent: "sogol",
+        child: "ali-sogol"
+    },
+
+    {
+        type: "parent",
+        parent: "hossein-aliakbar",
+        child: "ali-sogol"
+    },
+
+    {
+        type: "parent",
+        parent: "sogol",
+        child: "taleb-sogol"
+    },
+
+    {
+        type: "parent",
+        parent: "hossein-aliakbar",
+        child: "taleb-sogol"
+    },
+
+    {
+        type: "parent",
+        parent: "sogol",
+        child: "abed"
+    },
+
+    {
+        type: "parent",
+        parent: "hossein-aliakbar",
+        child: "abed"
+    },
+
+    {
+        type: "parent",
+        parent: "sogol",
+        child: "fatemeh-esmail"
+    },
+
+    {
+        type: "parent",
+        parent: "hossein-aliakbar",
+        child: "fatemeh-esmail"
+    },
+
+    {
+        type: "parent",
+        parent: "sogol",
+        child: "golbahar"
+    },
+
+    {
+        type: "parent",
+        parent: "hossein-aliakbar",
+        child: "golbahar"
+    },
+
+
+    /* غلامرضا سوگل */
+
+    {
+        type: "spouse",
+        person1: "gholamreza-sogol",
+        person2: "zeynat-moallemostafa"
+    },
+
+    {
+        type: "parent",
+        parent: "gholamreza-sogol",
+        child: "mehran"
+    },
+
+    {
+        type: "parent",
+        parent: "zeynat-moallemostafa",
+        child: "mehran"
+    },
+
+    {
+        type: "spouse",
+        person1: "mehran",
+        person2: "zeynab-tarazoo"
+    },
+
+    {
+        type: "parent",
+        parent: "mehran",
+        child: "lia"
+    },
+
+    {
+        type: "parent",
+        parent: "zeynab-tarazoo",
+        child: "lia"
+    },
+
+
+    /* علی سوگل */
+
+    {
+        type: "spouse",
+        person1: "ali-sogol",
+        person2: "shirin-qasem"
+    },
+
+    {
+        type: "parent",
+        parent: "ali-sogol",
+        child: "hossein-ali-sogol"
+    },
+
+    {
+        type: "parent",
+        parent: "shirin-qasem",
+        child: "hossein-ali-sogol"
+    },
+
+    {
+        type: "parent",
+        parent: "ali-sogol",
+        child: "hasan-sogol"
+    },
+
+    {
+        type: "parent",
+        parent: "shirin-qasem",
+        child: "hasan-sogol"
+    },
+
+    {
+        type: "parent",
+        parent: "ali-sogol",
+        child: "susan"
+    },
+
+    {
+        type: "parent",
+        parent: "shirin-qasem",
+        child: "susan"
+    },
+
+    {
+        type: "parent",
+        parent: "ali-sogol",
+        child: "pouran"
+    },
+
+    {
+        type: "parent",
+        parent: "shirin-qasem",
+        child: "pouran"
+    },
+
+
+    /* طالب سوگل */
+
+    {
+        type: "spouse",
+        person1: "taleb-sogol",
+        person2: "robbab-taleb"
+    },
+
+    {
+        type: "parent",
+        parent: "taleb-sogol",
+        child: "shahrokh-taleb-sogol"
+    },
+
+    {
+        type: "parent",
+        parent: "robbab-taleb",
+        child: "shahrokh-taleb-sogol"
+    },
+
+    {
+        type: "parent",
+        parent: "taleb-sogol",
+        child: "shahin-taleb-sogol"
+    },
+
+    {
+        type: "parent",
+        parent: "robbab-taleb",
+        child: "shahin-taleb-sogol"
+    },
+
+
+    /* عابد */
+
+    {
+        type: "spouse",
+        person1: "abed",
+        person2: "safiheh-rahim-armat"
+    },
+
+    {
+        type: "parent",
+        parent: "abed",
+        child: "amirarslan"
+    },
+
+    {
+        type: "parent",
+        parent: "safiheh-rahim-armat",
+        child: "amirarslan"
+    },
+
+    {
+        type: "parent",
+        parent: "abed",
+        child: "nazgol"
+    },
+
+    {
+        type: "parent",
+        parent: "safiheh-rahim-armat",
+        child: "nazgol"
+    },
+
+
+    /* فاطمه سوگل */
+
+    {
+        type: "spouse",
+        person1: "fatemeh-esmail",
+        person2: "esmail-bozorg"
+    },
+
+
+    /* گلبهار */
+
+    {
+        type: "spouse",
+        person1: "golbahar",
+        person2: "dariush-abdorrasoul"
+    },
+
+    {
+        type: "parent",
+        parent: "golbahar",
+        child: "azita"
+    },
+
+    {
+        type: "parent",
+        parent: "dariush-abdorrasoul",
+        child: "azita"
+    },
+
+    {
+        type: "parent",
+        parent: "golbahar",
+        child: "azizeh"
+    },
+
+    {
+        type: "parent",
+        parent: "dariush-abdorrasoul",
+        child: "azizeh"
+    },
+
+    {
+        type: "spouse",
+        person1: "azita",
+        person2: "mehdi-abdolkarim"
+    },
+
+    {
+        type: "parent",
+        parent: "azita",
+        child: "golbahar-azita"
+    },
+
+    {
+        type: "parent",
+        parent: "mehdi-abdolkarim",
+        child: "golbahar-azita"
+    },
+
+    {
+        type: "parent",
+        parent: "azita",
+        child: "golsa"
+    },
+
+    {
+        type: "parent",
+        parent: "mehdi-abdolkarim",
+        child: "golsa"
+    },
+
+    {
+        type: "spouse",
+        person1: "azizeh",
+        person2: "ali-abdoljabbar"
+    },
+
+    {
+        type: "parent",
+        parent: "azizeh",
+        child: "dariush-azizeh"
+    },
+
+    {
+        type: "parent",
+        parent: "ali-abdoljabbar",
+        child: "dariush-azizeh"
+    },
+
+    {
+        type: "parent",
+        parent: "azizeh",
+        child: "hossein-azizeh"
+    },
+
+    {
+        type: "parent",
+        parent: "ali-abdoljabbar",
+        child: "hossein-azizeh"
+    },
+
+
+    /* =====================================
+       منیجه
+    ===================================== */
+
+    {
+        type: "spouse",
+        person1: "manijeh",
+        person2: "jafar-haj-abdolrashid"
+    },
+
+    {
+        type: "parent",
+        parent: "manijeh",
+        child: "ali-manijeh"
+    },
+
+    {
+        type: "parent",
+        parent: "jafar-haj-abdolrashid",
+        child: "ali-manijeh"
+    },
+
+    {
+        type: "parent",
+        parent: "manijeh",
+        child: "zobeydeh-manijeh"
+    },
+
+    {
+        type: "parent",
+        parent: "jafar-haj-abdolrashid",
+        child: "zobeydeh-manijeh"
+    },
+
+    {
+        type: "spouse",
+        person1: "ali-manijeh",
+        person2: "fatemeh-manijeh"
+    },
+
+    {
+        type: "parent",
+        parent: "ali-manijeh",
+        child: "amirhossein-manijeh"
+    },
+
+    {
+        type: "parent",
+        parent: "fatemeh-manijeh",
+        child: "amirhossein-manijeh"
+    },
+
+    {
+        type: "parent",
+        parent: "ali-manijeh",
+        child: "ehsan"
+    },
+
+    {
+        type: "parent",
+        parent: "fatemeh-manijeh",
+        child: "ehsan"
+    },
+
+    {
+        type: "spouse",
+        person1: "zobeydeh-manijeh",
+        person2: "isa-mohammadali"
+    },
+
+
+    /* =====================================
+       حلیمه
+    ===================================== */
+
+    {
+        type: "spouse",
+        person1: "halimeh",
+        person2: "khodabakhsh-haj-jafar-abbas"
+    },
+
+    /*
+     * طبق داده ارسالی:
+     * مژگان همان فردی است که در شاخه پرویز نیز آمده.
+     */
+
+    {
+        type: "parent",
+        parent: "halimeh",
+        child: "mozhgan"
+    },
+
+    {
+        type: "parent",
+        parent: "khodabakhsh-haj-jafar-abbas",
+        child: "mozhgan"
+    },
+
+    /*
+     * باران همان فرد مشترک ثبت‌شده در شاخه فجر است.
+     */
+
+    {
+        type: "parent",
+        parent: "halimeh",
+        child: "fatemeh-fajr"
+    },
+
+    {
+        type: "parent",
+        parent: "khodabakhsh-haj-jafar-abbas",
+        child: "fatemeh-fajr"
+    },
+
+    {
+        type: "parent",
+        parent: "halimeh",
+        child: "abbas-halimeh"
+    },
+
+    {
+        type: "parent",
+        parent: "khodabakhsh-haj-jafar-abbas",
+        child: "abbas-halimeh"
+    },
+
+    {
+        type: "spouse",
+        person1: "mozhgan",
+        person2: "parviz"
+    },
+
+    {
+        type: "spouse",
+        person1: "fatemeh-fajr",
+        person2: "fajr"
+    },
+
+    {
+        type: "parent",
+        parent: "fajr",
+        child: "baran"
+    },
+
+    {
+        type: "parent",
+        parent: "fatemeh-fajr",
+        child: "baran"
+    },
+
+    {
+        type: "spouse",
+        person1: "mozhgan",
+        person2: "parviz"
     }
 
 ];
