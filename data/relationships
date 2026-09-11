@@ -1,0 +1,43 @@
+window.GENEALOGY_DATA = window.GENEALOGY_DATA || {};
+
+window.GENEALOGY_DATA.relationships = [
+
+    /*
+     * رابطه همسران
+     */
+
+    {
+        type: "spouse",
+        person1: "gholamhossein-qasem-zayer-gholamhossein",
+        person2: "parizad"
+    },
+
+
+    /*
+     * رابطه والد و فرزند
+     */
+
+    {
+        type: "parent",
+        parent: "gholamhossein-qasem-zayer-gholamhossein",
+        child: "qasem"
+    },
+
+    {
+        type: "parent",
+        parent: "parizad",
+        child: "qasem"
+    },
+
+
+    /*
+     * خانواده قاسم و ایران ولی
+     */
+
+    {
+        type: "spouse",
+        person1: "qasem",
+        person2: "iran-vali"
+    }
+
+];
