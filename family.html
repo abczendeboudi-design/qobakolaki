@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>شجره‌نامه خاندان</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+
+            font-family:
+                Tahoma,
+                Arial,
+                sans-serif;
+
+            background: #f3f7f4;
+
+            color: #173c29;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+
+            background: #124b30;
+
+            color: white;
+
+            padding: 18px 15px;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 50;
+
+            box-shadow:
+                0 3px 15px
+                rgba(0, 0, 0, 0.15);
+        }
+
+
+        .header-inner {
+
+            width: min(1300px, 95%);
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+        }
+
+
+        header h1 {
+
+            margin: 0;
+
+            font-size: 21px;
+        }
+
+
+        .header-buttons {
+
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .top-btn {
+
+            border: 1px solid
+                rgba(255,255,255,0.35);
+
+            background:
+                rgba(255,255,255,0.10);
+
+            color: white;
+
+            padding: 9px 14px;
+
+            border-radius: 9px;
+
+            text-decoration: none;
+
+            font-family: inherit;
+
+            cursor: pointer;
+
+            font-size: 13px;
+        }
+
+
+        .top-btn:hover {
+
+            background:
+                rgba(255,255,255,0.20);
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+
+            width: min(1400px, 95%);
+
+            margin: 25px auto 60px;
+        }
+
+
+        .title {
+
+            text-align: center;
+
+            margin-bottom: 22px;
+        }
+
+
+        .title h2 {
+
+            margin: 0 0 8px;
+
+            color: #125b38;
+
+            font-size: 29px;
+        }
+
+
+        .title p {
+
+            margin: 0;
+
+            color: #718077;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           STATISTICS
+        ========================= */
+
+        .stats {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+
+            margin: 25px auto 35px;
+        }
+
+
+        .stat-card {
+
+            min-width: 190px;
+
+            background: white;
+
+            border: 1px solid #dce9e0;
+
+            border-radius: 17px;
+
+            padding: 17px 25px;
+
+            text-align: center;
+
+            box-shadow:
+                0 6px 22px
+                rgba(0,0,0,0.06);
+        }
+
+
+        .stat-number {
+
+            display: block;
+
+            font-size: 29px;
+
+            font-weight: bold;
+
+            color: #12613b;
+
+            margin-bottom: 5px;
+        }
+
+
+        .stat-label {
+
+            color: #65766c;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           TREE WRAPPER
+        ========================= */
+
+        .tree-wrapper {
+
+            background: white;
+
+            border-radius: 22px;
+
+            border: 1px solid #dce9e0;
+
+            box-shadow:
+                0 8px 35px
+                rgba(0,0,0,0.07);
+
+            padding: 25px;
+
+            overflow-x: auto;
+
+            overflow-y: visible;
+        }
+
+
+        .tree {
+
+            min-width: 950px;
+
+            padding: 10px 10px 40px;
+        }
+
+
+        /* =========================
+           ROOT
+        ========================= */
+
+        .root-title {
+
+            text-align: center;
+
+            margin-bottom: 20px;
+
+            color: #12613b;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           UNION
+        ========================= */
+
+        .union {
+
+            position: relative;
+
+            margin: 0 auto 38px;
+
+            padding-top: 5px;
+        }
+
+
+        .couple {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 10px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .heart {
+
+            width: 30px;
+
+            height: 30px;
+
+            border-radius: 50%;
+
+            background: #eaf4ed;
+
+            color: #12613b;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 14px;
+
+            flex-shrink: 0;
+        }
+
+
+        /* =========================
+           PERSON CARD
+        ========================= */
+
+        .person-card {
+
+            width: 190px;
+
+            min-height: 82px;
+
+            background: #ffffff;
+
+            border: 2px solid #cfe1d5;
+
+            border-radius: 15px;
+
+            padding: 12px;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 4px 14px
+                rgba(0,0,0,0.07);
+
+            transition:
+                transform .18s ease,
+                box-shadow .18s ease,
+                border-color .18s ease;
+        }
+
+
+        .person-card:hover {
+
+            transform: translateY(-3px);
+
+            border-color: #5c9a76;
+
+            box-shadow:
+                0 8px 20px
+                rgba(0,0,0,0.12);
+        }
+
+
+        .person-card.main-person {
+
+            background: #eef7f1;
+
+            border-color: #8cbaa0;
+        }
+
+
+        .person-name {
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            color: #164b30;
+
+            line-height: 1.7;
+        }
+
+
+        .person-role {
+
+            font-size: 11px;
+
+            color: #77857d;
+
+            margin-top: 4px;
+        }
+
+
+        .shared-badge {
+
+            display: inline-block;
+
+            margin-top: 5px;
+
+            padding: 3px 7px;
+
+            border-radius: 20px;
+
+            background: #fff3cf;
+
+            color: #816525;
+
+            font-size: 10px;
+        }
+
+
+        /* =========================
+           CHILDREN
+        ========================= */
+
+        .children-area {
+
+            position: relative;
+
+            margin-top: 30px;
+
+            padding-top: 25px;
+        }
+
+
+        .children-area::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            right: 50%;
+
+            width: 2px;
+
+            height: 25px;
+
+            background: #a9c4b2;
+        }
+
+
+        .children-list {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: flex-start;
+
+            gap: 18px;
+
+            flex-wrap: nowrap;
+
+            position: relative;
+        }
+
+
+        .children-list::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            right: 5%;
+
+            left: 5%;
+
+            height: 2px;
+
+            background: #a9c4b2;
+        }
+
+
+        .child-branch {
+
+            position: relative;
+
+            padding-top: 23px;
+
+            min-width: 190px;
+
+            max-width: 205px;
+
+        }
+
+
+        .child-branch::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            right: 50%;
+
+            width: 2px;
+
+            height: 23px;
+
+            background: #a9c4b2;
+        }
+
+
+        /* =========================
+           GENERATION 3
+        ========================= */
+
+        .grandchild-card {
+
+            width: 190px;
+
+            min-height: 95px;
+
+            background: #fbfdfb;
+
+            border: 2px solid #b8d1c0;
+
+            border-radius: 15px;
+
+            padding: 12px;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            transition: .18s;
+
+            box-shadow:
+                0 4px 13px
+                rgba(0,0,0,0.06);
+        }
+
+
+        .grandchild-card:hover {
+
+            transform: translateY(-3px);
+
+            border-color: #4f8d68;
+
+            box-shadow:
+                0 8px 20px
+                rgba(0,0,0,0.10);
+        }
+
+
+        .family-link {
+
+            display: inline-block;
+
+            margin-top: 8px;
+
+            padding: 6px 9px;
+
+            border-radius: 7px;
+
+            background: #12613b;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            font-weight: bold;
+        }
+
+
+        .profile-link {
+
+            display: inline-block;
+
+            margin-top: 8px;
+
+            padding: 6px 9px;
+
+            border-radius: 7px;
+
+            background: #e7f0ea;
+
+            color: #185536;
+
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           EMPTY
+        ========================= */
+
+        .empty {
+
+            color: #88948d;
+
+            font-size: 12px;
+
+            margin-top: 8px;
+        }
+
+
+        /* =========================
+           MODAL
+        ========================= */
+
+        .modal {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(0,0,0,0.55);
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+            z-index: 100;
+        }
+
+
+        .modal.show {
+
+            display: flex;
+        }
+
+
+        .modal-box {
+
+            width: min(600px, 100%);
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 15px 50px
+                rgba(0,0,0,0.25);
+
+            position: relative;
+        }
+
+
+        .close-modal {
+
+            position: absolute;
+
+            left: 15px;
+
+            top: 12px;
+
+            border: none;
+
+            background: #edf3ef;
+
+            color: #27573d;
+
+            width: 35px;
+
+            height: 35px;
+
+            border-radius: 50%;
+
+            cursor: pointer;
+
+            font-size: 20px;
+        }
+
+
+        .profile-header {
+
+            text-align: center;
+
+            padding-bottom: 18px;
+
+            border-bottom: 1px solid #e3ebe5;
+
+            margin-bottom: 18px;
+        }
+
+
+        .profile-avatar {
+
+            width: 80px;
+
+            height: 80px;
+
+            border-radius: 50%;
+
+            background: #e7f2eb;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin: 0 auto 12px;
+
+            font-size: 32px;
+
+            color: #12613b;
+        }
+
+
+        .profile-header h3 {
+
+            margin: 0;
+
+            font-size: 24px;
+
+            color: #145434;
+        }
+
+
+        .profile-section {
+
+            margin-top: 18px;
+        }
+
+
+        .profile-section h4 {
+
+            margin: 0 0 8px;
+
+            color: #12613b;
+
+            font-size: 15px;
+        }
+
+
+        .profile-list {
+
+            margin: 0;
+
+            padding: 0;
+
+            list-style: none;
+        }
+
+
+        .profile-list li {
+
+            padding: 8px 0;
+
+            border-bottom: 1px solid #eef2ef;
+
+            color: #4d5e53;
+
+            line-height: 1.8;
+        }
+
+
+        .modal-family-button {
+
+            display: inline-block;
+
+            margin-top: 18px;
+
+            background: #12613b;
+
+            color: white;
+
+            padding: 11px 18px;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #103d28;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            header {
+
+                position: relative;
+            }
+
+
+            .header-inner {
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+
+            header h1 {
+
+                font-size: 18px;
+            }
+
+
+            main {
+
+                width: 96%;
+
+                margin-top: 18px;
+            }
+
+
+            .title h2 {
+
+                font-size: 22px;
+            }
+
+
+            .stats {
+
+                gap: 10px;
+            }
+
+
+            .stat-card {
+
+                min-width: 145px;
+
+                padding: 14px 15px;
+            }
+
+
+            .stat-number {
+
+                font-size: 25px;
+            }
+
+
+            .tree-wrapper {
+
+                padding: 12px;
+
+                border-radius: 15px;
+            }
+
+
+            .tree {
+
+                min-width: 850px;
+            }
+        }
+
+
+        /* =========================
+           PRINT
+        ========================= */
+
+        @media print {
+
+            body {
+
+                background: white;
+            }
+
+
+            header,
+            .stats,
+            .title p,
+            footer,
+            .top-btn,
+            .family-link,
+            .profile-link {
+
+                display: none !important;
+            }
+
+
+            main {
+
+                width: 100%;
+
+                margin: 0;
+            }
+
+
+            .title {
+
+                margin-bottom: 20px;
+            }
+
+
+            .title h2 {
+
+                font-size: 20px;
+            }
+
+
+            .tree-wrapper {
+
+                border: none;
+
+                box-shadow: none;
+
+                padding: 0;
+
+                overflow: visible;
+            }
+
+
+            .tree {
+
+                min-width: 0;
+
+                width: 100%;
+            }
+
+
+            .person-card,
+            .grandchild-card {
+
+                box-shadow: none;
+
+                break-inside: avoid;
+            }
+
+
+            .modal {
+
+                display: none !important;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="header-inner">
+
+        <h1 id="headerTitle">
+            شجره‌نامه قباکلکی
+        </h1>
+
+        <div class="header-buttons">
+
+            <a
+                href="index.html"
+                class="top-btn"
+            >
+                ← خاندان‌ها
+            </a>
+
+            <a
+                id="bookLink"
+                href="genealogy.html?family=gholamhossein-qasem"
+                class="top-btn"
+            >
+                📖 تصویر کتاب
+            </a>
+
+            <button
+                class="top-btn"
+                onclick="window.print()"
+            >
+                🖨 چاپ
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+    <section class="title">
+
+        <h2 id="familyTitle">
+            خاندان غلامحسین قاسم زائر غلامحسین
+        </h2>
+
+        <p>
+            شجره دیجیتال خاندان
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================
+         آمار خاندان
+    ====================== -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <span
+                id="memberCount"
+                class="stat-number"
+            >
+                ۰
+            </span>
+
+            <span class="stat-label">
+                تعداد کل اعضای ثبت‌شده
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span
+                id="generationCount"
+                class="stat-number"
+            >
+                ۳
+            </span>
+
+            <span class="stat-label">
+                نسل نمایش‌داده‌شده
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span
+                id="familyPeopleCount"
+                class="stat-number"
+            >
+                ۰
+            </span>
+
+            <span class="stat-label">
+                افراد دارای اطلاعات
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================
+         TREE
+    ====================== -->
+
+    <section class="tree-wrapper">
+
+        <div
+            id="tree"
+            class="tree"
+        >
+
+            در حال ساخت شجره‌نامه...
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    شجره‌نامه مردم قباکلکی
+
+</footer>
+
+
+
+<!-- =========================
+     PROFILE MODAL
+========================= -->
+
+<div
+    id="profileModal"
+    class="modal"
+    onclick="closeModalOutside(event)"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close-modal"
+            onclick="closeProfile()"
+        >
+            ×
+        </button>
+
+
+        <div id="profileContent">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script src="data/families.js"></script>
+
+
+
+<script>
+
+/* =====================================================
+   داده کامل خاندان
+===================================================== */
+
+const PEOPLE = {
+
+    "gholamhossein-qasem-zayer-gholamhossein": {
+        name: "غلامحسین قاسم زائر غلامحسین",
+
+        spouses: [
+            {
+                id: "parizad",
+                label: "همسر اول",
+                children: [
+                    "qasem"
+                ]
+            },
+            {
+                id: "kheir-mohammad-zayer-abdolrashid",
+                label: "همسر دوم",
+                children: [
+                    "amir",
+                    "ahmad",
+                    "nasser",
+                    "begom",
+                    "sogol",
+                    "manijeh",
+                    "halimeh"
+                ]
+            }
+        ]
+    },
+
+
+    "parizad": {
+        name: "پریزاد",
+        spouses: [
+            {
+                id: "gholamhossein-qasem-zayer-gholamhossein",
+                children: ["qasem"]
+            }
+        ]
+    },
+
+
+    "kheir-mohammad-zayer-abdolrashid": {
+        name: "خیر محمد زائر عبدالرشید",
+        spouses: [
+            {
+                id: "gholamhossein-qasem-zayer-gholamhossein",
+                children: [
+                    "amir",
+                    "ahmad",
+                    "nasser",
+                    "begom",
+                    "sogol",
+                    "manijeh",
+                    "halimeh"
+                ]
+            }
+        ]
+    },
+
+
+    /* =========================
+       قاسم
+    ========================= */
+
+    "qasem": {
+
+        name: "قاسم",
+
+        spouses: [
+
+            {
+                id: "iran-vali",
+                label: "همسر اول",
+                children: [
+                    "asghar",
+                    "akbar",
+                    "parviz",
+                    "jahangir",
+                    "shirin-qasem",
+                    "gholamhossein-qasem-son",
+                    "maryam-qasem"
+                ]
+            },
+
+            {
+                id: "sakineh-heydari",
+                label: "همسر دوم",
+                children: []
+            }
+
+        ]
+
+    },
+
+
+    "iran-vali": {
+        name: "ایران ولی",
+        spouses: [
+            {
+                id: "qasem",
+                children: [
+                    "asghar",
+                    "akbar",
+                    "parviz",
+                    "jahangir",
+                    "shirin-qasem",
+                    "gholamhossein-qasem-son",
+                    "maryam-qasem"
+                ]
+            }
+        ]
+    },
+
+
+    "sakineh-heydari": {
+        name: "سکینه حیدری",
+        spouses: [
+            {
+                id: "qasem",
+                children: []
+            }
+        ]
+    },
+
+
+    /* =========================
+       اصغر
+    ========================= */
+
+    "asghar": {
+
+        name: "اصغر",
+
+        spouses: [
+            {
+                id: "hakimeh-haj-mohammad",
+                children: [
+                    "ali-asghar",
+                    "rabab-asghar",
+                    "zeynab-asghar"
+                ]
+            }
+        ]
+
+    },
+
+
+    "hakimeh-haj-mohammad": {
+
+        name: "حکیمه حاج محمد",
+
+        spouses: [
+            {
+                id: "asghar",
+                children: [
+                    "ali-asghar",
+                    "rabab-asghar",
+                    "zeynab-asghar"
+                ]
+            }
+        ]
+
+    },
+
+
+    "ali-asghar": {
+        name: "علی"
+    },
+
+
+    "rabab-asghar": {
+
+        name: "رباب",
+
+        spouses: [
+            {
+                id: "taleb-bahader",
+                children: [
+                    "shahin-rabab",
+                    "shahrokh-rabab"
+                ]
+            }
+        ]
+
+    },
+
+
+    "taleb-bahader": {
+
+        name: "طالب بهادر",
+
+        spouses: [
+            {
+                id: "rabab-asghar",
+                children: [
+                    "shahin-rabab",
+                    "shahrokh-rabab"
+                ]
+            }
+        ]
+
+    },
+
+
+    "shahin-rabab": {
+        name: "شاهین"
+    },
+
+    "shahrokh-rabab": {
+        name: "شاهرخ"
+    },
+
+
+    "zeynab-asghar": {
+        name: "زینب"
+    },
+
+
+    /* =========================
+       اکبر
+    ========================= */
+
+    "akbar": {
+
+        name: "اکبر",
+
+        spouses: [
+            {
+                id: "roshan-mish-ali-bahader",
+                children: [
+                    "ali-akbar",
+                    "laleh-akbar",
+                    "fatemeh-akbar"
+                ]
+            }
+        ]
+
+    },
+
+
+    "roshan-mish-ali-bahader": {
+
+        name: "روشن میش علی بهادر",
+
+        spouses: [
+            {
+                id: "akbar",
+                children: [
+                    "ali-akbar",
+                    "laleh-akbar",
+                    "fatemeh-akbar"
+                ]
+            }
+        ]
+
+    },
+
+
+    "ali-akbar": {
+
+        name: "علی",
+
+        spouses: [
+            {
+                id: "bahareh-bahader",
+                children: []
+            }
+        ]
+
+    },
+
+
+    "bahareh-bahader": {
+        name: "بهاره بهادر"
+    },
+
+
+    "laleh-akbar": {
+
+        name: "لاله",
+
+        spouses: [
+            {
+                id: "musa-jafar-mish-mohammadali",
+                children: [
+                    "mehraveh",
+                    "mohammad-laleh",
+                    "maral"
+                ]
+            }
+        ]
+
+    },
+
+
+    "musa-jafar-mish-mohammadali": {
+
+        name: "موسی جعفر میش محمدعلی",
+
+        spouses: [
+            {
+                id: "laleh-akbar",
+                children: [
+                    "mehraveh",
+                    "mohammad-laleh",
+                    "maral"
+                ]
+            }
+        ]
+
+    },
+
+
+    "mehraveh": {
+        name: "مهراوه"
+    },
+
+    "mohammad-laleh": {
+        name: "محمد"
+    },
+
+    "maral": {
+        name: "مارال"
+    },
+
+
+    "fatemeh-akbar": {
+
+        name: "فاطمه",
+
+        spouses: [
+            {
+                id: "saeed-amrollah",
+                children: []
+            }
+        ]
+
+    },
+
+
+    "saeed-amrollah": {
+        name: "سعید امرالله"
+    },
+
+
+    /* =========================
+       پرویز
+    ========================= */
+
+    "parviz": {
+
+        name: "پرویز",
+
+        spouses: [
+            {
+                id: "mozhgan",
+                children: [
+                    "kowsar"
+                ]
+            }
+        ]
+
+    },
+
+
+    "mozhgan": {
+
+        name: "مژگان",
+
+        spouses: [
+            {
+                id: "parviz",
+                children: [
+                    "kowsar"
+                ]
+            }
+        ]
+
+    },
+
+
+    "kowsar": {
+        name: "کوثر"
+    },
+
+
+    /* =========================
+       جهانگیر
+    ========================= */
+
+    "jahangir": {
+
+        name: "جهانگیر",
+
+        spouses: [
+            {
+                id: "mahbagham-jamali",
+                children: [
+                    "mohammad-jahangir",
+                    "qasem-jahangir"
+                ]
+            }
+        ]
+
+    },
+
+
+    "mahbagham-jamali": {
+        name: "ماه‌بگم جمالی"
+    },
+
+    "mohammad-jahangir": {
+        name: "محمد"
+    },
+
+    "qasem-jahangir": {
+        name: "قاسم"
+    },
+
+
+    "shirin-qasem": {
+        name: "شیرین"
+    },
+
+
+    /* =========================
+       غلامحسین فرزند قاسم
+    ========================= */
+
+    "gholamhossein-qasem-son": {
+
+        name: "غلامحسین",
+
+        spouses: [
+            {
+                id: "rabab-kangani",
+                children: [
+                    "reza-gh",
+                    "savash",
+                    "radmehr"
+                ]
+            }
+        ]
+
+    },
+
+
+    "rabab-kangani": {
+        name: "رباب کنگانی"
+    },
+
+    "reza-gh": {
+        name: "رضا"
+    },
+
+    "savash": {
+        name: "ساواش"
+    },
+
+    "radmehr": {
+        name: "رادمهر"
+    },
+
+
+    /* =========================
+       مریم
+    ========================= */
+
+    "maryam-qasem": {
+
+        name: "مریم",
+
+        spouses: [
+            {
+                id: "reza-haj-abdolrashid",
+                children: [
+                    "ebrahim-maryam",
+                    "reyhaneh"
+                ]
+            }
+        ]
+
+    },
+
+
+    "reza-haj-abdolrashid": {
+        name: "رضا حاج عبدالرشید"
+    },
+
+    "ebrahim-maryam": {
+        name: "ابراهیم"
+    },
+
+    "reyhaneh": {
+        name: "ریحانه"
+    },
+
+
+    /* =====================================================
+       امیر
+    ===================================================== */
+
+    "amir": {
+
+        name: "امیر",
+
+        spouses: [
+            {
+                id: "mahin-haj-mohammad",
+                children: [
+                    "sedigheh",
+                    "sadegh",
+                    "samad",
+                    "fatemeh-amir",
+                    "maryam-amir"
+                ]
+            }
+        ]
+
+    },
+
+
+    "mahin-haj-mohammad": {
+        name: "مهین حاج محمد"
+    },
+
+
+    "sedigheh": {
+
+        name: "صدیقه",
+
+        spouses: [
+            {
+                id: "mansour-mohammadali-zayer-abbas",
+                children: [
+                    "mohammadali-sedigheh",
+                    "zhaleh-sedigheh",
+                    "yekta"
+                ]
+            }
+        ]
+
+    },
+
+
+    "mansour-mohammadali-zayer-abbas": {
+        name: "منصور محمدعلی زائرعباس"
+    },
+
+
+    "mohammadali-sedigheh": {
+        name: "محمدعلی"
+    },
+
+
+    "zhaleh-sedigheh": {
+        name: "ژاله"
+    },
+
+
+    "yekta": {
+
+        name: "یکتا",
+
+        spouses: [
+            {
+                id: "ali-jebraeil",
+                children: []
+            }
+        ]
+
+    },
+
+
+    "ali-jebraeil": {
+        name: "علی جبرئیل"
+    },
+
+
+    /* =========================
+       صادق مشترک
+    ========================= */
+
+    "sadegh": {
+
+        name: "صادق",
+
+        shared: true,
+
+        spouses: [
+            {
+                id: "farideh-ahmad",
+                children: [
+                    "kamelya"
+                ]
+            }
+        ]
+
+    },
+
+
+    "farideh-ahmad": {
+
+        name: "فریده احمد",
+
+        shared: true,
+
+        spouses: [
+            {
+                id: "sadegh",
+                children: [
+                    "kamelya"
+                ]
+            }
+        ]
+
+    },
+
+
+    "kamelya": {
+
+        name: "کاملیا",
+
+        shared: true
+
+    },
+
+
+    /* =========================
+       صمد
+    ========================= */
+
+    "samad": {
+
+        name: "صمد",
+
+        spouses: [
+            {
+                id: "zahra-mohammadali-zayer-abbas",
+                children: [
+                    "niloufar",
+                    "marila"
+                ]
+            }
+        ]
+
+    },
+
+
+    "zahra-mohammadali-zayer-abbas": {
+        name: "زهرا محمدعلی زائرعباس"
+    },
+
+    "niloufar": {
+        name: "نیلوفر"
+    },
+
+    "marila": {
+        name: "مریلا"
+    },
+
+
+    "fatemeh-amir": {
+        name: "فاطمه"
+    },
+
+    "maryam-amir": {
+        name: "مریم"
+    },
+
+
+    /* =====================================================
+       احمد
+    ===================================================== */
+
+    "ahmad": {
+
+        name: "احمد",
+
+        spouses: [
+            {
+                id: "shirin-haj-abdolrashid",
+                children: [
+                    "farideh-ahmad",
+                    "fajr-ahmad",
+                    "gholamhossein-ahmad",
+                    "feiz-ahmad",
+                    "pedram-ahmad"
+                ]
+            }
+        ]
+
+    },
+
+
+    "shirin-haj-abdolrashid": {
+        name: "شیرین حاج عبدالرش
