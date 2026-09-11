@@ -1,59 +1,131 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="شجره‌نامه خاندان‌های روستای قباکلکی"
+    >
 
     <title>شجره‌نامه قباکلکی</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
 </head>
+
 
 <body>
 
+
+    <!-- =========================
+         سربرگ سایت
+    ========================== -->
+
     <header class="site-header">
+
         <div class="container header-content">
 
-            <div>
-                <h1>شجره‌نامه قباکلکی</h1>
-                <p>سامانه ثبت و نمایش شجره‌نامه خاندان‌های قباکلکی</p>
+            <div class="header-text">
+
+                <h1>
+                    شجره‌نامه قباکلکی
+                </h1>
+
+                <p>
+                    سامانه ثبت و نمایش شجره‌نامه خاندان‌های قباکلکی
+                </p>
+
             </div>
 
         </div>
+
     </header>
 
 
+
+    <!-- =========================
+         محتوای اصلی
+    ========================== -->
+
     <main class="container">
+
+
+        <!-- معرفی -->
 
         <section class="hero">
 
-            <h2>خاندان‌های قباکلکی</h2>
+            <h2>
+                خاندان‌های قباکلکی
+            </h2>
 
             <p>
-                در این بخش می‌توانید خاندان‌های ثبت‌شده را مشاهده
-                و وارد شجره‌نامه هر خاندان شوید.
+                در این سامانه می‌توانید شجره‌نامه خاندان‌های
+                قباکلکی را مشاهده کنید و اطلاعات افراد،
+                نسل‌ها و روابط خانوادگی را بررسی نمایید.
             </p>
 
         </section>
 
 
+
+        <!-- =========================
+             لیست خاندان‌ها
+        ========================== -->
+
         <section class="families-section">
 
+
             <div class="section-title">
-                <h2>خاندان‌ها</h2>
+
+                <h2>
+                    فهرست خاندان‌ها
+                </h2>
+
+                <p>
+                    برای مشاهده شجره‌نامه، خاندان مورد نظر را انتخاب کنید.
+                </p>
+
             </div>
 
 
-            <div id="familiesContainer" class="families-grid">
+            <!--
+                کارت خاندان‌ها توسط JavaScript
+                در این قسمت ساخته می‌شوند.
+            -->
 
-                <!-- خاندان‌ها توسط JavaScript اینجا قرار می‌گیرند -->
+            <div
+                id="familiesContainer"
+                class="families-grid"
+            >
+
+                <div class="empty-message">
+                    در حال بارگذاری خاندان‌ها...
+                </div>
 
             </div>
+
 
         </section>
 
+
     </main>
 
+
+
+    <!-- =========================
+         پاورقی
+    ========================== -->
 
     <footer class="site-footer">
 
@@ -63,15 +135,34 @@
                 شجره‌نامه قباکلکی
             </p>
 
+            <p>
+                سامانه ثبت و نگهداری اطلاعات خاندان‌ها
+            </p>
+
         </div>
 
     </footer>
 
 
+
+    <!-- =========================
+         فایل‌های داده
+    ========================== -->
+
     <script src="data/families.js"></script>
+
     <script src="data/people.js"></script>
+
     <script src="data/relationships.js"></script>
+
+
+    <!-- =========================
+         برنامه اصلی
+    ========================== -->
+
     <script src="js/app.js"></script>
 
+
 </body>
+
 </html>
